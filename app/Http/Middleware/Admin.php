@@ -18,20 +18,22 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
+        return $next($request);
 
-        if (Auth::user()->role == 'pengguna') {
-            return redirect()->route('pengguna');
-        }
+        // if (!Auth::check()) {
+        //     return redirect()->route('login');
+        // }
 
-        if (Auth::user()->role == 'operator') {
-            return redirect()->route('operator');
-        }
+        // if (Auth::user()->role == 'pengguna') {
+        //     return redirect()->route('pengguna');
+        // }
 
-        if (Auth::user()->role == 'admin') {
-            return $next($request);
-        }
+        // if (Auth::user()->role == 'operator') {
+        //     return redirect()->route('operator');
+        // }
+
+        // if (Auth::user()->role == 'admin') {
+        //     return $next($request);
+        // }
     }
 }
