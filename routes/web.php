@@ -21,10 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [Quality_express::class, 'index'])->name('quality_express');
 
 //Master Data
 Route::get('/master/shipper', [Shipper::class, 'index'])->name('master/shipper');
