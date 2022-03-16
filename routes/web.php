@@ -8,7 +8,6 @@ use App\Http\Controllers\Notify_party;
 use App\Http\Controllers\Quality_express;
 use App\Http\Controllers\Shipper;
 use Illuminate\Support\Facades\Route;
-// use Auth;
 
 
 /*
@@ -54,19 +53,3 @@ Route::post('/master/issued_by/destroy', [Issued_by::class, 'destroy'])->name('m
 // Data
 Route::get('/quality_express', [Quality_express::class, 'index'])->name('quality_express');
 Route::get('/air_way', [Air_way::class, 'index'])->name('air_way');
-
-
-
-// // Auth::routes();
-// Route::get('/operator', 'OperatorController@index')->name('Operator')->middleware('Operator');
-// // Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
-// Route::get('/admin',  [AdminController::class, 'index'])->name('index')->middleware('guest');
-
-
-// Route::get('/pengguna', 'PenggunaController@index')->name('Pengguna')->middleware('Pengguna');
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-// require __DIR__.'/auth.php';
