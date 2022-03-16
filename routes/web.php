@@ -9,7 +9,6 @@ use App\Http\Controllers\Quality_express;
 use App\Http\Controllers\Shipper;
 use Illuminate\Support\Facades\Route;
 // use Auth;
-use Illuminate\Support\Facades\Auth;
 
 
 /*
