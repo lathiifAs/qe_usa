@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('no_of_original_signed');
             $table->string('consignee');
             $table->string('for_delivery');
-            $table->string('notifi_party');
+            $table->string('notify_party');
             $table->string('also_notify');
             $table->string('vessel_voy');
             $table->string('part_of_loading');
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('place_of_delivery');
             $table->string('final_destination');
             $table->string('container_no');
-            $table->string('seal_no');
+            // $table->string('seal_no');
             $table->string('no_of_pkgs');
             $table->string('kind_of_pkgs');
             $table->string('total_gross_weight');
@@ -42,7 +42,7 @@ return new class extends Migration
             $table->string('repaid_collect');
             $table->string('place_and_date_issue');
             $table->string('by');
-            $table->string('as_agent');
+            // $table->string('as_agent');
             $table->timestamps();
         });
     }

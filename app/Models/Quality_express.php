@@ -18,7 +18,7 @@ class Quality_express extends Model
         'no_of_original_signed',
         'consignee',
         'for_delivery',
-        'notifi_party',
+        'notify_party',
         'also_notify',
         'vessel_voy',
         'part_of_loading',
@@ -28,7 +28,7 @@ class Quality_express extends Model
         'place_of_delivery',
         'final_destination',
         'container_no',
-        'seal_no',
+        // 'seal_no',
         'no_of_pkgs',
         'kind_of_pkgs',
         'total_gross_weight',
@@ -38,7 +38,7 @@ class Quality_express extends Model
         'repaid_collect',
         'place_and_date_issue',
         'by',
-        'as_agent',
+        // 'as_agent',
     ];
 
 }
