@@ -51,7 +51,7 @@ Route::post('/master/issued_by/destroy', [Issued_by::class, 'destroy'])->name('m
 Route::get('/quality_express', [Quality_express::class, 'index'])->name('quality_express');
 Route::get('/quality_express/add', [Quality_express::class, 'create'])->name('quality_express/add');
 Route::post('/quality_express/store', [Quality_express::class, 'store'])->name('quality_express/store');
-Route::get('/quality_express/create_pdf/{id}', [Quality_express::class, 'detail'])->name('quality_express/create_pdf');
+Route::get('/quality_express/create_pdf/{id}', [Quality_express::class, 'createpdf'])->name('quality_express/create_pdf');
 Route::get('/quality_express/detail/{id}', [Quality_express::class, 'detail'])->name('quality_express/detail');
 Route::get('/quality_express/edit/{id}', [Quality_express::class, 'edit'])->name('quality_express/edit');
 Route::post('/quality_express/destroy', [Quality_express::class, 'destroy'])->name('quality_express/destroy');
