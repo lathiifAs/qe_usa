@@ -59,3 +59,13 @@ Route::post('/quality_express/update', [Quality_express::class, 'update'])->name
 
 
 Route::get('/air_way', [Air_way::class, 'index'])->name('air_way');
+Route::get('/air_way/add', [Air_way::class, 'create'])->name('air_way/add');
+Route::post('/air_way/store', [Air_way::class, 'store'])->name('air_way/store');
+Route::get('/air_way/create_pdf/{id}', [Air_way::class, 'createpdf'])->name('air_way/create_pdf');
+Route::get('/air_way/detail/{id}', [Air_way::class, 'detail'])->name('air_way/detail');
+Route::get('/air_way/edit/{id}', [Air_way::class, 'edit'])->name('air_way/edit');
+Route::post('/air_way/destroy', [Air_way::class, 'destroy'])->name('air_way/destroy');
+Route::post('/air_way/update', [Air_way::class, 'update'])->name('air_way/update');
+
+
+// Route::get('/air_way', [Air_way::class, 'index'])->name('air_way');
