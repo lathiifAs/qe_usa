@@ -23,7 +23,7 @@
             </tr>
         </table>
         <font size="2">
-        <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 5%;" cellpadding="0" cellspacing="0" >
+        <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 6%; table-layout: fixed;" cellpadding="0" cellspacing="0" >
             <tr>
                 <td rowspan="2" style="width: 45%">
                     <p>
@@ -147,7 +147,7 @@
                         {{ $qe->container_no }}
                     </p>
                 </td>
-                <td>
+                <td rowspan="2">
                     <p>
                         {{ $qe->no_of_pkgs }}
                     </p>
@@ -173,7 +173,7 @@
                     <p>
                     </p>
                 </td>
-                <td colspan="3">
+                <td colspan="3" rowspan="2">
                     <p>
                         {{ $qe->desc_of_goods }}
                     </p>
@@ -184,9 +184,22 @@
                 </td>
             </tr>
             <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+                        <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
                 <td colspan="1">
                 </td>
                 <td>
+                    {{-- total --}}
                     <p>
                         {{ $qe->total_no_pkgs }}
                     </p>
