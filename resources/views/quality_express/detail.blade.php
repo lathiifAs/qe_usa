@@ -25,7 +25,7 @@
         <font size="2">
         <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 5%;" cellpadding="0" cellspacing="0" >
             <tr>
-                <td rowspan="2" style="width: 35%">
+                <td rowspan="2" style="width: 45%">
                     <p>
                         {{ $qe->shipper }}
                     </p>
@@ -67,7 +67,7 @@
                     <p>
                     </p>
                 </td>
-                <td colspan style="width: 35%">
+                <td colspan style="width: 45%">
                     {{ $qe->issued_by }}
                 </td>
             </tr>
