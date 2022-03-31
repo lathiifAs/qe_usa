@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,9 +22,10 @@
                 <td style="text-align: right; width:50%"></td>
             </tr>
         </table>
-        <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 5%">
+        <font size="2">
+        <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 5%;" cellpadding="0" cellspacing="0" >
             <tr>
-                <td rowspan="2" style="width: 30%">
+                <td rowspan="2" style="width: 35%">
                     <p>
                         {{ $qe->shipper }}
                     </p>
@@ -62,7 +67,7 @@
                     <p>
                     </p>
                 </td>
-                <td colspan style="width: 30%">
+                <td colspan style="width: 35%">
                     {{ $qe->issued_by }}
                 </td>
             </tr>
@@ -213,6 +218,7 @@
                 </td>
             </tr>
         </table>
+        </font>
     </center>
 </body>
 
