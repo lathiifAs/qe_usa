@@ -269,7 +269,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-lg-2">
-                                    <label for="">Kind of PKGS, Description of Goods</label>
+                                    <label for="">Kind of PKGS</label>
                                     <textarea name="kind_of_pkgs" class="form-control" id="" cols="30" rows="10">{{ old('kind_of_pkgs', $qe->kind_of_pkgs) }}</textarea>
                                     @error('kind_of_pkgs')
                                         <div class="invalid-feedback">
@@ -288,13 +288,30 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <label for="">Total Measurement CBM (CFT)</label>
-                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea>
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
+
+                                    </div>
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
+
+                                    </div>
+                                    {{-- <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea> --}}
                                     @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
+                            </div>
+                            <div class="row col-lg-12 m-2 p-2">
+                                <label for="">Description of Goods</label>
+                                <input type="text" class="form-control" name="desc_of_goods" value="{{ old('desc_of_goods', $qe->desc_of_goods) }}">
+                                @error('total_no_pkgs')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="row col-lg-12 m-2 p-2">
                                 <label for="">Total No of Packages</label>
@@ -343,7 +360,18 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12">
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">as Agent</label>
+                                    <input type="text" class="form-control" name="as_agent"  value="{{ old('as_agent', $qe->as_agent) }}">
+                                    @error('freight_and_charges')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 mt-5">
                                 <div class="col-lg-11">
                                 </div>
                                 <div class="col-lg-1" style="text-align: right">

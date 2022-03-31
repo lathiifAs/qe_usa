@@ -78,8 +78,8 @@
                                                 <a href="{{ route('quality_express/create_pdf', $qe_data->id) }}"
                                                     class="btn btn-secondary text-xs mb-0 p-2" title="detail"> <i
                                                         class="fa fa-file-pdf"></i></a>
-                                                {{-- <a href="" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
-                                                        class="fa fa-file-text"></i></a> --}}
+                                                <a href="{{ route('quality_express/detail', $qe_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
+                                                        class="fa fa-file-text"></i></a>
                                                 <a href="{{ route('quality_express/edit', $qe_data->id) }}"
                                                     class="btn btn-warning text-xs mb-0 p-2" title="edit"> <i
                                                         class="fa fa-edit"></i></a>

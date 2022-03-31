@@ -295,6 +295,7 @@
                                     @enderror
                                 </div>
                             </div>
+                            <input type="text" class="form-control" name="desc_of_goods">
                             <div class="row col-lg-12 m-2 p-2">
                                 <label for="">Total No of Packages</label>
                                 <input type="text" class="form-control" name="total_no_pkgs">
@@ -336,6 +337,17 @@
                                     <label for="">Date, By</label>
                                     <input type="text" class="form-control" name="by">
                                     @error('by')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">as Agent</label>
+                                    <input type="text" class="form-control" name="as_agent" >
+                                    @error('freight_and_charges')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

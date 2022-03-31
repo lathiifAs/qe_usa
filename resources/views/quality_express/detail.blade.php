@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,161 +11,209 @@
 </head>
 
 <body>
-        <center>
-            <table style="border-color: black; border-collapse: collapse; width:80%">
-                <tr>
-                    <td style="width:50%">LOGO Perusahaan</td>
-                    <td style="text-align: right; width:50%"><h2>BILL OF LADING</h2></td>
-                </tr>
-            </table>
-            <hr>
-            <table border="1" style="border-color: black; border-collapse: collapse; width:100%">
-                <tr >
-                    <td rowspan="2" colspan="3"><b><h5>SHIPPER / EXPORTER :</h5></b>
+    <center>
+        <table style="border-color: black; border-collapse: collapse; width:80%">
+            <tr>
+                <td style="width:50%"></td>
+                <td style="text-align: right; width:50%"></td>
+            </tr>
+        </table>
+        <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 5%">
+            <tr>
+                <td rowspan="2" style="width: 30%">
                     <p>
-                    {{ $qe->shipper }}
+                        {{ $qe->shipper }}
                     </p>
                 </td>
-                    <td ><b><h5>EXPORT REFERENCES :</h5></b>
+                <td colspan="3">
                     <p>
                         {{ $qe->export_references }}
                     </p>
-                    </td>
-                    <td ><b><h5>BILL OF LADING NO :</h5></b>
+                </td>
+                <td style="width: 10%">
                     <p>
                         {{ $qe->bill_of_lading_no }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td ><b><h5>FMC NO. :</h5></b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
                     <p>
                         {{ $qe->fmc_no }}
                     </p>
                 </td>
-                    <td ><b><h5>NO OF ORIGINAL
-                        B(S)/L(S) SIGNED :</h5></b>
+                <td style="width: 10%">
                     <p>
                         {{ $qe->no_of_original_signed }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td  colspan="2"><b><h5>CONSIGNEE :</h5></b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1">
                     <p>
                         {{ $qe->consignee }}
                     </p>
-                    </td>
-                    <td  colspan="3"><b><h5>FOR DELIVERY PLEASE APPLY TO :</h5></b>
+                </td>
+                <td>
                     <p>
-                        {{ $qe->issued_by }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td  colspan="2"><b><h5>NOTIFY PARTY :</h5></b>
+                </td>
+                <td>
+                    <p>
+                    </p>
+                </td>
+                <td colspan style="width: 30%">
+                    {{ $qe->issued_by }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>
+                    </p>
+                </td>
+                <td colspan="3">
+                    <p>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>
+                    </p>
+                </td>
+                <td colspan="3">
+                    <p>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <p>
                         {{ $qe->notify_party }}
                     </p>
-                    </td>
-                    <td  colspan="3"><b><h5>ALSO NOTIFY (NAME AND FULL ADDRESS) / DOMESTIC ROUTING :</h5></b>
+                </td>
+                <td colspan="3">
                     <p>
                         {{ $qe->also_notify }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td ><b><h5>VESSEL VOY :</h5></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <p>
                         {{ $qe->vessel_voy }}
                     </p>
-                    </td>
-                    <td ><b><h5>PORT OF LOADING :</h5></b>
+                </td>
+                <td>
                     <p>
                         {{ $qe->part_of_loading }}</p>
-                    </td>
-                    <td colspan="2"><b><h5>PIER OR PLACE OR RECEIPT :</h5></b>
+                </td>
+                <td colspan="2">
                     <p>
                         {{ $qe->pier_or_place }}
                     </p>
-                    </td>
-                    <td ><b><h5> TYPE OF MOVE :</h5></b>
+                </td>
+                <td>
                     <p>
                         {{ $qe->type_of_move }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td ><b><h5>PORT OF DISCHARGE :</h5></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <p>
                         {{ $qe->port_of_discharge }}
                     </p>
-                    </td>
-                    <td ><b><h5>PLACE OF DELIVERY :</h5></b>
+                </td>
+                <td style="width: 35%">
                     <p>
                         {{ $qe->place_of_delivery }}
                     </p>
-                    </td>
-                    <td colspan="3"><b><h5>FINAL DESTINATION (FOR THE MERCHANT'S REFERENCES ONLY) :</h5></b>
+                </td>
+                <td colspan="3">
                     <p>
                         {{ $qe->final_destination }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td ><b><h5>CONTAINER NO. MARKS & NOS<br> SEAL NO : :</h5></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <p>
                         {{ $qe->container_no }}
                     </p>
-                    </td>
-                    <td ><b><h5>NO OF PKGS OR CONTAINER :</h5></b>
+                </td>
+                <td>
                     <p>
                         {{ $qe->no_of_pkgs }}
                     </p>
-                    </td>
-                    <td><b><h5>KIND OF PACKAGES; DESCRIPTION OF GOODS :</h5></b>
+                </td>
+                <td>
                     <p>
                         {{ $qe->kind_of_pkgs }}
                     </p>
-                    </td>
-                    <td><b><h5>TOTAL GROSS WEIGHT KGS; (POUNDS) :</h5></b>
+                </td>
+                <td>
                     <p>
                         {{ $qe->total_gross_weight }}
                     </p>
-                    </td>
-                    <td><b><h5>TOTAL MEASUREMENT CBM; (CFT) :</h5></b>
+                </td>
+                <td>
                     <p>
                         {{ $qe->total_measur }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td colspan="5"><b><h5>TOTAL OF NO PACKAGES :</h5></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                    </p>
+                </td>
+                <td colspan="3">
+                    <p>
+                        {{ $qe->desc_of_goods }}
+                    </p>
+                </td>
+                <td>
+                    <p>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1">
+                </td>
+                <td>
                     <p>
                         {{ $qe->total_no_pkgs }}
                     </p>
-                    </td>
-                </tr>
-                <tr >
-                    <td ><b><h5>FREIGHT AND CHARGES :</h5></b>
-                        <p>
-                            {{ $qe->freight_and_charges }}
-                        </p>
-                    </td>
-                    <td><b><h5>REPAID &nbsp;&nbsp;&nbsp; COLLECT :</h5></b>
-                        <p>
-                            {{ $qe->repaid_collect }}
-                        </p>
-                    </td>
-                    <td><b><h5>PLACE AND DATE OF ISSUE :</h5></b></td>
-                    <td colspan="2"><b><h5>DATE &nbsp;&nbsp;&nbsp; BY :</h5></b>
-                        <p>
-                            {{ $qe->place_and_date_issue }} - {{ $qe->by }}
-                        </p>
-                    </td>
-                </tr>
-            </table>
-        </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td style="text-align: right" colspan="3">
+                        {{ $qe->repaid_collect }}
+                        {{ $qe->place_and_date_issue }}, &nbsp; &nbsp;
+                </td>
+                <td style="text-align: left">
+                    <p>
+                        {{ $qe->by }}
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>
+                    </p>
+                </td>
+                <td style="text-align: right; width:10%; padding-right: 2%" colspan="4">
+                    <p>
+                        {{ $qe->as_agent }}
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </center>
 </body>
 
 {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"

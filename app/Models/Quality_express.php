@@ -37,7 +37,9 @@ class Quality_express extends Model
         'freight_and_charges',
         'repaid_collect',
         'place_and_date_issue',
+        'as_agent',
         'by',
+        'desc_of_goods'
         // 'as_agent',
     ];
 

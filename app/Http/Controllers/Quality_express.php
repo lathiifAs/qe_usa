@@ -64,6 +64,8 @@ class Quality_express extends Controller
             'freight_and_charges' => $request->freight_and_charges,
             'repaid_collect' => $request->repaid_collect,
             'place_and_date_issue' => $request->place_and_date_issue,
+            'as_agent' => $request->as_agent,
+            'desc_of_goods' => $request->desc_of_goods,
             'by' => $request->by,
             // 'as_agent' => $request->shipper,
         ]);
@@ -172,6 +174,8 @@ class Quality_express extends Controller
             'freight_and_charges' => $request->freight_and_charges,
             'repaid_collect' => $request->repaid_collect,
             'place_and_date_issue' => $request->place_and_date_issue,
+            'as_agent' => $request->as_agent,
+            'desc_of_goods' => $request->desc_of_goods,
             'by' => $request->by,
         ]);
 
