@@ -256,7 +256,7 @@
                     <td colspan="2"></td>
                     {{-- 4 --}}
                     {{-- 5 --}}
-                    <td colspan="3" style="text-align: left; padding-top: 23px; padding-left:10px"> {{ $qe->as_agent }}</td>
+                    <td colspan="3" style="text-align: left; padding-top: 20px; padding-left:10px"> {{ $qe->as_agent }}</td>
                     {{-- 6 --}}
                     {{-- 7 --}}
                     {{-- 8 --}}
