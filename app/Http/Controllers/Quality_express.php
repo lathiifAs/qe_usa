@@ -67,6 +67,9 @@ class Quality_express extends Controller
             'as_agent' => $request->as_agent,
             'desc_of_goods' => $request->desc_of_goods,
             'by' => $request->by,
+            'cont_no' => $request->cont_no,
+            'seal_no' => $request->seal_no,
+            'mother_vessel' => $request->mother_vessel,
             // 'as_agent' => $request->shipper,
         ]);
 
@@ -177,6 +180,9 @@ class Quality_express extends Controller
             'as_agent' => $request->as_agent,
             'desc_of_goods' => $request->desc_of_goods,
             'by' => $request->by,
+            'cont_no' => $request->cont_no,
+            'seal_no' => $request->seal_no,
+            'mother_vessel' => $request->mother_vessel,
         ]);
 
         if ($send) {
@@ -202,7 +208,7 @@ class Quality_express extends Controller
 
         if ($send) {
             return redirect()
-            ->route('quality_express/index')
+            ->route('quality_express')
             ->with([
                 'success' => 'New send has been deleted successfully'
                 ]);

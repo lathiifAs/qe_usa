@@ -2,6 +2,18 @@
 <html lang="en">
 
 <style>
+    td.cs {
+        padding-top: 10px;
+    }
+
+    div.h1 {
+        height: 68px;
+        overflow: hidden;
+    }
+
+    td.pl {
+        padding-left: 30px
+    }
 
 </style>
 
@@ -16,222 +28,241 @@
 
 <body>
     <center>
-        <table style="border-color: black; border-collapse: collapse; width:80%">
+        <table style="border-color: black; border-collapse: collapse;">
             <tr>
                 <td style="width:50%"></td>
                 <td style="text-align: right; width:50%"></td>
             </tr>
         </table>
-        <font size="2">
-        <table border="0" style="border-color: black; border-collapse: collapse; width:100%; margin-top: 6%; table-layout: fixed;" cellpadding="0" cellspacing="0" >
-            <tr>
-                <td rowspan="2" style="width: 40%">
-                    <p>
-                        {{ $qe->shipper }}
-                    </p>
-                </td>
-                <td colspan="3">
-                    <p>
-                        {{ $qe->export_references }}
-                    </p>
-                </td>
-                <td style="width: 10%">
-                    <p>
-                        {{ $qe->bill_of_lading_no }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <p>
-                        {{ $qe->fmc_no }}
-                    </p>
-                </td>
-                <td style="width: 10%">
-                    <p>
-                        {{ $qe->no_of_original_signed }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1">
-                    <p>
-                        {{ $qe->consignee }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                    </p>
-                </td>
-                <td>
-                    <p>
-                    </p>
-                </td>
-                <td colspan style="width: 40%">
-                    {{ $qe->issued_by }}
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p>
-                    </p>
-                </td>
-                <td colspan="3">
-                    <p>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p>
-                    </p>
-                </td>
-                <td colspan="3">
-                    <p>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p>
-                        {{ $qe->notify_party }}
-                    </p>
-                </td>
-                <td colspan="3">
-                    <p>
-                        {{ $qe->also_notify }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        {{ $qe->vessel_voy }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {{ $qe->part_of_loading }}</p>
-                </td>
-                <td colspan="2">
-                    <p>
-                        {{ $qe->pier_or_place }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {{ $qe->type_of_move }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        {{ $qe->port_of_discharge }}
-                    </p>
-                </td>
-                <td style="width: 35%">
-                    <p>
-                        {{ $qe->place_of_delivery }}
-                    </p>
-                </td>
-                <td colspan="3">
-                    <p>
-                        {{ $qe->final_destination }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        {{ $qe->container_no }}
-                    </p>
-                </td>
-                <td rowspan="2">
-                    <p>
-                        {{ $qe->no_of_pkgs }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {{ $qe->kind_of_pkgs }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {{ $qe->total_gross_weight }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {{ $qe->total_measur }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                    </p>
-                </td>
-                <td colspan="3" rowspan="2">
-                    <p>
-                        {{ $qe->desc_of_goods }}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-                        <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td colspan="1">
-                </td>
-                <td>
-                    {{-- total --}}
-                    <p>
-                        {{ $qe->total_no_pkgs }}
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-                <td style="text-align: right" colspan="3">
-                        {{ $qe->repaid_collect }}
-                        {{ $qe->place_and_date_issue }}, &nbsp; &nbsp;
-                </td>
-                <td style="text-align: left">
-                    <p>
-                        {{ $qe->by }}
-                    </p>
-                </td>
-            </tr>
+        {{-- <font size="2"> --}}
+            <table border="0"
+                style="font-size: 10px; border-color: black; border-collapse: collapse; width:104%; margin-top: 6%; table-layout: fixed;"
+                cellpadding="0" cellspacing="0">
+                <tr>
+                    {{-- 1 --}}
+                    <td colspan="4" style="width: 60%" rowspan="2" class="cs">
+                        <div class="h1">
+                            {{ $qe->shipper }}
+                        </div>
+                    </td>
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    <td colspan="2" style="width: 20%">{{ $qe->export_references }}</td>
+                    {{-- 6 --}}
+                    <td colspan="2" class="cs pl" style="width: 20%;">{{ $qe->bill_of_lading_no }}</td>
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
 
-            <tr>
-                <td>
-                    <p>
-                    </p>
+                <tr>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    <td colspan="2">{{ $qe->fmc_no }}</td>
+                    {{-- 6 --}}
+                    <td colspan="2" class="cs pl">{{ $qe->no_of_original_signed }}</td>
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+                {{--  --}}
+                <tr>
+                    <td colspan="4" style="padding-top: 15px;">
+                        <div style="height: 80px; overflow: hidden;">
+                            {{ $qe->consignee }}
+                        </div>
+                    </td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    {{-- 4 --}}
+                    <td colspan="4" class="pl" style="padding-top: 15px;">
+                        <div style="height: 80px; overflow: hidden;">
+                            {{ $qe->issued_by }}
+                        </div>
+                    </td>
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+                <tr>
+                    <td colspan="4" style="padding-top: 15px;">
+                        <div class="h1">
+                            {{ $qe->notify_party }}
+                        </div>
+                    </td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    {{-- 4 --}}
+                    <td colspan="4" class="pl" style="padding-top: 15px;">
+                        <div class="h1">
+                            {{ $qe->also_notify }}
+                        </div>
+                    </td>
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+                {{--  --}}
+
+                <tr>
+                    <td colspan="2" style="padding-top: 15px; width:35%">
+                        <div style="height: 17px;">
+                            {{ $qe->vessel_voy }}
+                        </div>
+                        </td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    <td colspan="2" style="padding-top: 13px; padding-left: 30px">{{ $qe->part_of_loading }}</td>
+                    {{-- 3 --}}
+                    {{-- 4 --}}
+                    <td colspan="2" style="padding-top: 13px; padding-left: 5px">{{ $qe->pier_or_place }}</td>
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    <td colspan="2"  style="padding-top: 13px; padding-left: 45px">{{ $qe->type_of_move }}</td>
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="cs">{{ $qe->port_of_discharge }}</td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    <td colspan="2"  style="padding-top: 13px; padding-left: 30px">{{ $qe->place_of_delivery }}</td>
+                    {{-- 3 --}}
+                    {{-- 4 --}}
+                    <td colspan="4"  style="padding-top: 13px; padding-left: 10px">{{ $qe->final_destination }}</td>
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+                {{-- copy area --}}
+
+                <tr>
+                    <td colspan="3" style="padding-top: 30px">
+                        <div style="height: 280px;">
+                            CONT.NO : {{ $qe->cont_no }}<br>
+                            SEAL.NO : {{ $qe->seal_no }}<br>
+                            MOTHER VESSEL : {{ $qe->mother_vessel }}
+                        </div>
+                    </td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    <td colspan="3">{{ $qe->no_of_pkgs }}</td>
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    <td colspan="2">{{ $qe->total_gross_weight }} - {{ $qe->total_measur }}</td>
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+
+                <tr>
+                    <td colspan="3"></td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    <td colspan="3">
+                        <div style="height: 150px;">
+                            {{ $qe->desc_of_goods }}
+                        </div></td>
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    <td colspan="2"></td>
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+                {{--  --}}
+                <tr>
+                    <td colspan="3"></td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    <td colspan="3">
+                        <div style="height: 20px;">
+                            {{ $qe->total_no_pkgs }}
+                        </div></td>
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    <td colspan="2"></td>
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    <td colspan="2" style="text-align: right">
+                        <div style="height: 30px;">
+                        &nbsp;
+                    </div>
                 </td>
-                <td style="text-align: right; width:10%; padding-right: 2%" colspan="4">
-                    <p>
-                        {{ $qe->as_agent }}
-                    </p>
-                </td>
-            </tr>
-        </table>
-        </font>
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    {{-- 7 --}}
+                    <td colspan="2" style="text-align: center"></td>
+                    {{-- 8 --}}
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    <td colspan="2" style="text-align: right">
+                            {{ $qe->repaid_collect }}
+                            {{ $qe->place_and_date_issue }}
+                    </td>
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    {{-- 6 --}}
+                    {{-- 7 --}}
+                    <td colspan="2" style="text-align: left; padding-left: 40px">, {{ $qe->by }}</td>
+                    {{-- 8 --}}
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="height: 130px;">
+                            &nbsp;
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3"></td>
+                    {{-- 1 --}}
+                    {{-- 2 --}}
+                    {{-- 3 --}}
+                    <td colspan="2"></td>
+                    {{-- 4 --}}
+                    {{-- 5 --}}
+                    <td colspan="3" style="text-align: left"> {{ $qe->as_agent }}</td>
+                    {{-- 6 --}}
+                    {{-- 7 --}}
+                    {{-- 8 --}}
+                </tr>
+
+
+
+            </table>
+        {{-- </font> --}}
     </center>
 </body>
 

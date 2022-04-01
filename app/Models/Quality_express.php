@@ -39,7 +39,10 @@ class Quality_express extends Model
         'place_and_date_issue',
         'as_agent',
         'by',
-        'desc_of_goods'
+        'desc_of_goods',
+        'cont_no',
+        'seal_no',
+        'mother_vessel'
         // 'as_agent',
     ];
 

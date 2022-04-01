@@ -251,7 +251,22 @@
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-3">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    {{-- <textarea name="container_no" class="form-control" id="" cols="30" rows="10"></textarea> --}}
+
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" name="cont_no" placeholder="CONT. NO">
+
+                                    </div>
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="seal_no" placeholder="SEAL NO.">
+
+                                    </div>
+
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="mother_vessel" placeholder="MOTHER VESSEL">
+
+                                    </div>
+
                                     @error('container_no')
                                         <div class="invalid-feedback">
                                             {{ $message }}

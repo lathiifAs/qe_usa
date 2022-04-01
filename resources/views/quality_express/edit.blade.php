@@ -252,7 +252,21 @@
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-3">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" class="form-control" id=""  cols="30" rows="10">{{ old('container_no', $qe->container_no) }}</textarea>
+                                    {{-- <textarea name="container_no" class="form-control" id=""  cols="30" rows="10">{{ old('container_no', $qe->container_no) }}</textarea> --}}
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" name="cont_no" placeholder="CONT. NO" value="{{ old('cont_no', $qe->cont_no) }}">
+
+                                    </div>
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="seal_no" placeholder="SEAL NO." value="{{ old('seal_no', $qe->seal_no) }}" >
+
+                                    </div>
+
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="mother_vessel" placeholder="MOTHER VESSEL" value="{{ old('mother_vessel', $qe->mother_vessel) }}">
+
+                                    </div>
+
                                     @error('container_no')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -288,15 +302,15 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <label for="">Total Measurement CBM (CFT)</label>
-                                    <div class="col-lg-12">
+                                    {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
 
-                                    </div>
-                                    <div class="col-lg-12 mt-4">
+                                    </div> --}}
+                                    {{-- <div class="col-lg-12 mt-4">
                                         <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
 
-                                    </div>
-                                    {{-- <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea> --}}
+                                    </div> --}}
+                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea>
                                     @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
