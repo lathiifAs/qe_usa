@@ -3,7 +3,7 @@
 <style>
 
     td.cs {
-        padding-top: 10px;
+        padding-top: 15px;
     }
 
     div.h1 {
@@ -40,7 +40,7 @@
                 cellpadding="0" cellspacing="0">
                 <tr>
                     {{-- 1 --}}
-                    <td colspan="4" style="padding-right:20px" rowspan="2" class="cs">
+                    <td colspan="4" style="padding-right:20px; padding-top:24px" rowspan="2" >
                         <div class="h1">
                             {{ $qe->shipper }}
                         </div>
@@ -70,7 +70,7 @@
                 </tr>
                 {{--  --}}
                 <tr>
-                    <td colspan="4" style="padding-top: 20px;">
+                    <td colspan="4" style="padding-top: 24px;">
                         <div style="height: 80px; overflow: hidden;">
                             {{ $qe->consignee }}
                         </div>
@@ -79,7 +79,7 @@
                     {{-- 2 --}}
                     {{-- 3 --}}
                     {{-- 4 --}}
-                    <td colspan="4" class="pl" style="padding-top: 22px;">
+                    <td colspan="4" class="pl" style="padding-top: 24px;">
                         <div style="height: 80px; overflow: hidden;">
                             {{ $qe->issued_by }}
                         </div>
@@ -124,10 +124,10 @@
                     <td colspan="2" style="padding-top: 15px; padding-left: 45px">{{ $qe->part_of_loading }}</td>
                     {{-- 3 --}}
                     {{-- 4 --}}
-                    <td colspan="2" style="padding-top: 15px; padding-left: 15px">{{ $qe->pier_or_place }}</td>
+                    <td colspan="2" style="padding-top: 15px; padding-left: 20px">{{ $qe->pier_or_place }}</td>
                     {{-- 5 --}}
                     {{-- 6 --}}
-                    <td colspan="2"  style="padding-top: 15px; padding-left: 55px">{{ $qe->type_of_move }}</td>
+                    <td colspan="2"  style="padding-top: 15px; padding-left: 65x">{{ $qe->type_of_move }}</td>
                     {{-- 7 --}}
                     {{-- 8 --}}
                 </tr>
@@ -136,10 +136,10 @@
                     <td colspan="2" class="cs">{{ $qe->port_of_discharge }}</td>
                     {{-- 1 --}}
                     {{-- 2 --}}
-                    <td colspan="2"  style="padding-top: 15px; padding-left: 40px">{{ $qe->place_of_delivery }}</td>
+                    <td colspan="2"  style="padding-top: 15px; padding-left: 50px">{{ $qe->place_of_delivery }}</td>
                     {{-- 3 --}}
                     {{-- 4 --}}
-                    <td colspan="4"  style="padding-top: 15px; padding-left: 15px">{{ $qe->final_destination }}</td>
+                    <td colspan="4"  style="padding-top: 15px; padding-left: 20px">{{ $qe->final_destination }}</td>
                     {{-- 5 --}}
                     {{-- 6 --}}
                     {{-- 7 --}}
@@ -236,7 +236,7 @@
                     {{-- 5 --}}
                     {{-- 6 --}}
                     {{-- 7 --}}
-                    <td colspan="2" style="text-align: left; padding-left: 50px">, {{ $qe->by }}</td>
+                    <td colspan="2" style="text-align: left; padding-left: 58px; padding-top: 15x">, {{ $qe->by }}</td>
                     {{-- 8 --}}
                 </tr>
 
