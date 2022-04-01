@@ -159,7 +159,7 @@
                     {{-- 1 --}}
                     {{-- 2 --}}
                     {{-- 3 --}}
-                    <td colspan="3" style="margin-left: 25px">{{ $qe->no_of_pkgs }}</td>
+                    <td colspan="3" style="padding-left: 42px">{{ $qe->no_of_pkgs }}</td>
                     {{-- 4 --}}
                     {{-- 5 --}}
                     <td></td>
