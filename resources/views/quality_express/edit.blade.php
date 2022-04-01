@@ -302,20 +302,20 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <label for="">Total Measurement CBM (CFT)</label>
-                                    {{-- <div class="col-lg-12">
-                                        <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" name="total_net" value="{{ old('total_net', $qe->total_net) }}">
 
-                                    </div> --}}
-                                    {{-- <div class="col-lg-12 mt-4">
-                                        <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
+                                    </div>
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="total_measur" value="{{ old('total_measur', $qe->total_measur) }}">
 
-                                    </div> --}}
-                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea>
-                                    @error('total_measur')
+                                    </div>
+                                    {{-- <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea> --}}
+                                    {{-- @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                    @enderror
+                                    @enderror --}}
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2 p-2">

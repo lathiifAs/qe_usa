@@ -302,12 +302,22 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <label for="">Total Measurement CBM (CFT)</label>
+
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" name="total_net" >
+
+                                    </div>
+                                    <div class="col-lg-12 mt-4">
+                                        <input type="text" class="form-control" name="total_measur">
+
+                                    </div>
+{{--
                                     <textarea name="total_measur" class="form-control" id="" cols="30" rows="10"></textarea>
                                     @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                    @enderror
+                                    @enderror --}}
                                 </div>
                             </div>
                             <input type="text" class="form-control" name="desc_of_goods">

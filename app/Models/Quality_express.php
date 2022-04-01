@@ -32,6 +32,7 @@ class Quality_express extends Model
         'no_of_pkgs',
         'kind_of_pkgs',
         'total_gross_weight',
+        'total_net',
         'total_measur',
         'total_no_pkgs',
         'freight_and_charges',
