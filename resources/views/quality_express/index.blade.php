@@ -86,7 +86,7 @@
                                             </td>
                                             <td class="text-center row">
                                                 <a href="{{ route('quality_express/edit', $qe_data->id) }}"
-                                                    class="btn btn-warning text-xs mb-0 p-2 col-lg-5" title="edit"><i
+                                                    class="btn btn-warning text-xs mb-0 p-2 col-lg-7" title="edit"><i
                                                         class="fa fa-edit"></i> Edit</a>
                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');" class="col-lg-3"
                                                     action="{{ route('quality_express/destroy') }}" method="POST">

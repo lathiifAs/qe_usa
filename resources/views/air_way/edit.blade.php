@@ -2,19 +2,21 @@
 
 @section('konten')
 
-<style>
-    .select2-container .select2-selection {
-    height: 40px;
-    padding-top: 5px;
-    }
-</style>
+    <style>
+        .select2-container .select2-selection {
+            height: 40px;
+            padding-top: 5px;
+        }
+
+    </style>
 
     <div class="mb-3">
         <nav aria-label="breadcrumb">
             <h6 class="font-weight-bolder text-white mb-0">Bill of Lading</h6>
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                <li class="breadcrumb-item text-sm"><a href="{{ route('quality_express') }}" class="text-white">Bill of Lading</a></li>
-                <li class="breadcrumb-item text-sm active" aria-current="page">Edit Data</li>
+                <li class="breadcrumb-item text-sm"><a href="{{ route('air_way') }}" class="text-white">Bill of
+                        Lading</a></li>
+                <li class="breadcrumb-item text-sm active" aria-current="page">Add Data</li>
             </ol>
         </nav>
     </div>
@@ -25,10 +27,10 @@
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-lg-10">
-                                <h6 class="mt-2">Edit Data</h6>
+                                <h6 class="mt-2">Add Data</h6>
                             </div>
                             <div class="col-lg-2" style="text-align: right">
-                                <a href="{{ route('quality_express') }}" class="btn btn-secondary"> Back</a>
+                                <a href="{{ route('air_way') }}" class="btn btn-secondary"> Back</a>
                             </div>
                         </div>
                     </div>
@@ -51,17 +53,17 @@
                     @endif
 
                     <div class="card-body px-0 pt-0 pb-2">
-                        <form action="{{ route('quality_express/update') }}" method="post">
-                            <input type="hidden" value="{{ $qe->id }}" name="id">
+                        <form action="{{ route('air_way/update') }}" method="post">
+                            <input type="hidden" value="{{ $aw->id }}" name="id">
                             {{ csrf_field() }}
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-6">
-                                    <label for="">Shipper / Exporter</label>
+                                    <label for="">Shipper Name and Address</label>
                                     <select
                                         class="js-example-basic-single form-control @error('shipper_exporter') is-invalid @enderror"
-                                        name="shipper_exporter">
+                                        name="shipper_name_address">
                                         @forelse ($shipper as $shp)
-                                            <option value="{{ $shp->id }}" @if ($qe->shipper_exporter == $shp->id) selected @endif>{{ $shp->shipper }}</option>
+                                            <option value="{{ $shp->id }}" @if ($aw->shipper_exporter == $shp->id) selected @endif>{{ $shp->shipper }}</option>
                                         @empty
                                             <option>Data Kosong</option>
                                         @endforelse
@@ -72,77 +74,113 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6 row">
-                                    <div class="col-lg-6">
-                                        <label for="">Export References</label>
-                                        <input type="text" name="export_references" id="" value="{{ old('export_references', $qe->export_references) }}" class="form-control">
-                                        @error('export_references')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label for="">Bill of Lading No.</label>
-                                        <input type="text" name="bill_of_lading_no" id="" value="{{ old('bill_of_lading_no', $qe->bill_of_lading_no) }}" class="form-control">
-                                        @error('bill_of_lading_no')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row col-lg-12 m-2">
                                 <div class="col-lg-6">
-
-                                </div>
-                                <div class="col-lg-6 row">
-                                    <div class="col-lg-6">
-                                        <label for="">FMC No.</label>
-                                        <input type="text" name="fmc_no" id="" value="{{ old('fmc_no', $qe->fmc_no) }}" class="form-control">
-                                        @error('fmc_no')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label for="">No. of Original B(s)/L(s) Signed</label>
-                                        <input type="text" name="no_of_original_signed" value="{{ old('no_of_original_signed', $qe->no_of_original_signed) }}" id="" class="form-control">
-                                        @error('no_of_original_signed')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row col-lg-12 m-2">
-                                <div class="col-lg-6">
-                                    <label for="">Consignee</label>
+                                    <label for="">Issued by</label>
                                     <select
-                                        class="js-example-basic-single form-control @error('consignee') is-invalid @enderror"
-                                        name="consignee">
-                                        @forelse ($consignee as $cn)
-                                            <option value="{{ $cn->id }}" @if ($qe->consignee == $cn->id) selected @endif>{{ $cn->consignee }}</option>
-                                        @empty
-                                            <option>Data Kosong</option>
-                                        @endforelse
+                                        class="js-example-basic-single form-control @error('for_delivery') is-invalid @enderror"
+                                        name="issued_by">
+                                        @forelse ($issued_by as $ib)
+                                        <option value="{{ $ib->id }}" @if ($aw->for_delivery == $ib->id) selected @endif>{{ $ib->issued_by }}</option>
+                                    @empty
+                                        <option>Data Kosong</option>
+                                    @endforelse
                                     </select>
-                                    @error('consignee')
+                                    @error('export_references')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <label for="">Shipper's Account Number</label>
+                                    <input type="text" name="shipper_account_number" id="" class="form-control" value="{{ old('shipper_account_number', $aw->shipper_account_number) }}">
+                                    @error('fmc_no')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="">For Delivery Please Apply To</label>
+                                    <label for="">Issuing Carrier's Agent Name and City</label>
+                                    <input type="text" name="issuing_carrier" id="" class="form-control" value="{{ old('issuing_carrier', $aw->issuing_carrier) }}">
+                                    @error('fmc_no')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <label for="">Consignee's Name and Address</label>
                                     <select
-                                        class="js-example-basic-single form-control @error('for_delivery') is-invalid @enderror"
-                                        name="for_delivery">
-                                        @forelse ($issued_by as $ib)
-                                            <option value="{{ $ib->id }}" @if ($qe->for_delivery == $ib->id) selected @endif>{{ $ib->issued_by }}</option>
+                                        class="js-example-basic-single form-control @error('consignee') is-invalid @enderror"
+                                        name="consignee_name_address">
+                                        @forelse ($consignee as $cn)
+                                        <option value="{{ $cn->id }}" @if ($aw->consignee == $cn->id) selected @endif>{{ $cn->consignee }}</option>
+                                    @empty
+                                        <option>Data Kosong</option>
+                                    @endforelse
+                                    </select>
+                                    @error('fmc_no')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <label for="">Consignee's Account Number</label>
+                                    <input type="text" name="account_no" id="" class="form-control" value="{{ old('account_no', $aw->account_no) }}">
+                                    @error('shipper')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Agent IATA Code</label>
+                                    <input type="text" class="form-control" name="agents_iata_cd" value="{{ old('agents_iata_cd', $aw->agents_iata_cd) }}">
+                                    @error('agents_iata_cd')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Account No.</label>
+                                    <input type="text" class="form-control" name="account_no"  value="{{ old('account_no', $aw->account_no) }}">
+                                    @error('account_no')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">Airport of Departure (Addr. of First Carrier) and Requested
+                                        Routing</label>
+                                    <input type="text" class="form-control" name="airport_of_departure" value="{{ old('airport_of_departure', $aw->airport_of_departure) }}">
+                                    @error('airport_of_departure')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+
+                                    <label for="">Accounting Information</label>
+                                    <select
+                                        class="js-example-basic-single form-control @error('shipper') is-invalid @enderror"
+                                        name="accounting_information" >
+                                        @forelse ($notify_party as $np)
+                                            <option value="{{ $np->id }}" @if ($aw->notify_party == $np->id) selected @endif>{{ $np->notify_party }}</option>
                                         @empty
                                             <option>Data Kosong</option>
                                         @endforelse
@@ -155,65 +193,55 @@
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2">
-                                <div class="col-lg-6">
-                                    <label for="">Notify Party</label>
-                                    <select
-                                        class="js-example-basic-single form-control @error('notify_party') is-invalid @enderror"
-                                        name="notify_party">
-                                        @forelse ($notify_party as $np)
-                                            <option value="{{ $np->id }}" @if ($qe->notify_party == $np->id) selected @endif>{{ $np->notify_party }}</option>
-                                        @empty
-                                            <option>Data Kosong</option>
-                                        @endforelse
-                                    </select>
-                                    @error('notify_party')
+                                <div class="col-lg-2">
+                                    <label for="">To</label>
+                                    <input type="text" class="form-control" name="to" value="{{ old('to', $aw->to) }}">
+                                    @error('to')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6">
-                                    <label for="">Also Notify (Name and Full Address) / Domestic Routing</label>
-                                    <input type="text" class="form-control" name="also_notify" value="{{ old('also_notify', $qe->also_notify) }}">
-                                    @error('also_notify')
+                                <div class="col-lg-2">
+                                    <label for="">By First Carrier</label>
+                                    <input type="text" class="form-control" name="by_first_carrier" value="{{ old('by_first_carrier', $aw->by_first_carrier) }}">
+                                    @error('by_first_carrier')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="row col-lg-12 m-2">
-                                <div class="col-lg-3">
-                                    <label for="">Vessel Voy</label>
-                                    <input type="text" class="form-control" name="vessel_voy" value="{{ old('vessel_voy', $qe->vessel_voy) }}">
-                                    @error('vessel_voy')
+                                <div class="col-lg-2">
+                                    <label for="">to (2)</label>
+                                    <input type="text" class="form-control" name="to_2" value="{{ old('to_2', $aw->to_2) }}">
+                                    @error('to_2')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
-                                    <label for="">Port of Loading</label>
-                                    <input type="text" class="form-control" name="part_of_loading" value="{{ old('part_of_loading', $qe->part_of_loading) }}">
-                                    @error('part_of_loading')
+                                <div class="col-lg-2">
+                                    <label for="">by</label>
+                                    <input type="text" class="form-control" name="by" value="{{ old('by', $aw->by) }}">
+                                    @error('by')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
-                                    <label for="">Pier or Place or Receipt</label>
-                                    <input type="text" class="form-control" name="pier_or_place" value="{{ old('pier_or_place', $qe->pier_or_place) }}">
-                                    @error('pier_or_place')
+                                <div class="col-lg-2">
+                                    <label for="">to (3)</label>
+                                    <input type="text" class="form-control" name="to_3"  value="{{ old('to_3', $aw->to_3) }}">
+                                    @error('to_3')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
-                                    <label for="">Type of Move</label>
-                                    <input type="text" class="form-control" name="type_of_move" value="{{ old('type_of_move', $qe->type_of_move) }}">
-                                    @error('type_of_move')
+                                <div class="col-lg-2">
+                                    <label for="">by (2)</label>
+                                    <input type="text" class="form-control" name="by_2" value="{{ old('by_2', $aw->by_2) }}">
+                                    @error('by_2')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -221,27 +249,242 @@
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2">
-                                <div class="col-lg-3">
-                                    <label for="">Port of Discharge</label>
-                                    <input type="text" class="form-control" name="port_of_discharge" value="{{ old('port_of_discharge', $qe->port_of_discharge) }}">
-                                    @error('port_of_discharge')
+                                <div class="col-lg-2">
+                                    <label for="">Currency</label>
+                                    <input type="text" class="form-control" name="currency" value="{{ old('currency', $aw->currency) }}">
+                                    @error('currency')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
-                                    <label for="">Port of Delivery</label>
-                                    <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $qe->place_of_delivery) }}">
-                                    @error('place_of_delivery')
+                                <div class="col-lg-2">
+                                    <label for="">CHOS Code</label>
+                                    <input type="text" class="form-control" name="chos_cd" value="{{ old('chos_cd', $aw->chos_cd) }}">
+                                    @error('chos_cd')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="">WTNAL PPD</label>
+                                    <input type="text" class="form-control" name="wtnal_pdd" value="{{ old('wtnal_pdd', $aw->wtnal_pdd) }}">
+                                    @error('wtnal_pdd')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="">WTNAL COLL</label>
+                                    <input type="text" class="form-control" name="wtnal_coll" value="{{ old('wtnal_coll', $aw->wtnal_coll) }}">
+                                    @error('wtnal_coll')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="">Other PPD</label>
+                                    <input type="text" class="form-control" name="qnay_pdd" value="{{ old('qnay_pdd', $aw->qnay_pdd) }}">
+                                    @error('qnay_pdd')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="">Other COLL</label>
+                                    <input type="text" class="form-control" name="qnay_coll" value="{{ old('qnay_coll', $aw->qnay_coll) }}">
+                                    @error('qnay_coll')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <label for="">Declared Value of Carriage</label>
+                                    <input type="text" class="form-control" name="declared_carriage" value="{{ old('declared_carriage', $aw->declared_carriage) }}">
+                                    @error('declared_carriage')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="">Final Destination (For the Merchant's Reference Only)</label>
-                                    <input type="text" class="form-control" name="final_destination" value="{{ old('final_destination', $qe->final_destination) }}">
+                                    <label for="">Declared Value of customs</label>
+                                    <input type="text" class="form-control" name="declared_costums" value="{{ old('declared_costums', $aw->declared_costums) }}">
+                                    @error('declared_costums')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-3">
+                                    <label for="">Airport of Destination</label>
+                                    <input type="text" class="form-control" name="airport_of_destination" value="{{ old('airport_of_destination', $aw->airport_of_destination) }}">
+                                    @error('airport_of_destination')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Start Flight Date</label>
+                                    <input type="text" class="form-control" name="start_flight_date" value="{{ old('start_flight_date', $aw->start_flight_date) }}">
+                                    @error('start_flight_date')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">End Flight Date</label>
+                                    <input type="text" class="form-control" name="end_flight_date" value="{{ old('end_flight_date', $aw->end_flight_date) }}">
+                                    @error('end_flight_date')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Amount of Insurance</label>
+                                    <input type="text" class="form-control" name="amount_of_insurance" value="{{ old('amount_of_insurance', $aw->amount_of_insurance) }}">
+                                    @error('final_destination')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                            </div>
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">Handling Information</label>
+                                    <textarea name="handling_information" class="form-control" id="" cols="30" rows="10">{{ old('handling_information', $aw->handling_information) }}</textarea>
+                                    @error('handling_information')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-3">
+                                    <label for="">No. of Pieces RCP</label>
+                                    <input type="text" class="form-control" name="no_of_pieces"  value="{{ old('no_of_pieces', $aw->no_of_pieces) }}">
+                                    @error('no_of_pieces')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Gross Weight</label>
+                                    <input type="text" class="form-control" name="gross_weight" value="{{ old('gross_weight', $aw->gross_weight) }}">
+                                    @error('gross_weight')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Kg lb</label>
+                                    <input type="number" class="form-control" name="kglg" value="{{ old('kglg', $aw->kglg) }}">
+                                    @error('kglg')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">(Rate Class) Comodity Item No.</label>
+                                    <input type="text" class="form-control" name="commodity_item">
+                                    @error('commodity_item')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-3">
+                                    <label for="">Chargeable Weight</label>
+                                    <input type="text" class="form-control" name="chargeable_weight"  value="{{ old('chargeable_weight', $aw->chargeable_weight) }}">
+                                    @error('chargeable_weight')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Rate / Charge</label>
+                                    <input type="text" class="form-control" name="rate_charge"  value="{{ old('rate_charge', $aw->rate_charge) }}">
+                                    @error('rate_charge')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Total</label>
+                                    <input type="text" class="form-control" name="total"  value="{{ old('total', $aw->total) }}">
+                                    @error('total')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Nature and Qty of Goods</label>
+                                    <input type="text" class="form-control" placeholder="incl. Dimens or Vol" name="nature_and_qty" value="{{ old('nature_and_qty', $aw->nature_and_qty) }}">
+                                    @error('nature_and_qty')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-3">
+                                    <label for="">(Weight Charge) Prepaid</label>
+                                    <input type="text" class="form-control" name="prepaid" value="{{ old('prepaid', $aw->prepaid) }}">
+                                    @error('prepaid')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">(Weight Charge) Collect</label>
+                                    <input type="text" class="form-control" name="collect" value="{{ old('collect', $aw->collect) }}">
+                                    @error('collect')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 text-center">
+                                        <label for="">----- Valuation Charge -----</label>
+                                    </div>
+                                    <div class="col-lg-12 row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="start_valuation_charge" value="{{ old('start_valuation_charge', $aw->start_valuation_charge) }}">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="end_valuation_charge" value="{{ old('end_valuation_charge', $aw->end_valuation_charge) }}">
+                                        </div>
+                                    </div>
                                     @error('final_destination')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -250,99 +493,177 @@
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2">
-                                <div class="col-lg-3">
-                                    <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" class="form-control" id=""  cols="30" rows="10">{{ old('container_no', $qe->container_no) }}</textarea>
-                                    @error('container_no')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-lg-3">
-                                    <label for="">No of PKGS or Containers</label>
-                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="30" rows="10">{{ old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea>
-                                    @error('no_of_pkgs')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-lg-2">
-                                    <label for="">Kind of PKGS, Description of Goods</label>
-                                    <textarea name="kind_of_pkgs" class="form-control" id="" cols="30" rows="10">{{ old('kind_of_pkgs', $qe->kind_of_pkgs) }}</textarea>
-                                    @error('kind_of_pkgs')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-lg-2">
-                                    <label for="">Total Gross Weight KGS (Pounds)</label>
-                                    <textarea name="total_gross_weight" class="form-control" id="" cols="30" rows="10">{{ old('total_gross_weight', $qe->total_gross_weight) }}</textarea>
-                                    @error('total_gross_weight')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-lg-2">
-                                    <label for="">Total Measurement CBM (CFT)</label>
-                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea>
-                                    @error('total_measur')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row col-lg-12 m-2 p-2">
-                                <label for="">Total No of Packages</label>
-                                <input type="text" class="form-control" name="total_no_pkgs" value="{{ old('total_no_pkgs', $qe->total_no_pkgs) }}">
-                                @error('total_no_pkgs')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 row text-center">
+                                        <label for="">--------- Tax ---------</label>
                                     </div>
-                                @enderror
+                                    <div class="col-lg-12 row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="start_tax" value="{{ old('start_tax', $aw->start_tax) }}">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="end_tax" value="{{ old('end_tax', $aw->end_tax) }}">
+                                        </div>
+                                    </div>
+                                    @error('final_destination')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 row text-center">
+                                        <label for="">----- Total other Charges Due Agent -----</label>
+                                    </div>
+                                    <div class="col-lg-12 row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="start_total_charge_agent" value="{{ old('start_total_charge_agent', $aw->start_total_charge_agent) }}">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="end_total_charge_agent" value="{{ old('end_total_charge_agent', $aw->end_total_charge_agent) }}">
+                                        </div>
+                                    </div>
+                                    @error('final_destination')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                             </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">Other Charges</label>
+                                    <input type="text" class="form-control" name="other_charges" value="{{ old('other_charges', $aw->other_charges) }}">
+                                    @error('other_charges')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-12 row text-center">
+                                        <label for="">----- Total other Charges Due Carrier -----</label>
+                                    </div>
+                                    <div class="col-lg-12 row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="start_total_charge_carrier" value="{{ old('start_total_charge_carrier', $aw->start_total_charge_carrier) }}">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="end_total_charge_carrier" value="{{ old('end_total_charge_carrier', $aw->end_total_charge_carrier) }}">
+                                        </div>
+                                    </div>
+                                    @error('final_destination')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Total Prepaid</label>
+                                    <input type="number" class="form-control" name="total_repaid" value="{{ old('total_repaid', $aw->total_repaid) }}">
+                                    @error('total_repaid')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="">Total Collect</label>
+                                    <input type="text" class="form-control" name="total_collect" value="{{ old('total_collect', $aw->total_collect) }}">
+                                    @error('total_collect')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-3">
-                                    <label for="">Freight And Charges</label>
-                                    <input type="text" class="form-control" name="freight_and_charges"  value="{{ old('freight_and_charges', $qe->freight_and_charges) }}">
-                                    @error('freight_and_charges')
+                                    <label for="">Currenct Conversion Rates</label>
+                                    <input type="text" class="form-control" name="current_conversion" value="{{ old('current_conversion', $aw->current_conversion) }}">
+                                    @error('current_conversion')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                                 <div class="col-lg-3">
-                                    <label for="">Prepaid Collect</label>
-                                    <input type="text" class="form-control" name="repaid_collect" value="{{ old('repaid_collect', $qe->repaid_collect) }}">
-                                    @error('repaid_collect')
+                                    <label for="">CC Charges in Dest. Currency</label>
+                                    <input type="text" class="form-control" name="cc_charges" value="{{ old('cc_charges', $aw->cc_charges) }}">
+                                    @error('cc_charges')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                                 <div class="col-lg-3">
-                                    <label for="">Place and Date of Issue</label>
-                                    <input type="text" class="form-control" name="place_and_date_issue" value="{{ old('place_and_date_issue', $qe->place_and_date_issue) }}">
-                                    @error('place_and_date_issue')
+                                    <label for="">Total Collect</label>
+                                    <input type="number" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $aw->place_of_delivery) }}">
+                                    @error('place_of_delivery')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
-                                    <label for="">Date, By</label>
-                                    <input type="text" class="form-control" name="by" value="{{ old('by', $qe->by) }}">
-                                    @error('by')
+                                <div class="col-lg-6">
+                                    <label for="">Charges at Destination (For Carrier's Use only at Destination)</label>
+                                    <input type="text" class="form-control" name="charges_desti" value="{{ old('charges_desti', $aw->charges_desti) }}">
+                                    @error('charges_desti')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">Total Collect Charges</label>
+                                    <input type="number" class="form-control" name="total_collect_charges" value="{{ old('total_collect_charges', $aw->total_collect_charges) }}">
+                                    @error('total_collect_charges')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-4">
+                                    <label for="">Executed on</label>
+                                    <input type="date" class="form-control" name="executed_date" value="{{ old('executed_date', $aw->executed_date) }}">
+                                    @error('executed_date')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="">at (Place)</label>
+                                    <input type="text" class="form-control" name="at_place" value="{{ old('at_place', $aw->at_place) }}">
+                                    @error('at_place')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <label for="">Signature if Issuing Carrier or its Agent</label>
+                                    <input type="text" class="form-control" name="signature_of_issue" value="{{ old('signature_of_issue', $aw->signature_of_issue) }}">
+                                    @error('signature_of_issue')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="row col-lg-12">
                                 <div class="col-lg-11">
                                 </div>

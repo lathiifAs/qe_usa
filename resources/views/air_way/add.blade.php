@@ -58,16 +58,32 @@
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-6">
                                     <label for="">Shipper Name and Address</label>
-                                    <input type="text" name="shipper_name_address" id="" class="form-control">
+                                    <select
+                                        class="js-example-basic-single form-control @error('shipper_exporter') is-invalid @enderror"
+                                        name="shipper_name_address">
+                                        @forelse ($shipper as $shp)
+                                            <option value="{{ $shp->id }}">{{ $shp->shipper }}</option>
+                                        @empty
+                                            <option>Data Kosong</option>
+                                        @endforelse
+                                    </select>
                                     @error('shipper_exporter')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6 row">
+                                <div class="col-lg-6">
                                     <label for="">Issued by</label>
-                                    <input type="text" name="issued_by" id="" class="form-control">
+                                    <select
+                                        class="js-example-basic-single form-control @error('for_delivery') is-invalid @enderror"
+                                        name="issued_by">
+                                        @forelse ($issued_by as $ib)
+                                            <option value="{{ $ib->id }}">{{ $ib->issued_by }}</option>
+                                        @empty
+                                            <option>Data Kosong</option>
+                                        @endforelse
+                                    </select>
                                     @error('export_references')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -85,7 +101,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6 row">
+                                <div class="col-lg-6">
                                     <label for="">Issuing Carrier's Agent Name and City</label>
                                     <input type="text" name="issuing_carrier" id="" class="form-control">
                                     @error('fmc_no')
@@ -98,7 +114,15 @@
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-6">
                                     <label for="">Consignee's Name and Address</label>
-                                    <input type="text" name="consignee_name_address" id="" class="form-control">
+                                    <select
+                                        class="js-example-basic-single form-control @error('consignee') is-invalid @enderror"
+                                        name="consignee_name_address">
+                                        @forelse ($consignee as $cn)
+                                            <option value="{{ $cn->id }}">{{ $cn->consignee }}</option>
+                                        @empty
+                                            <option>Data Kosong</option>
+                                        @endforelse
+                                    </select>
                                     @error('fmc_no')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -151,7 +175,15 @@
                                 <div class="col-lg-12">
 
                                     <label for="">Accounting Information</label>
-                                    <textarea name="accounting_information" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <select
+                                        class="js-example-basic-single form-control @error('shipper') is-invalid @enderror"
+                                        name="accounting_information">
+                                        @forelse ($notify_party as $np)
+                                            <option value="{{ $np->id }}">{{ $np->notify_party }}</option>
+                                        @empty
+                                            <option>Data Kosong</option>
+                                        @endforelse
+                                    </select>
                                     @error('for_delivery')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -304,7 +336,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Start Flight Date</label>
-                                    <input type="date" class="form-control" name="start_flight_date">
+                                    <input type="text" class="form-control" name="start_flight_date">
                                     @error('start_flight_date')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -313,7 +345,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">End Flight Date</label>
-                                    <input type="date" class="form-control" name="end_flight_date">
+                                    <input type="text" class="form-control" name="end_flight_date">
                                     @error('end_flight_date')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -403,7 +435,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Total</label>
-                                    <input type="number" class="form-control" name="total">
+                                    <input type="text" class="form-control" name="total">
                                     @error('total')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -433,7 +465,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">(Weight Charge) Collect</label>
-                                    <input type="number" class="form-control" name="collect">
+                                    <input type="text" class="form-control" name="collect">
                                     @error('collect')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -540,7 +572,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Total Collect</label>
-                                    <input type="number" class="form-control" name="total_collect">
+                                    <input type="text" class="form-control" name="total_collect">
                                     @error('total_collect')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -19,8 +19,13 @@ class Air_way extends Controller
 {
     public function index()
     {
-        $aw = ModelsAirway::latest()->get();
-        // $aw = ModelsAirway::join('shippers', 'air_ways.shipper_exporter', '=', 'shippers.id')
+        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
+        ->leftJoin('consignees', 'air_ways.consignee_name_address', '=', 'consignees.id')
+        ->leftJoin('notify_parties', 'air_ways.accounting_information', '=', 'notify_parties.id')
+        ->leftJoin('issued_bies', 'air_ways.issued_by', '=', 'issued_bies.id')
+        ->select('air_ways.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party', 'issued_bies.issued_by')
+        ->get();
+        // $aw = ModelsAirway::join('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
         //         ->orderBy('air_ways.created_at', 'desc')
         //         ->get(['air_ways.*', 'shippers.shipper']);
         return view('air_way.index', compact('aw'));
@@ -117,35 +122,36 @@ class Air_way extends Controller
 
     public function createpdf($id)
     {
-        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_exporter', '=', 'shippers.id')
-        ->leftJoin('consignees', 'air_ways.consignee', '=', 'consignees.id')
-        ->leftJoin('notify_parties', 'air_ways.notify_party', '=', 'notify_parties.id')
-        ->leftJoin('issued_bies', 'air_ways.for_delivery', '=', 'issued_bies.id')
-        ->select('air_ways.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
+        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
+        ->leftJoin('consignees', 'air_ways.consignee_name_address', '=', 'consignees.id')
+        ->leftJoin('notify_parties', 'air_ways.accounting_information', '=', 'notify_parties.id')
+        ->leftJoin('issued_bies', 'air_ways.issued_by', '=', 'issued_bies.id')
+        ->select('air_ways.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party', 'issued_bies.issued_by')
         ->where('air_ways.id', $id)
         ->first();
-    	$pdf = PDF::loadview('air_way.detail', compact('aw'));
-    	return $pdf->download('Bill_of_lading_'.time().'.pdf');
+    	// $pdf = PDF::loadview('air_way.detail_checker', compact('aw'));
+    	// return $pdf->download('Bill_of_lading_'.time().'.pdf');
+        return view('air_way.detail_checker', compact('aw'));
     }
 
     public function detail($id)
     {
         // $aw = ModelsAirway::findOrFail($id);
-        // $aw = ModelsAirway::join('shippers', 'air_ways.shipper_exporter', '=', 'shippers.id')
+        // $aw = ModelsAirway::join('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
         // ->get(['air_ways.*', 'shippers.shipper'])
         // ->where('air_ways.id', $id);
         // $aw = ModelsAirway::join('shippers', function($join)
         // {
-        //     $join->on('air_ways.shipper_exporter', '=', 'shippers.id');
+        //     $join->on('air_ways.shipper_name_address', '=', 'shippers.id');
         // })
         // ->where('air_ways.id', '=', $id)
         // ->get();
 
-        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_exporter', '=', 'shippers.id')
-            ->leftJoin('consignees', 'air_ways.consignee', '=', 'consignees.id')
-            ->leftJoin('notify_parties', 'air_ways.notify_party', '=', 'notify_parties.id')
-            ->leftJoin('issued_bies', 'air_ways.for_delivery', '=', 'issued_bies.id')
-            ->select('air_ways.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
+        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
+            ->leftJoin('consignees', 'consignee_name_addressys.consignee', '=', 'consignees.id')
+            ->leftJoin('notify_parties', 'air_ways.accounting_information', '=', 'notify_parties.id')
+            ->leftJoin('issued_bies', 'air_ways.issued_by', '=', 'issued_bies.id')
+            ->select('air_ways.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party', 'issued_bies.issued_by')
             ->where('air_ways.id', $id)
             ->first();
         return view('air_way.detail', compact('aw'));
@@ -159,11 +165,11 @@ class Air_way extends Controller
         $issued_by = Modelsissued_by::latest()->get();
 
 
-        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_exporter', '=', 'shippers.id')
-        ->leftJoin('consignees', 'air_ways.consignee', '=', 'consignees.id')
-        ->leftJoin('notify_parties', 'air_ways.notify_party', '=', 'notify_parties.id')
-        ->leftJoin('issued_bies', 'air_ways.for_delivery', '=', 'issued_bies.id')
-        ->select('air_ways.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
+        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
+        ->leftJoin('consignees', 'air_ways.consignee_name_address', '=', 'consignees.id')
+        ->leftJoin('notify_parties', 'air_ways.accounting_information', '=', 'notify_parties.id')
+        ->leftJoin('issued_bies', 'air_ways.issued_by', '=', 'issued_bies.id')
+        ->select('air_ways.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party', 'issued_bies.issued_by')
         ->where('air_ways.id', $id)
         ->first();
 

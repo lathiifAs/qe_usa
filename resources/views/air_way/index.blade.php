@@ -44,6 +44,8 @@
                                             width="10%">at<br>(Place)</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                                             width="10%">Signature <br> of Shipper</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        width="10%">Download</th>
                                         <th class="text-secondary opacity-7"></th>
                                     </tr>
                                 </thead>
@@ -54,16 +56,16 @@
                                                 {{ $key + 1 }}
                                             </td>
                                             <td class="text-xs mb-0">
-                                                {{ $aw_data->created_at }}
+                                                {{ date('j F, Y', strtotime($aw_data->created_at)) }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ $aw_data->shipper_name_address }}
+                                                {{ \Illuminate\Support\Str::limit($aw_data->shipper, 20, $end = '...') }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ $aw_data->issued_by }}
+                                                {{ \Illuminate\Support\Str::limit($aw_data->issued_by, 20, $end = '...') }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ $aw_data->consignee_name_address }}
+                                                {{ \Illuminate\Support\Str::limit($aw_data->consignee, 20, $end = '...') }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
                                                 {{ $aw_data->total_collect_charges }}
@@ -74,21 +76,25 @@
                                             <td class="text-xs mb-0">
                                                 {{ $aw_data->signature_of_shipper }}
                                             </td>
-                                            <td class="text-center">
-                                                <a href="{{ route('air_way/create_pdf', $aw_data->id) }}"
-                                                    class="btn btn-secondary text-xs mb-0 p-2" title="detail"> <i
-                                                        class="fa fa-file-pdf"></i></a>
+                                            <td>
+                                                <a href="{{ route('air_way/create_pdf', $aw_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
+                                                    class="fa fa-file-text"></i> Checker</a>
+                                                <a href="{{ route('quality_express/create_pdf', $aw_data->id) }}"
+                                                    class="btn btn-secondary text-xs mb-0 p-2" title="detail"><i
+                                                        class="fa fa-file-pdf"></i> Final</a>
+                                            </td>
+                                            <td class="text-center row">
                                                 {{-- <a href="" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
                                                         class="fa fa-file-text"></i></a> --}}
                                                 <a href="{{ route('air_way/edit', $aw_data->id) }}"
-                                                    class="btn btn-warning text-xs mb-0 p-2" title="edit"> <i
-                                                        class="fa fa-edit"></i></a>
-                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                    class="btn btn-warning text-xs mb-0 p-2 col-lg-7" title="edit"> <i
+                                                        class="fa fa-edit"></i> Edit</a>
+                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" class="col-lg-1"
                                                     action="{{ route('air_way/destroy') }}" method="POST">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="id" value="{{ $aw_data->id }}">
                                                     <button type="submit" class="btn btn-danger text-xs mb-0 p-2" title="delete"> <i
-                                                            class="fa fa-trash"></i></button>
+                                                            class="fa fa-trash"></i> Hapus</button>
                                                 </form>
                                             </td>
                                         </tr>
