@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-
     td.cs {
         padding-top: 15px;
     }
@@ -12,8 +11,8 @@
     }
 
 
-    td.h2{
-        height: 45px;
+    td.h2 {
+        height: 35px;
         overflow: hidden;
     }
 
@@ -39,11 +38,11 @@
 <body>
     <center>
         {{-- <font size="2"> --}}
-            <table border="1"
+        <table border="1"
             style="font-size: 10px; margin-left : -10px; border-color: black; border-collapse: collapse; width:104%; margin-top: 15px; table-layout: fixed;"
             cellpadding="0" cellspacing="0">
-                <tbody>
-                    {{-- <tr>
+            <tbody>
+                {{-- <tr>
                         <td>1</td>
                         <td >2</td>
                         <td >3</td>
@@ -69,153 +68,255 @@
                         <td >23</td>
                         <td >24</td>
                     </tr> --}}
-                    <tr>
-                        <td ><br></td>
-                        <td ><br></td>
-                        <td ><br></td>
-                        <td ><br></td>
-                        <td colspan="20" ><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="6" ><b>Shipper's Name and Address</b></td>
-                        <td colspan="6" ><b>Shipper Account Number</b></td>
-                        <td colspan="12" rowspan="2"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="12" class="h1"><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="6" ><b>Consignee's Name and Address</b></td>
-                        <td colspan="6" ><b>Consegnee's Account Number</b></td>
-                        <td colspan="12" rowspan="2" ></td>
-                    </tr>
-                    <tr>
-                        <td colspan="12" class="h1"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="12" class="h2"><b>Issuing Carrier's Agent Name and City</b></td>
-                        <td colspan="12" rowspan="3" ><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="6" class="h2" ><b>Agent's IATA Code</b></td>
-                        <td colspan="6" ><b>Account No.</b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="12" class="h2" ><b>Airport of Departure (Addr. of First Carrier) and Request Routing</b></td>
-                    </tr>
-                    <tr>
-                        <td class="h2"><b>To</b></td>
-                        <td colspan="7" ><b>By First Carrier (Routing and Destination)</b></td>
-                        <td ><b>To</b></td>
-                        <td ><b>By</b></td>
-                        <td ><b>To</b></td>
-                        <td ><b>By</b></td>
-                        <td ><b>Currency</b></td>
-                        <td ><b>CHGS Code</b></td>
-                        <td ><b>(WT/VAL) PDD</b></td>
-                        <td ><b>(WT/VAL) COLL</b></td>
-                        <td ><b>(Other) PDD</b></td>
-                        <td ><b>(Other) COLL</b></td>
-                        <td colspan="3"><b>Declared Value of Carriage</b></td>
-                        <td colspan="3" ><b>Declared Value of Costums</b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="6" class="h2"><b>Airport of Destination</b></td>
-                        <td colspan="3" ><b>Start Flight/Date</b></td>
-                        <td colspan="3" ><b>End Flight/Date</b></td>
-                        <td colspan="4" ><b>Amount of Insurance</b></td>
-                        <td colspan="8" ></td>
-                    </tr>
-                    <tr>
-                        <td colspan="21" rowspan="2" style="border:none"><b>Handling Information</b></td>
-                        <td colspan="3" ><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" ></td>
-                    </tr>
-                    <tr>
-                        <td colspan="21" rowspan="2" class="h1"></td>
-                        <td colspan="3" ><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" ></td>
-                    </tr>
-                    <tr>
-                        <td ><b>No Of Piesces RCP</b></td>
-                        <td colspan="2"><b>Gross Weight</b></td>
-                        <td><b>Kg/lb</b></td>
-                        <td><b>Rate Class</b></td>
-                        <td colspan="2"><b>Commodity Item No.</b></td>
-                        <td colspan="3" ><b>Chargeable Weight</b></td>
-                        <td colspan="2" ><b>Rate / Charge</b></td>
-                        <td colspan="5" ><b>Total</b></td>
-                        <td colspan="7" rowspan="2" ><b>Nature and Qty of Goods (Incl. Dimensions or Volume)</b></td>
-                    </tr>
-                    <tr>
-                        <td >No Of</td>
-                        <td colspan="2" >gross</td>
-                        <td>kg</td>
-                        <td>rate</td>
-                        <td colspan="2" ><br></td>
-                        <td colspan="3" ><br></td>
-                        <td colspan="2" >&nbsp;rate / charge</td>
-                        <td colspan="5" ><br></td>
-                    </tr>
-                    <tr>
-                        <td >No Of</td>
-                        <td colspan="2" >gross</td>
-                        <td>kg</td>
-                        <td>rate</td>
-                        <td colspan="2" ><br></td>
-                        <td colspan="3" ><br></td>
-                        <td colspan="2" >&nbsp;rate / charge</td>
-                        <td colspan="5" ><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Weight Charge (Prepaid)</b></td>
-                        <td colspan="5" ><b>Weight Charge (Collect)</b></td>
-                        <td colspan="14" rowspan="3" >Other Charges</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Start Valiation Charge</b></td>
-                        <td colspan="5" ><b>End Valiation Charge</b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Start Tax<b></td>
-                        <td colspan="5" ><b>End Tax<b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Start Total Other Charges Due Agent</b></td>
-                        <td colspan="5" ><b>End Total Other Charges Due Agent</b></td>
-                        <td colspan="14" rowspan="3" ><b>Signature of Shipper or His Agent</b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Start Total Other Charges Due Carrier</b></td>
-                        <td colspan="5" ><b>End Total Other Charges Due Carrier</b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" style="background-color: rgb(209, 72, 65);"><br></td>
-                        <td colspan="5" style="background-color: rgb(209, 72, 65);"><br></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Total Prepaid</b></td>
-                        <td colspan="5" ><b>Total Collect</b></td>
-                        <td colspan="4" rowspan="2" ><b>Executed on (Date)</b></td>
-                        <td colspan="5" rowspan="2" ><b>at (Place)</b></td>
-                        <td colspan="5" rowspan="2" ><b>Signiture of Issuing Carrier or itsAgent</b></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" ><b>Currency Conversion Rate</b></td>
-                        <td colspan="5" ><b>CC Charges in Des. Currency</b></td>
-                    </tr>
-                    <tr>
-                        <td  colspan="5" ><b>for Carrier's Use Only at Destination</b></td>
-                        <td colspan="5" ><b>Charges at Destination</b></td>
-                        <td colspan="4" ><b>Total Collect Charges</b></td>
-                        <td colspan="10" ><b></b></td>
-                    </tr>
-                </tbody>
-            </table>
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td colspan="20"><br></td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="border-bottom-style: hidden;"><b>Shipper's Name and Address</b></td>
+                    <td colspan="6"><b>Shipper Account Number</b>
+                        <p>{{ $aw->shipper_account_number }}</p>
+                    </td>
+                    <td colspan="3" rowspan="2" style="border-right-style: hidden;">NOT NEGOTIABLE<p>
+                            <b>Air Waybill</b>
+                        </p>
+                        <p>
+                            Issued by : </p>
+                    </td>
+                    <td colspan="9" style="border-left-style: hidden;" rowspan="2">
+                        {{ $aw->issued_by }}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12" class="h1">
+                        <p>{{ $aw->shipper }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="border-bottom-style: hidden;"><b>Consignee's Name and Address</b></td>
+                    <td colspan="6"><b>Consegnee's Account Number</b>
+                        <p> {{ $aw->account_no }} </p>
+                    </td>
+                    <td colspan="12" rowspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12" class="h1">
+                        {{ $aw->consignee }}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12" class="h1"><b>Issuing Carrier's Agent Name and City</b>
+                        <p>{{ $aw->issuing_carrier }}</p>
+                    </td>
+                    <td colspan="12" rowspan="3">NOTIFY PARTY : {{ $aw->notify_party }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="h2"><b>Agent's IATA Code</b></td>
+                    <td colspan="6"><b>Account No.</b></td>
+                </tr>
+                <tr>
+                    <td colspan="12" class="h2"><b>Airport of Departure (Addr. of First Carrier) and Request
+                            Routing</b>
+                        <p>{{ $aw->airport_of_departure }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="h2"><b>To</b>
+                        <p>{{ $aw->to }}</p>
+                    </td>
+                    <td colspan="7"><b>By First Carrier (Routing and Destination)</b>
+                        <p>{{ $aw->by_first_carrier }}</p>
+                    </td>
+                    <td><b>To</b>
+                        <p>{{ $aw->to_2 }}</p>
+                    </td>
+                    <td><b>By</b>
+                        <p>{{ $aw->by }}</p>
+                    </td>
+                    <td><b>To</b>
+                        <p>{{ $aw->to_3 }}</p>
+                    </td>
+                    <td><b>By</b>
+                        <p>{{ $aw->by_2 }}</p>
+                    </td>
+                    <td><b>Currency</b>
+                        <p>{{ $aw->currency }}</p>
+                    </td>
+                    <td><b>CHGS Code</b>
+                        <p>{{ $aw->chos_cd }}</p>
+                    </td>
+                    <td><b>(WT/VAL) PDD</b>
+                        <p>{{ $aw->wtnal_pdd }}</p>
+                    </td>
+                    <td><b>(WT/VAL) COLL</b>
+                        <p>{{ $aw->wtnal_coll }}</p>
+                    </td>
+                    <td><b>(Other) PDD</b>
+                        <p>{{ $aw->qnay_pdd }}</p>
+                    </td>
+                    <td><b>(Other) COLL</b>
+                        <p>{{ $aw->qnay_coll }}</p>
+                    </td>
+                    <td colspan="3"><b>Declared Value of Carriage</b>
+                        <p>{{ $aw->declared_carriage }}</p>
+                    </td>
+                    <td colspan="3"><b>Declared Value of Costums</b>
+                        <p>{{ $aw->declared_costums }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="h2"><b>Airport of Destination</b>
+                        <p>{{ $aw->airport_of_destination }}</p>
+                    </td>
+                    <td colspan="3"><b>Start Flight/Date</b>
+                        <p>{{ $aw->start_flight_date }}</p>
+                    </td>
+                    <td colspan="3"><b>End Flight/Date</b>
+                        <p>{{ $aw->end_flight_date }}</p>
+                    </td>
+                    <td colspan="4"><b>Amount of Insurance</b>
+                        <p>{{ $aw->amount_of_insurance }}</p>
+                    </td>
+                    <td colspan="8"></td>
+                </tr>
+                <tr>
+                    <td colspan="21" rowspan="2" style="border-bottom-style: hidden; border-right-style: hidden;">
+                        <b>Handling Information</b></td>
+                    <td colspan="3" style="border-bottom-style: hidden;"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border-top-style: hidden; border-bottom-style: hidden;"></td>
+                </tr>
+                <tr>
+                    <td colspan="21" rowspan="2" class="h2" style="border-right-style: hidden;">
+                        {{ $aw->handling_information }}</td>
+                    <td colspan="3"><br></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border-top-style: hidden;"><b>SCI</b></td>
+                </tr>
+                <tr>
+                    <td><b>No Of Piesces RCP</b></td>
+                    <td colspan="2"><b>Gross Weight</b></td>
+                    <td><b>Kg/lb</b></td>
+                    <td><b>Rate Class</b></td>
+                    <td colspan="2"><b>Commodity Item No.</b></td>
+                    <td colspan="3"><b>Chargeable Weight</b></td>
+                    <td colspan="2"><b>Rate / Charge</b></td>
+                    <td colspan="5"><b>Total</b></td>
+                    <td colspan="7"><b>Nature and Qty of Goods (Incl. Dimensions or Volume)</b></td>
+                </tr>
+                <tr>
+                    <td style="height: 100px">{{ $aw->no_of_pieces }}</td>
+                    <td colspan="2">{{ $aw->gross_weight }}</td>
+                    <td rowspan="2">{{ $aw->kglg }}</td>
+                    <td rowspan="2"></td>
+                    <td colspan="2" rowspan="2">{{ $aw->commodity_item }}</td>
+                    <td colspan="3" rowspan="2">{{ $aw->chargeable_weight }}</td>
+                    <td colspan="2" rowspan="2">{{ $aw->rate_charge }}</td>
+                    <td colspan="5" rowspan="2">{{ $aw->total }}</td>
+                    <td colspan="7" rowspan="2">{{ $aw->nature_and_qty }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="5"><br></td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Weight Charge (Prepaid)</b>
+                        <p>{{ $aw->prepaid }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>Weight Charge (Collect)</b>
+                        <p>{{ $aw->collect }}</p>
+                    </td>
+                    <td colspan="14" class="h2" rowspan="3"><b>Other Charges</b>
+                        <p>{{ $aw->other_charges }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Start Valiation Charge</b>
+                        <p>{{ $aw->start_valuation_charge }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>End Valiation Charge</b>
+                        <p>{{ $aw->end_valuation_charge }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Start Tax<b>
+                                <p>{{ $aw->start_tax }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>End Tax<b>
+                                <p>{{ $aw->end_tax }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Start Total Other Charges Due Agent</b>
+                        <p>{{ $aw->start_total_charge_agent }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>End Total Other Charges Due Agent</b>
+                        <p>{{ $aw->end_total_charge_agent }}</p>
+                    </td>
+                    <td colspan="14" rowspan="3" style="text-align: center">
+                        <p>{{ $aw->signature_of_shipper }}</p>
+                        <b>Signature of Shipper or His Agent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Start Total Other Charges Due Carrier</b>
+                        <p>{{ $aw->start_total_charge_carrier }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>End Total Other Charges Due Carrier</b>
+                        <p>{{ $aw->end_total_charge_carrier }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2" style="background-color: rgb(209, 72, 65);"><br></td>
+                    <td colspan="5" class="h2" style="background-color: rgb(209, 72, 65);"><br></td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Total Prepaid</b>
+                        <p>{{ $aw->total_repaid }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>Total Collect</b>
+                        <p>{{ $aw->total_collect }}</p>
+                    </td>
+                    <td colspan="4" rowspan="2" style="text-align: center">
+                        <p>  {{ date('j F, Y', strtotime($aw->executed_date)) }}</p>
+                        <b>Executed on (Date)</b>
+                    </td>
+                    <td colspan="5" class="h2" rowspan="2" style="text-align: center">
+                        <p>{{ $aw->at_place }}</p>
+                        <b>at (Place)</b>
+                    </td>
+                    <td colspan="5" class="h2" rowspan="2" style="text-align: center">
+                        <p>{{ $aw->signature_of_issue }}</p>
+                        <b>Signiture of
+                            Issuing Carrier or itsAgent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>Currency Conversion Rate</b>
+                        <p>{{ $aw->current_conversion }}</p>
+                    </td>
+                    <td colspan="5" class="h2"><b>CC Charges in Des. Currency</b>
+                        <p>{{ $aw->cc_charges }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="h2"><b>for Carrier's Use Only at Destination</b></td>
+                    <td colspan="5" class="h2"><b>Charges at Destination</b>
+                        <p>{{ $aw->charges_desti }}</p>
+                    </td>
+                    <td colspan="4"><b>Total Collect Charges</b>
+                        <p>{{ $aw->total_collect_charges }}</p>
+                    </td>
+                    <td colspan="10"><b></b></td>
+                </tr>
+            </tbody>
+        </table>
         {{-- </font> --}}
     </center>
 </body>

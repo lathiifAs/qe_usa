@@ -633,6 +633,19 @@
                                 </div>
                             </div>
 
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-12">
+                                    <label for="">Signature of Shipper or his Agent</label>
+                                    <input type="text" class="form-control" name="signature_of_shipper" value="{{ old('signature_of_shipper', $aw->signature_of_shipper) }}">
+                                    @error('total_collect_charges')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-4">
                                     <label for="">Executed on</label>

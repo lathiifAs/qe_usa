@@ -134,6 +134,22 @@ class Air_way extends Controller
         return view('air_way.detail_checker', compact('aw'));
     }
 
+    public function createpdf_checker($id)
+    {
+        $aw = ModelsAirway::leftJoin('shippers', 'air_ways.shipper_name_address', '=', 'shippers.id')
+        ->leftJoin('consignees', 'air_ways.consignee_name_address', '=', 'consignees.id')
+        ->leftJoin('notify_parties', 'air_ways.accounting_information', '=', 'notify_parties.id')
+        ->leftJoin('issued_bies', 'air_ways.issued_by', '=', 'issued_bies.id')
+        ->select('air_ways.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party', 'issued_bies.issued_by')
+        ->where('air_ways.id', $id)
+        ->first();
+
+        $customPaper = array(0,0,680.315, 864.5669);
+    	$pdf = PDF::loadview('air_way.detail_checker', compact('aw'))->setPaper($customPaper, 'portrait');
+    	return $pdf->download('AWB_'.time().'.pdf');
+        // return view('air_way.detail_checker', compact('aw'));
+    }
+
     public function detail($id)
     {
         // $aw = ModelsAirway::findOrFail($id);

@@ -77,9 +77,9 @@
                                                 {{ $aw_data->signature_of_shipper }}
                                             </td>
                                             <td>
-                                                <a href="{{ route('air_way/create_pdf', $aw_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
+                                                <a href="{{ route('air_way/createpdf_checker', $aw_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
                                                     class="fa fa-file-text"></i> Checker</a>
-                                                <a href="{{ route('quality_express/create_pdf', $aw_data->id) }}"
+                                                <a href="{{ route('air_way/create_pdf', $aw_data->id) }}"
                                                     class="btn btn-secondary text-xs mb-0 p-2" title="detail"><i
                                                         class="fa fa-file-pdf"></i> Final</a>
                                             </td>
