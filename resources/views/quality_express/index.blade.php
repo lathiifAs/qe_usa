@@ -35,16 +35,19 @@
                                         <th class=" text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
                                             width="10%">Shipper <br>/ Exporter</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                                            width="10%">Export References</th>
+                                            width="10%">Consignee</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                                             width="10%">Bill of Lading No.</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                                            width="10%">FMC No.</th>
+                                            width="10%">Issued By.</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                                             width="10%">No of Original <br>B(s)/L(s) Signed</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                                             width="10%">By</th>
-                                        <th class="text-secondary opacity-7"></th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        width="10%">Download</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        width="10%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,41 +57,43 @@
                                                 {{ $key + 1 }}
                                             </td>
                                             <td class="text-xs mb-0">
-                                                {{ $qe_data->created_at }}
+                                                {{ date('j F, Y', strtotime($qe_data->created_at)) }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ $qe_data->shipper }}
+                                                {{ \Illuminate\Support\Str::limit($qe_data->shipper, 20, $end = '...') }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ $qe_data->export_references }}
+                                                {{ \Illuminate\Support\Str::limit($qe_data->consignee, 20, $end = '...') }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
                                                 {{ $qe_data->bill_of_lading_no }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ $qe_data->fmc_no }}
+                                                {{ \Illuminate\Support\Str::limit($qe_data->notify_party, 20, $end = '...') }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
                                                 {{ $qe_data->no_of_original_signed }}
                                             </td>
                                             <td class="text-xs mb-0">
-                                                {{ $qe_data->by }}
+                                                {{ \Illuminate\Support\Str::limit($qe_data->as_agent, 15, $end = '...') }}
                                             </td>
                                             <td class="text-center">
+                                                <a href="{{ route('quality_express/detail_checker', $qe_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
+                                                    class="fa fa-file-text"></i> Checker</a>
                                                 <a href="{{ route('quality_express/create_pdf', $qe_data->id) }}"
-                                                    class="btn btn-secondary text-xs mb-0 p-2" title="detail"> <i
-                                                        class="fa fa-file-pdf"></i></a>
-                                                <a href="{{ route('quality_express/detail', $qe_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
-                                                        class="fa fa-file-text"></i></a>
+                                                    class="btn btn-secondary text-xs mb-0 p-2" title="detail"><i
+                                                        class="fa fa-file-pdf"></i> Final</a>
+                                            </td>
+                                            <td class="text-center row">
                                                 <a href="{{ route('quality_express/edit', $qe_data->id) }}"
-                                                    class="btn btn-warning text-xs mb-0 p-2" title="edit"> <i
-                                                        class="fa fa-edit"></i></a>
-                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                    class="btn btn-warning text-xs mb-0 p-2 col-lg-5" title="edit"><i
+                                                        class="fa fa-edit"></i> Edit</a>
+                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" class="col-lg-3"
                                                     action="{{ route('quality_express/destroy') }}" method="POST">
                                                     {{ csrf_field() }}
                                                     <input type="hidden" name="id" value="{{ $qe_data->id }}">
                                                     <button type="submit" class="btn btn-danger text-xs mb-0 p-2" title="delete"> <i
-                                                            class="fa fa-trash"></i></button>
+                                                            class="fa fa-trash"></i> Hapus</button>
                                                 </form>
                                             </td>
                                         </tr>

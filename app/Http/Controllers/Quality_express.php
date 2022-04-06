@@ -21,8 +21,10 @@ class Quality_express extends Controller
     {
         // $qe = ModelsQuality_express::latest()->get();
         $qe = ModelsQuality_express::join('shippers', 'quality_expresses.shipper_exporter', '=', 'shippers.id')
+                ->leftJoin('consignees', 'quality_expresses.consignee', '=', 'consignees.id')
+                ->leftJoin('notify_parties', 'quality_expresses.notify_party', '=', 'notify_parties.id')
                 ->orderBy('quality_expresses.created_at', 'desc')
-                ->get(['quality_expresses.*', 'shippers.shipper']);
+                ->get(['quality_expresses.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party']);
         return view('quality_express.index', compact('qe'));
     }
 
@@ -103,6 +105,19 @@ class Quality_express extends Controller
     	return $pdf->download('Bill_of_lading_'.time().'.pdf');
     }
 
+    public function createcheckerpdf($id)
+    {
+        $qe = ModelsQuality_express::leftJoin('shippers', 'quality_expresses.shipper_exporter', '=', 'shippers.id')
+        ->leftJoin('consignees', 'quality_expresses.consignee', '=', 'consignees.id')
+        ->leftJoin('notify_parties', 'quality_expresses.notify_party', '=', 'notify_parties.id')
+        ->leftJoin('issued_bies', 'quality_expresses.for_delivery', '=', 'issued_bies.id')
+        ->select('quality_expresses.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
+        ->where('quality_expresses.id', $id)
+        ->first();
+    	$pdf = PDF::loadview('quality_express.detail_checker', compact('qe'));
+    	return $pdf->download('Bill_of_lading_'.time().'.pdf');
+    }
+
     public function detail($id)
     {
         // $qe = ModelsQuality_express::findOrFail($id);
@@ -124,6 +139,29 @@ class Quality_express extends Controller
             ->where('quality_expresses.id', $id)
             ->first();
         return view('quality_express.detail', compact('qe'));
+    }
+
+    public function detail_checker($id)
+    {
+        // $qe = ModelsQuality_express::findOrFail($id);
+        // $qe = ModelsQuality_express::join('shippers', 'quality_expresses.shipper_exporter', '=', 'shippers.id')
+        // ->get(['quality_expresses.*', 'shippers.shipper'])
+        // ->where('quality_expresses.id', $id);
+        // $qe = ModelsQuality_express::join('shippers', function($join)
+        // {
+        //     $join->on('quality_expresses.shipper_exporter', '=', 'shippers.id');
+        // })
+        // ->where('quality_expresses.id', '=', $id)
+        // ->get();
+
+        $qe = ModelsQuality_express::leftJoin('shippers', 'quality_expresses.shipper_exporter', '=', 'shippers.id')
+            ->leftJoin('consignees', 'quality_expresses.consignee', '=', 'consignees.id')
+            ->leftJoin('notify_parties', 'quality_expresses.notify_party', '=', 'notify_parties.id')
+            ->leftJoin('issued_bies', 'quality_expresses.for_delivery', '=', 'issued_bies.id')
+            ->select('quality_expresses.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
+            ->where('quality_expresses.id', $id)
+            ->first();
+        return view('quality_express.detail_checker', compact('qe'));
     }
 
     public function edit($id)
