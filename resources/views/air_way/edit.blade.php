@@ -601,7 +601,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
+                                {{-- <div class="col-lg-3">
                                     <label for="">Total Collect</label>
                                     <input type="number" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery', $aw->place_of_delivery) }}">
                                     @error('place_of_delivery')
@@ -609,7 +609,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
+                                </div> --}}
                                 <div class="col-lg-6">
                                     <label for="">Charges at Destination (For Carrier's Use only at Destination)</label>
                                     <input type="text" class="form-control" name="charges_desti" value="{{ old('charges_desti', $aw->charges_desti) }}">

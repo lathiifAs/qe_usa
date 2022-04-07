@@ -139,61 +139,107 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="h2"><b>To</b>
-                        <p>{{ $aw->to }}</p>
+                    <td><b>To</b>
+                        <div style="height: 13px; overflow:hidden;">
+                            {{ $aw->to }}
+                        </div>
                     </td>
                     <td colspan="7"><b>By First Carrier (Routing and Destination)</b>
-                        <p>{{ $aw->by_first_carrier }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                            {{ $aw->by_first_carrier }}
+                        </div>
                     </td>
                     <td><b>To</b>
-                        <p>{{ $aw->to_2 }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                            {{ $aw->to_2 }}
+                        </div>
                     </td>
                     <td><b>By</b>
-                        <p>{{ $aw->by }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                            {{ $aw->by }}
+                        </div>
                     </td>
                     <td><b>To</b>
-                        <p>{{ $aw->to_3 }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                            {{ $aw->to_3 }}
+                        </div>
                     </td>
                     <td><b>By</b>
-                        <p>{{ $aw->by_2 }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                            {{ $aw->by_2 }}
+                        </div>
                     </td>
                     <td><b>Currency</b>
-                        <p>{{ $aw->currency }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                        {{ $aw->currency }}
+                        </div>
                     </td>
-                    <td><b>CHGS Code</b>
-                        <p>{{ $aw->chos_cd }}</p>
+                    <td><b>CHGS Cd</b>
+                        <div style="height: 13px; overflow:hidden;">
+                        {{ $aw->chos_cd }}
+                        </div>
                     </td>
                     <td><b>(WT/VAL) PDD</b>
-                        <p>{{ $aw->wtnal_pdd }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                        {{ $aw->wtnal_pdd }}
+                        </div>
                     </td>
                     <td><b>(WT/VAL) COLL</b>
-                        <p>{{ $aw->wtnal_coll }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                        {{ $aw->wtnal_coll }}
+                        </div>
                     </td>
                     <td><b>(Other) PDD</b>
-                        <p>{{ $aw->qnay_pdd }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                        {{ $aw->qnay_pdd }}
+                        </div>
                     </td>
                     <td><b>(Other) COLL</b>
-                        <p>{{ $aw->qnay_coll }}</p>
+                        <div style="height: 13px; overflow:hidden;">
+                        {{ $aw->qnay_coll }}
+                        </div>
                     </td>
-                    <td colspan="3"><b>Declared Value of Carriage</b>
-                        <p>{{ $aw->declared_carriage }}</p>
+                    <td colspan="3">
+                        <div style="height: 13px; overflow:hidden;">
+                        <b>Declared Value of Carriage</b>
+                        {{ $aw->declared_carriage }}
+                        </div>
                     </td>
-                    <td colspan="3"><b>Declared Value of Costums</b>
-                        <p>{{ $aw->declared_costums }}</p>
+                    <td colspan="3">
+                        <div style="height: 13px; overflow:hidden;">
+                        <b>Declared Value of Costums</b>
+                        {{ $aw->declared_costums }}
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="6" class="h2"><b>Airport of Destination</b>
-                        <p>{{ $aw->airport_of_destination }}</p>
+                    <td colspan="6">
+                        <div style="height: 30px; overflow:hidden;">
+                        <b>Airport of Destination</b>
+                        <br>
+                        {{ $aw->airport_of_destination }}
+                        </div>
                     </td>
-                    <td colspan="3"><b>Start Flight/Date</b>
-                        <p>{{ $aw->start_flight_date }}</p>
+                    <td colspan="3">
+                        <div style="height: 30px; overflow:hidden;">
+                        <b>Start Flight/Date</b>
+                        <br>
+                        {{ $aw->start_flight_date }}
+                        </div>
                     </td>
-                    <td colspan="3"><b>End Flight/Date</b>
-                        <p>{{ $aw->end_flight_date }}</p>
+                    <td colspan="3">
+                        <div style="height: 30px; overflow:hidden;">
+                        <b>End Flight/Date</b>
+                        <br>
+                        {{ $aw->end_flight_date }}
+                        </div>
                     </td>
-                    <td colspan="4"><b>Amount of Insurance</b>
-                        <p>{{ $aw->amount_of_insurance }}</p>
+                    <td colspan="4">
+                        <div style="height: 30px; overflow:hidden;">
+                        <b>Amount of Insurance</b>
+                        <br>
+                        {{ $aw->amount_of_insurance }}
+                        </div>
                     </td>
                     <td colspan="8"></td>
                 </tr>
