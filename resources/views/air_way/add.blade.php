@@ -396,7 +396,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Kg lb</label>
-                                    <input type="number" class="form-control" name="kglg">
+                                    <input type="text" class="form-control" name="kglg">
                                     @error('kglg')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -456,7 +456,7 @@
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-3">
                                     <label for="">(Weight Charge) Prepaid</label>
-                                    <input type="number" class="form-control" name="prepaid">
+                                    <input type="text" class="form-control" name="prepaid">
                                     @error('prepaid')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -563,7 +563,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Total Prepaid</label>
-                                    <input type="number" class="form-control" name="total_repaid">
+                                    <input type="text" class="form-control" name="total_repaid">
                                     @error('total_repaid')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -602,7 +602,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Total Collect</label>
-                                    <input type="number" class="form-control" name="place_of_delivery">
+                                    <input type="text" class="form-control" name="place_of_delivery">
                                     @error('place_of_delivery')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -623,7 +623,7 @@
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-12">
                                     <label for="">Total Collect Charges</label>
-                                    <input type="number" class="form-control" name="total_collect_charges">
+                                    <input type="text" class="form-control" name="total_collect_charges">
                                     @error('total_collect_charges')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+    td {
+        overflow: hidden;
+    }
+
     td.cs {
         padding-top: 15px;
     }
@@ -10,6 +14,10 @@
         overflow: hidden;
     }
 
+    td.h45 {
+        height: 45px;
+        overflow: hidden;
+    }
 
     td.h2 {
         height: 35px;
@@ -68,13 +76,13 @@
                         <td >23</td>
                         <td >24</td>
                     </tr> --}}
-                <tr>
+                {{-- <tr>
                     <td><br></td>
                     <td><br></td>
                     <td><br></td>
                     <td><br></td>
                     <td colspan="20"><br></td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <td colspan="6" style="border-bottom-style: hidden;"><b>Shipper's Name and Address</b></td>
                     <td colspan="6"><b>Shipper Account Number</b>
@@ -91,8 +99,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="12" class="h1">
+                    <td colspan="12">
+                        <div style="height: 40px; overflow:hidden;">
                         <p>{{ $aw->shipper }}</p>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -104,13 +114,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="12" class="h1">
+                    <td colspan="12">
+                        <div style="height: 40px; overflow:hidden;">
                         {{ $aw->consignee }}
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="12" class="h1"><b>Issuing Carrier's Agent Name and City</b>
+                    <td colspan="12">
+                        <div style="height: 40px; overflow:hidden;"><b>Issuing Carrier's Agent Name and City</b>
                         <p>{{ $aw->issuing_carrier }}</p>
+                        </div>
                     </td>
                     <td colspan="12" rowspan="3">NOTIFY PARTY : {{ $aw->notify_party }}</td>
                 </tr>

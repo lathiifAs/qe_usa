@@ -131,7 +131,10 @@ class Air_way extends Controller
         ->first();
     	// $pdf = PDF::loadview('air_way.detail_checker', compact('aw'));
     	// return $pdf->download('Bill_of_lading_'.time().'.pdf');
-        return view('air_way.detail_checker', compact('aw'));
+        $customPaper = array(0,0,609.4488, 864.5669);
+    	$pdf = PDF::loadview('air_way.detail', compact('aw'))->setPaper($customPaper, 'portrait');
+    	return $pdf->download('AWB_'.time().'.pdf');
+        // return view('air_way.detail', compact('aw'));
     }
 
     public function createpdf_checker($id)
@@ -144,9 +147,9 @@ class Air_way extends Controller
         ->where('air_ways.id', $id)
         ->first();
 
-        $customPaper = array(0,0,680.315, 864.5669);
+        $customPaper = array(0,0,609.4488, 864.5669);
     	$pdf = PDF::loadview('air_way.detail_checker', compact('aw'))->setPaper($customPaper, 'portrait');
-    	return $pdf->download('AWB_'.time().'.pdf');
+    	return $pdf->download('AWB_checker'.time().'.pdf');
         // return view('air_way.detail_checker', compact('aw'));
     }
 
