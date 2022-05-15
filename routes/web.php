@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Air_way;
+use App\Http\Controllers\Also_notify;
 use App\Http\Controllers\Consignee;
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\For_delivery;
 use App\Http\Controllers\Issued_by;
 use App\Http\Controllers\Notify_party;
 use App\Http\Controllers\Quality_express;
@@ -21,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Quality_express::class, 'index'])->name('quality_express');
+Route::get('/', [Dashboard::class, 'index'])->name('/');
 
 //Master Data
 Route::get('/master/shipper', [Shipper::class, 'index'])->name('master/shipper');
@@ -45,6 +48,18 @@ Route::get('/master/issued_by', [Issued_by::class, 'index'])->name('master/issue
 Route::get('/master/issued_by/add', [Issued_by::class, 'create'])->name('master/issued_by/add');
 Route::post('/master/issued_by/store', [Issued_by::class, 'store'])->name('master/issued_by/store');
 Route::post('/master/issued_by/destroy', [Issued_by::class, 'destroy'])->name('master/issued_by/destroy');
+
+
+Route::get('/master/for_delivery', [For_delivery::class, 'index'])->name('master/for_delivery');
+Route::get('/master/for_delivery/add', [For_delivery::class, 'create'])->name('master/for_delivery/add');
+Route::post('/master/for_delivery/store', [For_delivery::class, 'store'])->name('master/for_delivery/store');
+Route::post('/master/for_delivery/destroy', [For_delivery::class, 'destroy'])->name('master/for_delivery/destroy');
+
+Route::get('/master/also_notify', [Also_notify::class, 'index'])->name('master/also_notify');
+Route::get('/master/also_notify/add', [Also_Notify::class, 'create'])->name('master/also_notify/add');
+Route::post('/master/also_notify/store', [Also_Notify::class, 'store'])->name('master/also_notify/store');
+Route::post('/master/also_notify/destroy', [Also_Notify::class, 'destroy'])->name('master/also_notify/destroy');
+
 
 
 // Data

@@ -1,29 +1,37 @@
 @extends('template_admin.template')
 
 @section('konten')
-    <div class="mb-3">
-        <nav aria-label="breadcrumb">
-            <h6 class="font-weight-bolder text-white mb-0">Notify Party</h6>
-            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                <li class="breadcrumb-item text-sm text-white">Notify Party</li>
-                <li class="breadcrumb-item text-sm active" aria-current="page">Add Data</li>
-            </ol>
-        </nav>
-    </div>
-    <div class="container-fluid py-4">
+
+
+<div class="white-box">
+    <h3 class="box-title">Notify Party</h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#"> <i class="fa fa-database"></i> Master Data</a></li>
+        <li class="breadcrumb-item" aria-current="page"><a href="{{ route('master/notify_party') }}">Notify Party</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Data</li>
+        </ol>
+    </nav>
+</div>
+
+    <div class="white-box">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-lg-10">
-                                <h6 class="mt-2">Add Data Notify Party</h6>
+                                <div class="col-lg-12">
+                                    <h3 class="box-title">Add Data Notify Party</h3>
+                                </div>
                             </div>
                             <div class="col-lg-2" style="text-align: right">
-                                <a href="{{ route('master/notify_party') }}" class="btn btn-secondary"> Back</a>
+                                <a href="{{ route('master/notify_party') }}" class="btn btn-default btn-secondary"> Back</a>
                             </div>
                         </div>
                     </div>
+
+                    <hr>
 
                     @if ($errors->any())
                         <div class="alert alert-danger m-3" role="alert">
@@ -46,9 +54,11 @@
                         <form action="{{ route('master/notify_party/store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row col-lg-12 m-2">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <label for="">Notify Party</label>
-                                    <input type="text" class="form-control @error('notify_party') is-invalid @enderror" name="notify_party" value="{{ old('notify_party') }}">
+                                    <textarea class="form-control @error('notify_party') is-invalid @enderror" name="notify_party" value="{{ old('notify_party') }}" id="" cols="100" rows="10"></textarea>
+
+                                    {{-- <input type="text" class="form-control @error('notify_party') is-invalid @enderror" name="notify_party" value="{{ old('notify_party') }}"> --}}
                                     @error('notify_party')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -56,7 +66,7 @@
                                 @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12">
+                            <div class="row col-lg-12" style="margin-top: 20px">
                                 <div class="col-lg-11">
                                 </div>
                                 <div class="col-lg-1" style="text-align: right">

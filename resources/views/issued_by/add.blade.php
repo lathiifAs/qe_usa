@@ -1,30 +1,36 @@
 @extends('template_admin.template')
 
 @section('konten')
-    <div class="mb-3">
+
+    <div class="white-box">
+        <h3 class="box-title">Issued By</h3>
         <nav aria-label="breadcrumb">
-            <h6 class="font-weight-bolder text-white mb-0">Issued by</h6>
-            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                <li class="breadcrumb-item text-sm text-white">Issued by</li>
-                <li class="breadcrumb-item text-sm active" aria-current="page">Add Data</li>
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"> <i class="fa fa-database"></i> Master Data</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="{{ route('master/issued_by') }}">Issued By</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Data</li>
             </ol>
         </nav>
     </div>
-    <div class="container-fluid py-4">
+
+    <div class="white-box">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-lg-10">
-                                <h6 class="mt-2">Add Data Issued by</h6>
+                                <div class="col-lg-12">
+                                    <h3 class="box-title">Add Data Issued By</h3>
+                                </div>
                             </div>
                             <div class="col-lg-2" style="text-align: right">
-                                <a href="{{ route('master/issued_by') }}" class="btn btn-secondary"> Back</a>
+                                <a href="{{ route('master/issued_by') }}" class="btn btn-default btn-secondary"> Back</a>
                             </div>
                         </div>
                     </div>
 
+                    <hr>
                     @if ($errors->any())
                         <div class="alert alert-danger m-3" role="alert">
                             <h4>Error</h4>
@@ -46,9 +52,10 @@
                         <form action="{{ route('master/issued_by/store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row col-lg-12 m-2">
-                                <div class="col-lg-6">
-                                    <label for="">Notify Party</label>
-                                    <input type="text" class="form-control @error('issued_by') is-invalid @enderror" name="issued_by" value="{{ old('issued_by') }}">
+                                <div class="col-lg-12">
+                                    <label for="">Issued By</label>
+                                    <textarea class="form-control @error('issued_by') is-invalid @enderror" name="issued_by" value="{{ old('issued_by') }}" id="" cols="100" rows="10"></textarea>
+                                    {{-- <input type="text" class="form-control @error('issued_by') is-invalid @enderror" name="issued_by" value="{{ old('issued_by') }}"> --}}
                                     @error('issued_by')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -56,7 +63,7 @@
                                 @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12">
+                            <div class="row col-lg-12" style="margin-top: 15px">
                                 <div class="col-lg-11">
                                 </div>
                                 <div class="col-lg-1" style="text-align: right">

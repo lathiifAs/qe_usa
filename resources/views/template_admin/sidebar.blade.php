@@ -1,67 +1,21 @@
-<div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link {{ Request::path() == 'dashboard' ? 'active' : '' }}" href="../pages/dashboard.html">
-                <div
-                    class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-                </div>
-                <span class="nav-link-text ms-1">Dashboard</span>
-            </a>
+<nav class="sidebar-nav">
+    <ul id="side-menu">
+        <li>
+            <a {{ Request::path() == 'quality_express' || Request::path() == '/'  ? 'active' : '' }}" href="{{ route('quality_express') }}" aria-expanded="false"><i class="fa fa-file-code-o fa-fw"></i> <span class="hide-menu"> Bill of Lading </span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link  {{ Request::path() == 'quality_express' ? 'active' : '' }}" href="{{ route('quality_express') }}">
-                <div
-                    class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="ni ni-app text-info text-sm opacity-10"></i>
-                </div>
-                <span class="nav-link-text ms-1">Bill of Lading</span>
-            </a>
+        <li>
+            <a {{ Request::path() == 'air_way' ? 'active' : '' }}" href="{{ route('air_way') }}" aria-expanded="false"><i class="fa fa-file-pdf-o fa-fw"></i> <span class="hide-menu"> Air Way Bill </span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link {{ Request::path() == 'air_way' ? 'active' : '' }}" href="{{ route('air_way') }}">
-                <div
-                    class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="ni ni-credit-card text-warning text-sm opacity-10"></i>
-                </div>
-                <span class="nav-link-text ms-1">Air Way Bill</span>
-            </a>
+        <li>
+            <a class="waves-effect  {{ Request::segment(1)  == 'master' ? 'active' : ''}}" href="javascript:void(0);" aria-expanded="false"><i class="fa fa-database fa-fw"></i> <span class="hide-menu"> Master Data </span> <span class="label label-rounded label-info pull-right">6</span></a>
+            <ul aria-expanded="false" class="collapse {{ Request::segment(1)  == 'master' ? 'in' : ''}}">
+                <li> <a href="{{ route('master/shipper') }}" class=" {{ Request::segment(1) . '/' . Request::segment(2)  == 'master/shipper'  ? 'active' : ''}}">Shipper (All)</a> </li>
+                <li> <a class="{{ Request::segment(1) . '/' . Request::segment(2) == 'master/consignee' ? 'active' : '' }}" href="{{ route('master/consignee') }}" href="products.html">Consignee (All)</a> </li>
+                <li> <a class="{{ Request::segment(1) . '/' . Request::segment(2)  == 'master/notify_party'  ? 'active' : ''}} == 'master/notify_party' ? 'active' : '' }}" href="{{ route('master/notify_party') }}">Notify Party (All)</a> </li>
+                <li> <a  class="{{ Request::segment(1) . '/' . Request::segment(2)  == 'master/for_delivery'  ? 'active' : ''}} == 'master/for_delivery' ? 'active' : '' }}" href="{{ route('master/for_delivery') }}">For Delivery (BL)</a> </li>
+                <li> <a class="{{ Request::segment(1) . '/' . Request::segment(2)  == 'master/also_notify'  ? 'active' : ''}} == 'master/also_notify' ? 'active' : '' }}" href="{{ route('master/also_notify') }}">Also Notify (BL)</a> </li>
+                <li> <a class=" {{ Request::segment(1) . '/' . Request::segment(2) == 'master/issued_by' ? 'active' : '' }}" href="{{ route('master/issued_by') }}">Issued By (AWB)</a> </li>
+            </ul>
         </li>
-        <li class="nav-item">
-            <a data-bs-toggle="collapse" href="#ecommerceExamples" class="nav-link {{ Request::segment(1)  == 'master' ? 'active' : ''}}" aria-controls="ecommerceExamples" role="button" aria-expanded="false">
-              <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
-                <i class="ni ni-archive-2 text-success text-sm opacity-10"></i>
-              </div>
-              <span class="nav-link-text ms-1">Master Data</span>
-            </a>
-            <div class="collapse  {{ Request::segment(1)  == 'master' ? 'show' : ''}}" id="ecommerceExamples">
-              <ul class="nav ms-4">
-                <li class="nav-item {{ Request::path() == 'master/shipper' ? 'active' : '' }}">
-                  <a class="nav-link {{ Request::path() == 'master/shipper' ? 'active' : '' }}" href="{{ route('master/shipper') }}">
-                    <span class="sidenav-mini-icon"> O </span>
-                    <span class="sidenav-normal"> Shipper </span>
-                  </a>
-                </li>
-                <li class="nav-item {{ Request::path() == 'master/consignee' ? 'active' : '' }}">
-                    <a class="nav-link {{ Request::path() == 'master/consignee' ? 'active' : '' }}" href="{{ route('master/consignee') }}">
-                      <span class="sidenav-mini-icon"> O </span>
-                      <span class="sidenav-normal"> Consignee </span>
-                    </a>
-                </li>
-                <li class="nav-item  {{ Request::path() == 'master/notify_party' ? 'active' : '' }}">
-                    <a class="nav-link  {{ Request::path() == 'master/notify_party' ? 'active' : '' }}" href="{{ route('master/notify_party') }}">
-                      <span class="sidenav-mini-icon"> O </span>
-                      <span class="sidenav-normal"> Notify Party </span>
-                    </a>
-                </li>
-                <li class="nav-item  {{ Request::path() == 'master/issued_by' ? 'active' : '' }}">
-                    <a class="nav-link  {{ Request::path() == 'master/issued_by' ? 'active' : '' }}" href="{{ route('master/issued_by') }}">
-                      <span class="sidenav-mini-icon"> O </span>
-                      <span class="sidenav-normal"> Issued by </span>
-                    </a>
-                </li>
-              </ul>
-            </div>
-          </li>
     </ul>
-  </div>
+</nav>

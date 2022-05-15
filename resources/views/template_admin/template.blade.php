@@ -1,141 +1,200 @@
-<!--
-=========================================================
-* Project Name - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ URL('/img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ URL('/img/favicon.png') }}">
-    <title>
-        Project Name by Darma Ayu Tekno
-    </title>
-    <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <!-- Nucleo Icons -->
-    <link href="{{ URL('/css/nucleo-icons.css') }}" rel="stylesheet" />
-    <link href="{{ URL('/css/nucleo-svg.css') }}" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL('cubic_template/plugins/images/favicon.png') }}">
+    <title>Cubic Admin Template</title>
+    <!-- ===== Bootstrap CSS ===== -->
+    <link href="{{ URL('cubic_template/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- ===== Plugin CSS ===== -->
+    <link href="{{ URL('cubic_template/plugins/components/chartist-js/dist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ URL('cubic_template/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
+    <!-- ===== Animation CSS ===== -->
+    <link href="{{ URL('cubic_template/css/animate.css') }}" rel="stylesheet">
+    <!-- ===== Custom CSS ===== -->
+    <link href="{{ URL('cubic_template/css/style.css') }}" rel="stylesheet">
+    <!-- ===== Color CSS ===== -->
+    <link href="{{ URL('cubic_template/css/colors/default.css') }}" id="theme" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="{{ URL('/css/nucleo-svg.css') }}" rel="stylesheet" />
-    <!-- CSS Files -->
-    <link id="pagestyle" href="{{ URL('/css/argon-dashboard.css?v=2.0.0') }}" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>
+    <![endif]-->
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-    <div class="min-height-300 bg-primary position-absolute w-100"></div>
-    <aside
-        class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
-        id="sidenav-main">
-        <div class="sidenav-header">
-            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-                aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
-                target="_blank">
-                <img src="{{ URL('/img/logo-ct-dark.png') }}" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold">Project Name</span>
-            </a>
+<body class="mini-sidebar">
+    <!-- ===== Main-Wrapper ===== -->
+    <div id="wrapper">
+        <div class="preloader">
+            <div class="cssload-speeding-wheel"></div>
         </div>
-        <hr class="horizontal dark mt-0">
-        {{-- sidebar --}}
-        @include('template_admin.sidebar')
-        {{-- end sidebar --}}
-        {{-- <div class="sidenav-footer mx-3 ">
-            <div class="card card-plain shadow-none" id="sidenavCard">
-                <img class="w-50 mx-auto" src="{{ URL('/img/illustrations/icon-documentation.svg') }}"
-                    alt="sidebar_illustration">
-                <div class="card-body text-center p-3 w-100 pt-0">
-                    <div class="docs-info">
-                        <h6 class="mb-0">Need help?</h6>
-                        <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
-                    </div>
-                </div>
-            </div>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank"
-                class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
-            <a class="btn btn-primary btn-sm mb-0 w-100"
-                href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to
-                pro</a>
-        </div> --}}
-    </aside>
-    <main class="main-content position-relative border-radius-lg ">
-        <!-- Navbar -->
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
-            data-scroll="false">
-            <div class="container-fluid py-1 px-3">
+        <!-- ===== Top-Navigation ===== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <a class="navbar-toggle font-20 hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="top-left-part">
+                    <a class="logo" href="index.html">
+                        <b>
+                            <img src="{{ URL('cubic_template/plugins/images/logo.png') }}" alt="home" />
+                        </b>
+                        <span>
 
-                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
-                            <span class="input-group-text text-body"><i class="fas fa-search"
-                                    aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Type here...">
-                        </div>
-                    </div>
+                            Quality Express
+
+                            {{-- <img src="{{ URL('cubic_template/plugins/images/logo-text.png') }}" alt="homepage" class="dark-logo" /> --}}
+                        </span>
+                    </a>
                 </div>
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li>
+                        <a href="javascript:void(0)" class="sidebartoggler font-20 waves-effect waves-light"><i class="icon-arrow-left-circle"></i></a>
+                    </li>
+                    {{-- <li>
+                        <form role="search" class="app-search hidden-xs">
+                            <i class="icon-magnifier"></i>
+                            <input type="text" placeholder="Search..." class="form-control">
+                        </form>
+                    </li> --}}
+                </ul>
+                {{-- <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="right-side-toggle">
+                        <a class="right-side-toggler waves-effect waves-light b-r-0 font-20" href="javascript:void(0)">
+                            <i class="icon-settings"></i>
+                        </a>
+                    </li>
+                </ul> --}}
             </div>
         </nav>
-        <!-- End Navbar -->
-        <div class="container-fluid py-3">
-            @yield('konten')
-            <footer class="footer pt-3" style="position: fixed;
-            bottom:1%;
-            width:100%;
-            opacity: 1;">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold"
-                                    target="_blank">Darma Ayu Tekno</a>
-                                for a better web.
-                            </div>
+        <!-- ===== Top-Navigation-End ===== -->
+        <!-- ===== Left-Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="scroll-sidebar">
+                <div class="user-profile">
+                    <div class="dropdown user-pro-body">
+                        <div class="profile-image">
+
+                        </div>
+                        <p class="profile-text m-t-15 font-16"><a href="javascript:void(0);"> Main Menu</a></p>
+                    </div>
+                </div>
+
+                @include('template_admin.sidebar')
+
+            </div>
+        </aside>
+        <!-- ===== Left-Sidebar-End ===== -->
+        <!-- ===== Page-Content ===== -->
+        <div class="page-wrapper">
+            {{-- <div class="row m-0">
+                <div class="col-md-3 col-sm-6 info-box">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icoleaf bg-primary text-white"><i class="mdi mdi-checkbox-marked-circle-outline"></i></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="info-count text-blue">154</h3>
+                            <p class="info-text font-12">Bookings</p>
+                            <span class="hr-line"></span>
+                            <p class="info-ot font-15">Target<span class="label label-rounded label-success">300</span></p>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3 col-sm-6 info-box">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icoleaf bg-primary text-white"><i class="mdi mdi-comment-text-outline"></i></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="info-count text-blue">68</h3>
+                            <p class="info-text font-12">Complaints</p>
+                            <span class="hr-line"></span>
+                            <p class="info-ot font-15">Total Pending<span class="label label-rounded label-danger">154</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 info-box">
+                    <div class="media">
+                        <div class="media-left">
+                            <span class="icoleaf bg-primary text-white"><i class="mdi mdi-coin"></i></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="info-count text-blue">&#36;9475</h3>
+                            <p class="info-text font-12">Earning</p>
+                            <span class="hr-line"></span>
+                            <p class="info-ot font-15">March : <span class="text-blue font-semibold">&#36;514578</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 info-box b-r-0">
+                    <div class="media">
+                        <div class="media-left p-r-5">
+                            <div id="earning" class="e" data-percent="60">
+                                <div id="pending" class="p" data-percent="55"></div>
+                                <div id="booking" class="b" data-percent="50"></div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="text-blue font-22 m-t-0">Report</h2>
+                            <ul class="p-0 m-b-20">
+                                <li><i class="fa fa-circle m-r-5 text-primary"></i>60% Earnings</li>
+                                <li><i class="fa fa-circle m-r-5 text-primary"></i>55% Pending</li>
+                                <li><i class="fa fa-circle m-r-5 text-info"></i>50% Bookings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            <!-- ===== Page-Container ===== -->
+            <div class="container-fluid">
+                @yield('konten')
+            </div>
+            <!-- ===== Page-Container-End ===== -->
+            <footer class="footer t-a-c">
+                © 2022 Darma Ayu Tekno
             </footer>
         </div>
-    </main>
-    <!--   Core JS Files   -->
-    <script src="{{ URL('/js/core/popper.min.js') }}"></script>
-    <script src="{{ URL('/js/core/bootstrap.min.js') }}"></script>
-    <script src="{{ URL('/js/plugins/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ URL('/js/plugins/smooth-scrollbar.min.js') }}"></script>
-    <script src="{{ URL('/js/plugins/chartjs.min.js') }}"></script>
+        <!-- ===== Page-Content-End ===== -->
+    </div>
+    <!-- ===== Main-Wrapper-End ===== -->
+    <!-- ==============================
+        Required JS Files
+    =============================== -->
+    <!-- ===== jQuery ===== -->
+    <script src="{{ URL('cubic_template/plugins/components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- ===== Bootstrap JavaScript ===== -->
+    <script src="{{ URL('cubic_template/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- ===== Slimscroll JavaScript ===== -->
+    <script src="{{ URL('cubic_template/js/jquery.slimscroll.js') }}"></script>
+    <!-- ===== Wave Effects JavaScript ===== -->
+    <script src="{{ URL('cubic_template/js/waves.js') }}"></script>
+    <!-- ===== Menu Plugin JavaScript ===== -->
+    <script src="{{ URL('cubic_template/js/sidebarmenu.js') }}"></script>
+    <!-- ===== Custom JavaScript ===== -->
+    <script src="{{ URL('cubic_template/js/custom.js') }}"></script>
+    <!-- ===== Plugin JS ===== -->
+    <script src="{{ URL('cubic_template/plugins/components/chartist-js/dist/chartist.min.js') }}"></script>
+    <script src="{{ URL('cubic_template/plugins/components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
+    <script src="{{ URL('cubic_template/plugins/components/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ URL('cubic_template/plugins/components/sparkline/jquery.charts-sparkline.js') }}"></script>
+    <script src="{{ URL('cubic_template/plugins/components/knob/jquery.knob.js') }}"></script>
+    <script src="{{ URL('cubic_template/plugins/components/easypiechart/dist/jquery.easypiechart.min.js') }}"></script>
+    <script src="{{ URL('cubic_template/js/db1.js') }}"></script>
+    <!-- ===== Style Switcher JS ===== -->
+    <script src="{{ URL('cubic_template/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
 
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-    <!-- Github buttons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="{{ URL('/js/argon-dashboard.min.js?v=2.0.0') }}"></script>
     @stack('custom-scripts')
+
 </body>
 
 </html>

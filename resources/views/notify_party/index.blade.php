@@ -1,22 +1,34 @@
 @extends('template_admin.template')
 
 @section('konten')
-<div class="mb-3">
+
+<style>
+    .preserveLines {
+    white-space: pre-wrap;
+}
+</style>
+
+<div class="white-box">
+    <h3 class="box-title">Notify Party</h3>
     <nav aria-label="breadcrumb">
-        <h6 class="font-weight-bolder text-white mb-0">Notify Party</h6>
-        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Notify Party</li>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#"> <i class="fa fa-database"></i> Master Data</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Notify Party</li>
         </ol>
     </nav>
 </div>
-<div class="container-fluid py-4">
+
+
+<div class="white-box">
     <div class="row">
       <div class="col-12">
         <div class="card mb-4">
           <div class="card-header pb-0">
               <div class="row">
                   <div class="col-lg-10">
-                    <h6 class="mt-2">Notify Party</h6>
+                      <div class="col-lg-12">
+                        <h3 class="box-title">Notify Party</h3>
+                      </div>
                   </div>
                 <div class="col-lg-2" style="text-align: right">
                 <a href="{{ route('master/notify_party/add') }}" class="btn btn-primary"> Add Data</a>
@@ -40,7 +52,7 @@
                             {{ $key+1 }}
                         </td>
                         <td class="text-xs mb-0">
-                            {{ $nt->notify_party}}
+                            <label for=""  class='preserveLines'> {{ $nt->notify_party}} </label>
                         </td>
                         <td style=" text-align: center">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('master/notify_party/destroy') }}" method="POST">

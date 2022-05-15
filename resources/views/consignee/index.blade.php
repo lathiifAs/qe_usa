@@ -1,28 +1,40 @@
 @extends('template_admin.template')
 
 @section('konten')
-<div class="mb-3">
+
+<style>
+    .preserveLines {
+    white-space: pre-wrap;
+}
+</style>
+
+<div class="white-box">
+    <h3 class="box-title">Consignee</h3>
     <nav aria-label="breadcrumb">
-        <h6 class="font-weight-bolder text-white mb-0">Consignee</h6>
-        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Consignee</li>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#"> <i class="fa fa-database"></i> Master Data</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Consignee</li>
         </ol>
     </nav>
 </div>
-<div class="container-fluid py-4">
+
+<div class="white-box">
     <div class="row">
       <div class="col-12">
         <div class="card mb-4">
           <div class="card-header pb-0">
               <div class="row">
                   <div class="col-lg-10">
-                    <h6 class="mt-2">Consignee</h6>
+                      <div class="col-lg-12">
+                        <h3 class="box-title">Consignee</h3>
+                      </div>
                   </div>
                 <div class="col-lg-2" style="text-align: right">
                 <a href="{{ route('master/consignee/add') }}" class="btn btn-primary"> Add Data</a>
                 </div>
               </div>
           </div>
+          <hr>
           <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
               <table class="table align-items-center mb-0">
@@ -40,7 +52,7 @@
                             {{ $key+1 }}
                         </td>
                         <td class="text-xs mb-0">
-                            {{ $cn->consignee}}
+                            <label for=""  class='preserveLines'> {{ $cn->consignee}} </label>
                         </td>
                         <td style=" text-align: center">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('master/consignee/destroy') }}" method="POST">
