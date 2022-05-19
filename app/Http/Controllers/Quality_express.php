@@ -9,8 +9,10 @@ use App\Models\Shipper as ModelsShipper;
 use App\Models\Consignee as ModelsConsignee;
 use App\Models\Notify_party as ModelsNotify_party;
 use App\Models\Issued_by as ModelsIssued_by;
+use App\Models\For_delivery as ModelsFor_delivery;
+use App\Models\Also_notify as ModelsAlso_Notify;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\App;
 
 // use Barryvdh\DomPDF\Facade\Pdf;
 // use Illuminate\Support\Facades\App;
@@ -33,8 +35,10 @@ class Quality_express extends Controller
         $shipper = ModelsShipper::latest()->get();
         $consignee = ModelsConsignee::latest()->get();
         $notify_party = ModelsNotify_party::latest()->get();
+        $for_delivery = Modelsfor_delivery::latest()->get();
         $issued_by = Modelsissued_by::latest()->get();
-        return view('quality_express.add', compact('shipper', 'consignee', 'notify_party', 'issued_by'));
+        $also_notify = ModelsAlso_notify::latest()->get();
+        return view('quality_express.add', compact('shipper', 'consignee', 'notify_party', 'issued_by', 'for_delivery', 'also_notify'));
     }
 
     public function store(Request $request)
@@ -59,21 +63,20 @@ class Quality_express extends Controller
             'container_no' => $request->container_no,
             // 'seal_no' => $request->shipper,
             'no_of_pkgs' => $request->no_of_pkgs,
-            'kind_of_pkgs' => $request->kind_of_pkgs,
+            // 'kind_of_pkgs' => $request->kind_of_pkgs,
             'total_gross_weight' => $request->total_gross_weight,
             'total_measur' => $request->total_measur,
-            'total_net' => $request->total_net,
+            // 'total_net' => $request->total_net,
             'total_no_pkgs' => $request->total_no_pkgs,
             'freight_and_charges' => $request->freight_and_charges,
             'repaid_collect' => $request->repaid_collect,
             'place_and_date_issue' => $request->place_and_date_issue,
             'as_agent' => $request->as_agent,
-            'desc_of_goods' => $request->desc_of_goods,
+            // 'desc_of_goods' => $request->desc_of_goods,
             'by' => $request->by,
-            'cont_no' => $request->cont_no,
-            'seal_no' => $request->seal_no,
-            'mother_vessel' => $request->mother_vessel,
-            // 'as_agent' => $request->shipper,
+            // 'cont_no' => $request->cont_no,
+            // 'seal_no' => $request->seal_no,
+            // 'mother_vessel' => $request->mother_vessel,
         ]);
 
         if ($send) {
@@ -114,8 +117,10 @@ class Quality_express extends Controller
         ->select('quality_expresses.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
         ->where('quality_expresses.id', $id)
         ->first();
-    	$pdf = PDF::loadview('quality_express.detail_checker', compact('qe'));
-    	return $pdf->download('Bill_of_lading_'.time().'.pdf');
+        return view('quality_express.detail_checker', compact('qe'));
+
+    	// $pdf = PDF::loadview('quality_express.detail_checker', compact('qe'));
+    	// return $pdf->download('Bill_of_lading_'.time().'.pdf');
     }
 
     public function detail($id)

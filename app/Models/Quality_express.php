@@ -30,9 +30,9 @@ class Quality_express extends Model
         'container_no',
         // 'seal_no',
         'no_of_pkgs',
-        'kind_of_pkgs',
+        // 'kind_of_pkgs',
         'total_gross_weight',
-        'total_net',
+        // 'total_net',
         'total_measur',
         'total_no_pkgs',
         'freight_and_charges',
@@ -40,11 +40,10 @@ class Quality_express extends Model
         'place_and_date_issue',
         'as_agent',
         'by',
-        'desc_of_goods',
-        'cont_no',
-        'seal_no',
-        'mother_vessel'
-        // 'as_agent',
+        // 'desc_of_goods',
+        // 'cont_no',
+        // 'seal_no',
+        // 'mother_vessel'
     ];
 
 }

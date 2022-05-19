@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <style>
+    .preserveLines {
+        white-space: pre-wrap;
+    }
 
     td.cs {
         padding-top: 15px;
@@ -14,6 +18,7 @@
     td.pl {
         padding-left: 10px
     }
+
 
 </style>
 
@@ -43,7 +48,7 @@
                     <td colspan="4" class="pl" style="padding-right:20px; padding-top:10px" rowspan="2" >
                         <div class="h1">
                             <b>Shipper / Exporter</b>
-                            <p>{{ $qe->shipper }}</p>
+                            <label for=""  class='preserveLines'> <p> {{ $qe->shipper }} </p></label>
                         </div>
                     </td>
                     {{-- 2 --}}
@@ -85,7 +90,7 @@
                     <td colspan="4" style="padding-top: 10px;" class="pl">
                         <div style="height: 80px; overflow: hidden;">
                             <b>Consignee</b>
-                            <p>{{ $qe->consignee }}</p>
+                            <label for=""  class='preserveLines'> <p> {{ $qe->consignee }} </p> </label>
                         </div>
                     </td>
                     {{-- 1 --}}
@@ -95,7 +100,7 @@
                     <td colspan="4" class="pl" style="padding-top: 20px;">
                         <div style="height: 80px; overflow: hidden;">
                             <b>For Delivery Please Apply To</b>
-                            <p>{{ $qe->issued_by }}</p>
+                            <label for=""  class='preserveLines'> <p> {{ $qe->issued_by }} </p> </label>
                         </div>
                     </td>
                     {{-- 5 --}}
@@ -108,7 +113,7 @@
                     <td colspan="4" class="pl">
                         <div class="h1">
                             <b>Notify Party</b>
-                            <p>{{ $qe->notify_party }}</p>
+                            <label for=""  class='preserveLines'> <p> {{ $qe->notify_party }} </p> </label>
                         </div>
                     </td>
                     {{-- 1 --}}
@@ -118,7 +123,9 @@
                     <td colspan="4" class="pl" style="padding-top: 15px;">
                         <div class="h1">
                             <b>Also Notify (Name Full Address) / Domestic Routing</b>
-                            <p>{{ $qe->also_notify }}</p>
+                            <p>
+                            <label for=""  class='preserveLines'> {{ $qe->also_notify }} </label>
+                        </p>
                         </div>
                     </td>
                     {{-- 5 --}}
@@ -209,20 +216,25 @@
                 <tr>
                     <td colspan="2" style="padding-top: 50px; border:none;" class="pl">
                         <div style="height: 180px;">
-                            CONT.NO : {{ $qe->cont_no }}<br>
-                            SEAL.NO : {{ $qe->seal_no }}<br>
-                            MOTHER VESSEL : {{ $qe->mother_vessel }}
+                            <label for=""  class='preserveLines'> <p> {{ $qe->container_no }} </p></label>
                         </div>
                     </td>
                     {{-- 1 --}}
                     {{-- 2 --}}
                     {{-- 3 --}}
-                    <td colspan="3" style="padding-left: 42px; border:none;">{{ $qe->no_of_pkgs }}</td>
+                    <td colspan="3" style="padding-left: 42px; border:none;">
+                        <label for=""  class='preserveLines'> <p> {{ $qe->no_of_pkgs }} </p></label>
+                    </td>
                     {{-- 4 --}}
                     {{-- 5 --}}
-                    <td style="border:none;"></td>
+                    <td style="border:none;">
+                        <label for=""  class='preserveLines'> <p> {{ $qe->total_gross_weight }} </p></label>
+
+                    </td>
                     {{-- 6 --}}
-                    <td colspan="2" style="border:none;">{{ $qe->total_gross_weight }} <p> {{ $qe->total_net }}</p><p>{{ $qe->total_measur }}</p></td>
+                    <td colspan="2" style="border:none;">
+                        <label for=""  class='preserveLines'> <p> {{ $qe->total_measur }} </p></label>
+                    </td>
                     {{-- 7 --}}
                     {{-- 8 --}}
                 </tr>

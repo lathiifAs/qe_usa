@@ -8,6 +8,11 @@
     width: 83%;
     padding-top: 5px;
     }
+
+    .select2-drop li {
+  white-space: pre-line;
+}
+
 </style>
 
 <div class="white-box">
@@ -145,8 +150,8 @@
                                     <select
                                         class="js-example-basic-single form-control @error('for_delivery') is-invalid @enderror"
                                         name="for_delivery">
-                                        @forelse ($issued_by as $ib)
-                                            <option value="{{ $ib->id }}">{{ $ib->issued_by }}</option>
+                                        @forelse ($for_delivery as $fd)
+                                            <option value="{{ $fd->id }}">{{ $fd->for_delivery }}</option>
                                         @empty
                                             <option>Data Kosong</option>
                                         @endforelse
@@ -178,12 +183,15 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="">Also Notify (Name and Full Address) / Domestic Routing</label>
-                                    <input type="text" class="form-control" name="also_notify">
-                                    @error('also_notify')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                    <select
+                                        class="js-example-basic-single form-control @error('also') is-invalid @enderror"
+                                        name="also_notify">
+                                        @forelse ($also_notify as $an)
+                                            <option value="{{ $an->id }}">{{ $an->also_notify }}</option>
+                                        @empty
+                                            <option>Data Kosong</option>
+                                        @endforelse
+                                    </select>
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
@@ -278,19 +286,10 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-3">
-                                    <label for="">No of PKGS or Containers</label>
+                                <div class="col-lg-5">
+                                    <label for="">No of PKGS or Containers || Kind of PKGS, Desc of Goods</label>
                                     <textarea name="no_of_pkgs" class="form-control" id="" cols="30" rows="10"></textarea>
                                     @error('no_of_pkgs')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-lg-2">
-                                    <label for="">Kind of PKGS, Desc of Goods</label>
-                                    <textarea name="kind_of_pkgs" class="form-control" id="" cols="30" rows="10"></textarea>
-                                    @error('kind_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -308,34 +307,36 @@
                                 <div class="col-lg-2">
                                     <label for="">Total Measurement CBM (CFT)</label>
 
-                                    <div class="col-lg-12">
+                                    {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="total_net" >
 
                                     </div>
                                     <div class="col-lg-12 mt-4">
                                         <input type="text" class="form-control" name="total_measur">
 
-                                    </div>
-{{--
+                                    </div> --}}
+
                                     <textarea name="total_measur" class="form-control" id="" cols="30" rows="10"></textarea>
                                     @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                    @enderror --}}
+                                    @enderror
                                 </div>
                             </div>
-                            <input type="text" class="form-control" name="desc_of_goods" placeholder="Desc of goods">
-                            <div class="row col-lg-12 m-2 p-2">
-                                <label for="">Total No of Packages</label>
-                                <input type="text" class="form-control" name="total_no_pkgs">
-                                @error('total_no_pkgs')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                            {{-- <input type="text" class="form-control" name="desc_of_goods" placeholder="Desc of goods"> --}}
+                            <div class="row col-lg-12 m-2 p-2" style="margin-top: 20px">
+                                <div class="col-lg-12">
+                                    <label for="">Total No of Packages</label>
+                                    <input type="text" class="form-control" name="total_no_pkgs">
+                                    @error('total_no_pkgs')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2"  style="margin-top: 20px">
                                 <div class="col-lg-3">
                                     <label for="">Freight And Charges</label>
                                     <input type="text" class="form-control" name="freight_and_charges">
@@ -373,7 +374,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2"  style="margin-top: 20px">
                                 <div class="col-lg-12">
                                     <label for="">as Agent</label>
                                     <input type="text" class="form-control" name="as_agent" >
@@ -407,7 +408,26 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.js-example-basic-single').select2();
+
+                // function templateResult(item, container) {
+                //     // replace the placeholder with the break-tag and put it into an jquery object
+                //     return $('<span>' + item.text.replace('[br]', '<br/>') + '</span>');
+                // }
+
+                // function templateSelection(item, container) {
+                //     // replace your placeholder with nothing, so your select shows the whole option text
+                //     return item.text.replace('[br]', '');
+                // }
+
+                // $('.js-example-basic-single').select2({
+                //     templateResult: templateResult,
+                //     templateSelection: templateSelection
+                // });
+
+
+                $('.js-example-basic-single').select2({
+                    minimumResultsForSearch: Infinity, //removes the search box
+                });
             });
         </script>
     @endpush

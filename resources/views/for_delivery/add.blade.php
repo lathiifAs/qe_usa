@@ -21,11 +21,11 @@
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="col-lg-12">
-                                    <h3 class="box-title">Add Data Consignee</h3>
+                                    <h3 class="box-title">Add Data For Delivery</h3>
                                 </div>
                             </div>
                             <div class="col-lg-2" style="text-align: right">
-                                <a href="{{ route('master/consignee') }}" class="btn btn-default btn-secondary"> Back</a>
+                                <a href="{{ route('master/for_delivery') }}" class="btn btn-default btn-secondary"> Back</a>
                             </div>
                         </div>
                     </div>
@@ -50,14 +50,14 @@
                     @endif
 
                     <div class="card-body px-0 pt-0 pb-2">
-                        <form action="{{ route('master/consignee/store') }}" method="post">
+                        <form action="{{ route('master/for_delivery/store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-12">
-                                    <label for="">Consignee</label>
-                                    <textarea class="form-control @error('consignee') is-invalid @enderror" name="consignee" value="{{ old('consignee') }}" id="" cols="100" rows="10"></textarea>
-                                    {{-- <input type="text" class="form-control @error('consignee') is-invalid @enderror" name="consignee" value="{{ old('consignee') }}"> --}}
-                                    @error('consignee')
+                                    <label for="">For Delivery</label>
+                                    <textarea class="form-control @error('for_delivery') is-invalid @enderror" name="for_delivery" value="{{ old('for_delivery') }}" id="" cols="100" rows="10"></textarea>
+                                    {{-- <input type="text" class="form-control @error('for_delivery') is-invalid @enderror" name="for_delivery" value="{{ old('for_delivery') }}"> --}}
+                                    @error('for_delivery')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
