@@ -100,7 +100,7 @@
                     <td colspan="4" class="pl" style="padding-top: 20px;">
                         <div style="height: 80px; overflow: hidden;">
                             <b>For Delivery Please Apply To</b>
-                            <label for=""  class='preserveLines'> <p> {{ $qe->issued_by }} </p> </label>
+                            <label for=""  class='preserveLines'> <p> {{ $qe->for_delivery }} </p> </label>
                         </div>
                     </td>
                     {{-- 5 --}}
