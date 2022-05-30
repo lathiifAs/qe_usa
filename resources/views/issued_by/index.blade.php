@@ -52,7 +52,7 @@
                             {{ $key+1 }}
                         </td>
                         <td class="text-xs mb-0">
-                            {{ $is->issued_by}}
+                            <label for=""  class='preserveLines'>{{ $is->issued_by}}</label>
                         </td>
                         <td style=" text-align: center">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('master/issued_by/destroy') }}" method="POST">

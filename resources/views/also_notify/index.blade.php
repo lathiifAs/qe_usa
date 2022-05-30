@@ -53,7 +53,7 @@
                             {{ $key+1 }}
                         </td>
                         <td class="text-xs mb-0">
-                            <label for=""  class='preserveLines'> {{ $cn->also_notify}} </label>
+                            <label for=""  class='preserveLines'>{{$cn->also_notify}}</label>
                         </td>
                         <td style=" text-align: center">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('master/also_notify/destroy') }}" method="POST">

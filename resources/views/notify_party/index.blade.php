@@ -52,7 +52,7 @@
                             {{ $key+1 }}
                         </td>
                         <td class="text-xs mb-0">
-                            <label for=""  class='preserveLines'> {{ $nt->notify_party}} </label>
+                            <label for=""  class='preserveLines'>{{$nt->notify_party}}</label>
                         </td>
                         <td style=" text-align: center">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('master/notify_party/destroy') }}" method="POST">
