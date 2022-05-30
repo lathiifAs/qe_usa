@@ -2,6 +2,12 @@
 
 @section('konten')
 
+<style>
+    .preserveLines {
+        white-space: pre-wrap;
+    }
+</style>
+
 <div class="white-box">
     <h3 class="box-title">Bill of Lading</h3>
     <nav aria-label="breadcrumb">
@@ -61,7 +67,9 @@
                                                 {{ date('j F, Y', strtotime($qe_data->created_at)) }}
                                             </td>
                                             <td class="text-xs mb-0  text-center">
-                                                {{ \Illuminate\Support\Str::limit($qe_data->shipper, 20, $end = '...') }}
+                                                <label for="" class='preserveLines'>
+                                                    {{ \Illuminate\Support\Str::limit($qe_data->shipper, 20, $end = '...') }}
+                                                </label>
                                             </td>
 
                                             <td class="text-xs mb-0  text-center">

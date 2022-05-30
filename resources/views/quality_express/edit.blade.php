@@ -3,6 +3,22 @@
 @section('konten')
 
 <style>
+
+@media (min-width: 768px) {
+    .col-sm-18, .col-sm-40, .col-sm-8half {
+        float: left;
+    }
+    .col-sm-18 {
+        width: 18%;
+    }
+    .col-sm-40 {
+        width: 28%;
+    }
+    .col-sm-8half {
+        width: 70.83333333%;
+    }
+}
+
     .select2-container .select2-selection {
     height: 40px;
     width: 83%;
@@ -264,7 +280,7 @@
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
-                                <div class="col-lg-3">
+                                <div class="col-sm-18" style="padding-left: 15px">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
                                     <textarea name="container_no" class="form-control" id="" cols="30" rows="10"> {{ old('container_no', $qe->container_no) }}</textarea>
 
@@ -288,9 +304,9 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-5">
+                                <div class="col-sm-40" style="padding-left: 30px">
                                     <label for="">No of PKGS or Containers || Kind of PKGS, Desc of Goods</label>
-                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="30" rows="10">{{ old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea>
+                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{ old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea>
                                     @error('no_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}

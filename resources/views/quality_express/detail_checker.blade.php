@@ -2,6 +2,15 @@
 <html lang="en">
 
 <style>
+
+    b {
+    font-size: 12px; /* 40px/16=2.5em */
+    }
+
+    label {
+    font-size: 12px; /* 40px/16=2.5em */
+    }
+
     .preserveLines {
         white-space: pre-wrap;
     }
@@ -48,7 +57,7 @@
                     <td colspan="4" class="pl" style="padding-right:20px; padding-top:10px" rowspan="2" >
                         <div class="h1">
                             <b>Shipper / Exporter</b>
-                            <label for=""  class='preserveLines'> <p> {{ $qe->shipper }} </p></label>
+                            <label for=""  class='preserveLines'><p>{{ $qe->shipper }}</p></label>
                         </div>
                     </td>
                     {{-- 2 --}}
@@ -88,9 +97,9 @@
                 {{--  --}}
                 <tr>
                     <td colspan="4" style="padding-top: 10px;" class="pl">
-                        <div style="height: 80px; overflow: hidden;">
+                        <div style="height: 90px; overflow: hidden;">
                             <b>Consignee</b>
-                            <label for=""  class='preserveLines'> <p> {{ $qe->consignee }} </p> </label>
+                            <label for=""  class='preserveLines'><p>{{ $qe->consignee }}</p></label>
                         </div>
                     </td>
                     {{-- 1 --}}
@@ -98,9 +107,9 @@
                     {{-- 3 --}}
                     {{-- 4 --}}
                     <td colspan="4" class="pl" style="padding-top: 20px;">
-                        <div style="height: 80px; overflow: hidden;">
+                        <div style="height: 90px; overflow: hidden;">
                             <b>For Delivery Please Apply To</b>
-                            <label for=""  class='preserveLines'> <p> {{ $qe->for_delivery }} </p> </label>
+                            <label for=""  class='preserveLines'><p>{{ $qe->for_delivery }}</p></label>
                         </div>
                     </td>
                     {{-- 5 --}}
@@ -111,9 +120,9 @@
 
                 <tr>
                     <td colspan="4" class="pl">
-                        <div class="h1">
+                        <div style="height: 90px; overflow: hidden;">
                             <b>Notify Party</b>
-                            <label for=""  class='preserveLines'> <p> {{ $qe->notify_party }} </p> </label>
+                            <label for=""  class='preserveLines'><p>{{ $qe->notify_party }}</p></label>
                         </div>
                     </td>
                     {{-- 1 --}}
@@ -121,10 +130,10 @@
                     {{-- 3 --}}
                     {{-- 4 --}}
                     <td colspan="4" class="pl" style="padding-top: 15px;">
-                        <div class="h1">
+                        <div style="height: 90px; overflow: hidden;">
                             <b>Also Notify (Name Full Address) / Domestic Routing</b>
                             <p>
-                            <label for=""  class='preserveLines'> {{ $qe->also_notify }} </label>
+                            <label for=""  class='preserveLines'>{{ $qe->also_notify }}</label>
                         </p>
                         </div>
                     </td>
@@ -187,24 +196,24 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2" style="width:35%; padding-top: 15px; " class="pl">
-                        <div style="height: 25px;">
+                    <td colspan="2" style="width:30%;" class="pl">
+                        <div style="height: 20px;">
                             <b>Container No, Seal No, Marks & Nos</b>
                         </div>
                     </td>
                     {{-- 1 --}}
                     {{-- 2 --}}
-                    <td colspan="2" style="padding-left: 10px">
+                    <td colspan="4" style="padding-left: 10px">
                         <b>No of PKGS. or Containers, Kid of PKGS, Description of Goods</b>
                         </td>
                     {{-- 3 --}}
                     {{-- 4 --}}
-                    <td colspan="2" style="padding-left: 20px">
+                    <td colspan="1" style="padding-left: 20px">
                         <b>Total Gross Weight KGS ; (Pounds)</b>
                         </td>
                     {{-- 5 --}}
                     {{-- 6 --}}
-                    <td colspan="2"  style="padding-left: 10px">
+                    <td colspan="1"  style="padding-left: 10px">
                         <b>Total Measurement CBM; (CFT)</b>
                     </td>
                     {{-- 7 --}}
@@ -214,26 +223,25 @@
                 {{-- copy area --}}
 
                 <tr>
-                    <td colspan="2" style="padding-top: 50px; border:none;" class="pl">
-                        <div style="height: 180px;">
-                            <label for=""  class='preserveLines'> <p> {{ $qe->container_no }} </p></label>
+                    <td colspan="2" style="border:none;" class="pl">
+                        <div style="height: 180px; ">
+                            <label for=""  class='preserveLines'><p>{{ $qe->container_no }}</p></label>
                         </div>
                     </td>
                     {{-- 1 --}}
                     {{-- 2 --}}
                     {{-- 3 --}}
-                    <td colspan="3" style="padding-left: 42px; border:none;">
-                        <label for=""  class='preserveLines'> <p> {{ $qe->no_of_pkgs }} </p></label>
+                    <td colspan="5" style="padding-left: 20px; border:none;">
+                        <label for=""  class='preserveLines'><p>{{ $qe->no_of_pkgs }}</p></label>
                     </td>
                     {{-- 4 --}}
                     {{-- 5 --}}
-                    <td style="border:none;">
-                        <label for=""  class='preserveLines'> <p> {{ $qe->total_gross_weight }} </p></label>
-
-                    </td>
+                    {{-- <td style="border:none;">
+                        <label for=""  class='preserveLines'><p>{{ $qe->total_gross_weight }}</p></label>
+                    </td> --}}
                     {{-- 6 --}}
-                    <td colspan="2" style="border:none;">
-                        <label for=""  class='preserveLines'> <p> {{ $qe->total_measur }} </p></label>
+                    <td style="border:none">
+                        <label for=""  class='preserveLines'><p>{{ $qe->total_measur }}</p></label>
                     </td>
                     {{-- 7 --}}
                     {{-- 8 --}}
@@ -246,7 +254,7 @@
                     {{-- 2 --}}
                     {{-- 3 --}}
                     <td colspan="3" style="border:none;">
-                        <div style="height: 60px;">
+                        <div style="height: 40px;">
                             {{ $qe->desc_of_goods }}
                         </div></td>
                     {{-- 4 --}}
@@ -264,9 +272,7 @@
                     {{-- 2 --}}
                     {{-- 3 --}}
                     <td colspan="4" class="pl">
-                        <div style="height: 20px; padding-top: 5px">
-                            {{ $qe->total_no_pkgs }}
-                        </div></td>
+                        <div style="height: 20px; padding-top: 5px">{{ $qe->total_no_pkgs }}</div></td>
                     {{-- 4 --}}
                     {{-- 5 --}}
                     {{-- 6 --}}
@@ -296,15 +302,19 @@
                 </tr>
 
                 <tr>
-                    <td colspan="4"></td>
+                    <td colspan="2"></td>
                     {{-- 1 --}}
                     {{-- 2 --}}
+                    <td colspan="2" class="text-center">
+                        <center>
+                            {{ $qe->repaid_collect }}
+                        </center>
+                    </td>
                     {{-- 3 --}}
                     <td colspan="2" style="text-align: right; padding-right:10px; padding-top: 10px">
                         <div style="height: 25px;">
 
                         {{-- jakarta --}}
-                            {{ $qe->repaid_collect }}
                             {{ $qe->place_and_date_issue }}
                         </div>
                     </td>
