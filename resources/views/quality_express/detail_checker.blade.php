@@ -60,7 +60,7 @@
                 cellpadding="0" cellspacing="0">
                 <tr>
                     {{-- 1 --}}
-                    <td colspan="4" class="pl" style="padding-right:20px; padding-top:10px" rowspan="2" >
+                    <td colspan="4" class="pl" style="padding-right:20px; padding-top:15px" rowspan="2" >
                         <div class="h1">
                             <b>Shipper / Exporter</b>
                             <p>

@@ -106,6 +106,9 @@ class Quality_express extends Controller
         ->select('quality_expresses.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*', 'for_deliveries.*', 'also_notifies.*')
         ->where('quality_expresses.id', $id)
         ->first();
+
+        // return view('quality_express.detail', compact('qe'));
+
     	$pdf = PDF::loadview('quality_express.detail', compact('qe'));
     	return $pdf->download('Bill_of_lading_'.time().'.pdf');
     }
