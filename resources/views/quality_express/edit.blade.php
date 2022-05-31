@@ -4,7 +4,7 @@
 
 <style>
 
-textarea { font-size: 100px; }
+textarea { font-family: Arial; }
 
 @media (min-width: 768px) {
     .col-sm-18, .col-sm-40, .col-sm-8half {

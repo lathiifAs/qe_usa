@@ -3,6 +3,24 @@
 @section('konten')
 
 <style>
+
+textarea { font-family: Arial; }
+
+@media (min-width: 768px) {
+    .col-sm-18, .col-sm-40, .col-sm-8half {
+        float: left;
+    }
+    .col-sm-18 {
+        width: 18%;
+    }
+    .col-sm-40 {
+        width: 28%;
+    }
+    .col-sm-8half {
+        width: 70.83333333%;
+    }
+}
+
     .select2-container .select2-selection {
     height: 40px;
     width: 83%;
@@ -14,6 +32,8 @@
 }
 
 </style>
+
+
 
 <div class="white-box">
     <h3 class="box-title">Bill of Lading</h3>
@@ -63,13 +83,14 @@
                     <div class="card-body px-0 pt-0 pb-2 mt-3">
                         <form action="{{ route('quality_express/store') }}" method="post">
                             {{ csrf_field() }}
+
                             <div class="row col-lg-12 m-2">
                                 <div class="col-lg-6">
                                     <label for="">Shipper / Exporter</label>
                                     <select
                                         class="js-example-basic-single form-control @error('shipper_exporter') is-invalid @enderror"
                                         name="shipper_exporter">
-                                        @forelse ($shipper as $shp)
+                                         @forelse ($shipper as $shp)
                                             <option value="{{ $shp->id }}">{{ $shp->shipper }}</option>
                                         @empty
                                             <option>Data Kosong</option>
@@ -84,7 +105,7 @@
                                 <div class="col-lg-6 row">
                                     <div class="col-lg-6">
                                         <label for="">Export References</label>
-                                        <input type="text" name="export_references" id="" class="form-control">
+                                        <input type="text" name="export_references" id="" class="form-control" value="{{ old('export_references') }}">
                                         @error('export_references')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -93,7 +114,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="">Bill of Lading No.</label>
-                                        <input type="text" name="bill_of_lading_no" id="" class="form-control">
+                                        <input type="text" name="bill_of_lading_no" id="" value="{{ old('bill_of_lading_no') }}" class="form-control">
                                         @error('bill_of_lading_no')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -109,7 +130,7 @@
                                 <div class="col-lg-6 row">
                                     <div class="col-lg-6">
                                         <label for="">FMC No.</label>
-                                        <input type="text" name="fmc_no" id="" class="form-control">
+                                        <input type="text" name="fmc_no" id="" value="{{ old('fmc_no') }}" class="form-control">
                                         @error('fmc_no')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -118,7 +139,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="">No. of Original B(s)/L(s) Signed</label>
-                                        <input type="text" name="no_of_original_signed" id="" class="form-control">
+                                        <input type="text" name="no_of_original_signed" id="" value="{{ old('no_of_original_signed') }}" class="form-control">
                                         @error('no_of_original_signed')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -134,11 +155,11 @@
                                         class="js-example-basic-single form-control @error('consignee') is-invalid @enderror"
                                         name="consignee">
                                         @forelse ($consignee as $cn)
-                                            <option value="{{ $cn->id }}">{{ $cn->consignee }}</option>
+                                            <option value="{{ $cn->id }}" >{{ $cn->consignee }}</option>
                                         @empty
                                             <option>Data Kosong</option>
                                         @endforelse
-                                    </select>
+                                        </select>
                                     @error('consignee')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -197,7 +218,7 @@
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">Vessel Voy</label>
-                                    <input type="text" class="form-control" name="vessel_voy">
+                                    <input type="text" class="form-control" name="vessel_voy" value="{{ old('vessel_voy') }}">
                                     @error('vessel_voy')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -206,7 +227,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Port of Loading</label>
-                                    <input type="text" class="form-control" name="part_of_loading">
+                                    <input type="text" class="form-control" name="part_of_loading" value="{{ old('part_of_loading') }}">
                                     @error('part_of_loading')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -215,7 +236,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Pier or Place or Receipt</label>
-                                    <input type="text" class="form-control" name="pier_or_place">
+                                    <input type="text" class="form-control" name="pier_or_place"  value="{{ old('pier_or_place') }}">
                                     @error('pier_or_place')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -224,7 +245,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Type of Move</label>
-                                    <input type="text" class="form-control" name="type_of_move">
+                                    <input type="text" class="form-control" name="type_of_move" value="{{ old('type_of_move') }}">
                                     @error('type_of_move')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -235,7 +256,7 @@
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">Port of Discharge</label>
-                                    <input type="text" class="form-control" name="port_of_discharge">
+                                    <input type="text" class="form-control" name="port_of_discharge" value="{{ old('port_of_discharge') }}">
                                     @error('port_of_discharge')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -244,7 +265,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Port of Delivery</label>
-                                    <input type="text" class="form-control" name="place_of_delivery">
+                                    <input type="text" class="form-control" name="place_of_delivery" value="{{ old('place_of_delivery') }}">
                                     @error('place_of_delivery')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -253,7 +274,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="">Final Destination (For the Merchant's Reference Only)</label>
-                                    <input type="text" class="form-control" name="final_destination">
+                                    <input type="text" class="form-control" name="final_destination"  value="{{ old('final_destination') }}">
                                     @error('final_destination')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -262,9 +283,9 @@
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="container_no" class="form-control" id="" cols="30" rows="10">{{ old('container_no') }}</textarea>
 
                                     {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="cont_no" placeholder="CONT. NO">
@@ -286,26 +307,28 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-5">
-                                    <label for="">No of PKGS or Containers || Kind of PKGS, Desc of Goods</label>
-                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <div class="col-lg-6">
+                                    <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
+                                        {{-- <textarea name="no_of_pkgs" id="editor" size="2" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea> --}}
+
+                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{old('no_of_pkgs') }}</textarea>
                                     @error('no_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-2">
+                                {{-- <div class="col-lg-1">
                                     <label for="">Total Gross Weight KGS (Pounds)</label>
-                                    <textarea name="total_gross_weight" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="total_gross_weight" class="form-control" id="" cols="30" rows="10">{{ old('total_gross_weight', $qe->total_gross_weight) }}</textarea>
                                     @error('total_gross_weight')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
+                                </div> --}}
                                 <div class="col-lg-2">
-                                    <label for="">Total Measurement CBM (CFT)</label>
+                                    <label for="">Total Meas CBM (CFT)</label>
 
                                     {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="total_net" >
@@ -316,7 +339,7 @@
 
                                     </div> --}}
 
-                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur') }}</textarea>
                                     @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -324,11 +347,15 @@
                                     @enderror
                                 </div>
                             </div>
+
+
+
+
                             {{-- <input type="text" class="form-control" name="desc_of_goods" placeholder="Desc of goods"> --}}
                             <div class="row col-lg-12 m-2 p-2" style="margin-top: 20px">
                                 <div class="col-lg-12">
                                     <label for="">Total No of Packages</label>
-                                    <input type="text" class="form-control" name="total_no_pkgs">
+                                    <input type="text" class="form-control" value="{{ old('total_no_pkgs') }}" name="total_no_pkgs">
                                     @error('total_no_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -339,7 +366,7 @@
                             <div class="row col-lg-12 m-2"  style="margin-top: 20px">
                                 <div class="col-lg-3">
                                     <label for="">Freight And Charges</label>
-                                    <input type="text" class="form-control" name="freight_and_charges">
+                                    <input type="text" class="form-control" value="{{ old('freight_and_charges') }}" name="freight_and_charges">
                                     @error('freight_and_charges')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -348,7 +375,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Prepaid Collect</label>
-                                    <input type="text" class="form-control" name="repaid_collect">
+                                    <input type="text" class="form-control" name="repaid_collect" value="{{ old('repaid_collect') }}">
                                     @error('repaid_collect')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -357,7 +384,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Place and Date of Issue</label>
-                                    <input type="text" class="form-control" name="place_and_date_issue">
+                                    <input type="text" class="form-control" value="{{ old('place_and_date_issue') }}" name="place_and_date_issue">
                                     @error('place_and_date_issue')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -366,7 +393,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">Date, By</label>
-                                    <input type="text" class="form-control" name="by">
+                                    <input type="text" class="form-control" value="{{ old('by') }}" name="by">
                                     @error('by')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -377,7 +404,7 @@
                             <div class="row col-lg-12 m-2"  style="margin-top: 20px">
                                 <div class="col-lg-12">
                                     <label for="">as Agent</label>
-                                    <input type="text" class="form-control" name="as_agent" >
+                                    <input type="text" class="form-control" value="{{ old('as_agent') }}" name="as_agent" >
                                     @error('freight_and_charges')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -400,6 +427,9 @@
     </div>
 
     @push('custom-scripts')
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
                 integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -409,25 +439,18 @@
         <script type="text/javascript">
             $(document).ready(function() {
 
-                // function templateResult(item, container) {
-                //     // replace the placeholder with the break-tag and put it into an jquery object
-                //     return $('<span>' + item.text.replace('[br]', '<br/>') + '</span>');
-                // }
-
-                // function templateSelection(item, container) {
-                //     // replace your placeholder with nothing, so your select shows the whole option text
-                //     return item.text.replace('[br]', '');
-                // }
-
-                // $('.js-example-basic-single').select2({
-                //     templateResult: templateResult,
-                //     templateSelection: templateSelection
-                // });
-
-
                 $('.js-example-basic-single').select2({
                     minimumResultsForSearch: Infinity, //removes the search box
                 });
+
+                ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
             });
         </script>
     @endpush

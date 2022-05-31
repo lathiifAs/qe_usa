@@ -9,6 +9,7 @@
 
     label {
     font-size: 12px; /* 40px/16=2.5em */
+    font-family: Arial;
     }
 
 
