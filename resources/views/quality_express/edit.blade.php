@@ -4,6 +4,8 @@
 
 <style>
 
+textarea { font-size: 100px; }
+
 @media (min-width: 768px) {
     .col-sm-18, .col-sm-40, .col-sm-8half {
         float: left;
@@ -284,7 +286,7 @@
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-4">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" class="form-control" id="" cols="30" rows="10"> {{ old('container_no', $qe->container_no) }}</textarea>
+                                    <textarea name="container_no" class="form-control" id="" cols="30" rows="10">{{ old('container_no', $qe->container_no) }}</textarea>
 
                                     {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="cont_no" placeholder="CONT. NO">
@@ -310,7 +312,7 @@
                                     <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
                                         {{-- <textarea name="no_of_pkgs" id="editor" size="2" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea> --}}
 
-                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea>
+                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea>
                                     @error('no_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
