@@ -232,7 +232,7 @@
                     {{-- 2 --}}
                     {{-- 3 --}}
                     <td colspan="5" style="padding-left: 20px; border:none;">
-                        <label for=""  class='preserveLines'><p>{{ $qe->no_of_pkgs }}</p></label>
+                        <label for=""  class='preserveLines'><p>{!! $qe->no_of_pkgs !!}</p></label>
                     </td>
                     {{-- 4 --}}
                     {{-- 5 --}}

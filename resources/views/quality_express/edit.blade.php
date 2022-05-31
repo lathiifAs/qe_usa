@@ -31,6 +31,8 @@
 
 </style>
 
+
+
 <div class="white-box">
     <h3 class="box-title">Bill of Lading</h3>
     <nav aria-label="breadcrumb">
@@ -280,7 +282,7 @@
                                 </div>
                             </div>
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
-                                <div class="col-sm-18" style="padding-left: 15px">
+                                <div class="col-lg-4">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
                                     <textarea name="container_no" class="form-control" id="" cols="30" rows="10"> {{ old('container_no', $qe->container_no) }}</textarea>
 
@@ -304,16 +306,18 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-sm-40" style="padding-left: 30px">
-                                    <label for="">No of PKGS or Containers || Kind of PKGS, Desc of Goods</label>
-                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{ old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea>
+                                <div class="col-lg-6">
+                                    <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
+                                        {{-- <textarea name="no_of_pkgs" id="editor" size="2" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea> --}}
+
+                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea>
                                     @error('no_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-2">
+                                {{-- <div class="col-lg-1">
                                     <label for="">Total Gross Weight KGS (Pounds)</label>
                                     <textarea name="total_gross_weight" class="form-control" id="" cols="30" rows="10">{{ old('total_gross_weight', $qe->total_gross_weight) }}</textarea>
                                     @error('total_gross_weight')
@@ -321,9 +325,9 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
+                                </div> --}}
                                 <div class="col-lg-2">
-                                    <label for="">Total Measurement CBM (CFT)</label>
+                                    <label for="">Total Meas CBM (CFT)</label>
 
                                     {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="total_net" >
@@ -342,6 +346,10 @@
                                     @enderror
                                 </div>
                             </div>
+
+
+
+
                             {{-- <input type="text" class="form-control" name="desc_of_goods" placeholder="Desc of goods"> --}}
                             <div class="row col-lg-12 m-2 p-2" style="margin-top: 20px">
                                 <div class="col-lg-12">
@@ -418,6 +426,9 @@
     </div>
 
     @push('custom-scripts')
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
                 integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -430,6 +441,15 @@
                 $('.js-example-basic-single').select2({
                     minimumResultsForSearch: Infinity, //removes the search box
                 });
+
+                ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
             });
         </script>
     @endpush

@@ -101,7 +101,9 @@ class Quality_express extends Controller
         ->leftJoin('consignees', 'quality_expresses.consignee', '=', 'consignees.id')
         ->leftJoin('notify_parties', 'quality_expresses.notify_party', '=', 'notify_parties.id')
         ->leftJoin('issued_bies', 'quality_expresses.for_delivery', '=', 'issued_bies.id')
-        ->select('quality_expresses.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*')
+        ->leftJoin('for_deliveries', 'quality_expresses.for_delivery', '=', 'for_deliveries.id')
+        ->leftJoin('also_notifies', 'quality_expresses.also_notify', '=', 'also_notifies.id')
+        ->select('quality_expresses.*', 'shippers.*', 'consignees.*', 'notify_parties.*', 'issued_bies.*', 'for_deliveries.*', 'also_notifies.*')
         ->where('quality_expresses.id', $id)
         ->first();
     	$pdf = PDF::loadview('quality_express.detail', compact('qe'));
