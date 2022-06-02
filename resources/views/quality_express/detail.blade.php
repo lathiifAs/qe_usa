@@ -117,7 +117,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 60px; overflow: hidden;">
+                    <div style="height: 60px; overflow: hidden; padding-left: 10px">
                         <p><label for="" class='preserveLines'>{{ $qe->for_delivery }}</label></p>
                     </div>
                 </td>
@@ -137,7 +137,7 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="4" class="pl" style="padding-top: 15px; padding-top: 15px">
+                <td colspan="4" class="pl" style="padding-top: 15px; padding-left: 10px">
                     <div style="height: 55px; overflow: hidden;">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
@@ -152,7 +152,7 @@
 
             <tr>
                 <td colspan="2" style="width:35%" class="pl">
-                    <div class="k1" style="padding-top: 15px">
+                    <div class="k1" style="padding-top: 10px">
                         <p><label for="">{{ $qe->vessel_voy }}</label></p>
                     </div>
                 </td>
@@ -238,7 +238,7 @@
 
             <tr>
                 <td colspan="2" style="border:none;" class="pl">
-                    <div style="height: 330px; padding-top: 30px">
+                    <div style="height: 320px; padding-top: 30px">
                         <p><label for="" class='preserveLines'>{{ $qe->container_no }}</label></p>
                     </div>
                 </td>
