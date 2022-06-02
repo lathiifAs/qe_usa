@@ -63,7 +63,7 @@
         </table>
         {{-- <font size="2"> --}}
         <table
-            style="font-size: 10px; border-color: black; border-collapse: collapse; width:104%; table-layout: fixed; padding-left: -15px"
+            style="font-size: 10px; border-color: black; border-collapse: collapse; width:104%; table-layout: fixed; padding-right: 15px"
             cellpadding="0" cellspacing="0">
             <tr>
                 {{-- 1 --}}
