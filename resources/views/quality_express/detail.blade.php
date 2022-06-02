@@ -82,7 +82,7 @@
                     <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl" style="padding-top:5px">
+                <td colspan="2" class="pl" style="padding-top:5px; padding-left: 10px">
                     <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -99,7 +99,7 @@
                     <p>{{ $qe->fmc_no }}</p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl" style="padding-top: 20px">
+                <td colspan="2" class="pl" style="padding-top: 20px; padding-left: 10px">
                     <p><label for="">{{ $qe->no_of_original_signed }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -137,7 +137,7 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="4" class="pl" style="padding-top: 15px; padding-top: 10px">
+                <td colspan="4" class="pl" style="padding-top: 15px; padding-top: 15px">
                     <div style="height: 55px; overflow: hidden;">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
@@ -152,7 +152,7 @@
 
             <tr>
                 <td colspan="2" style="width:35%" class="pl">
-                    <div class="k1" style="padding-top: 10px">
+                    <div class="k1" style="padding-top: 15px">
                         <p><label for="">{{ $qe->vessel_voy }}</label></p>
                     </div>
                 </td>
@@ -238,7 +238,7 @@
 
             <tr>
                 <td colspan="2" style="border:none;" class="pl">
-                    <div style="height: 315px; padding-top: 30px">
+                    <div style="height: 330px; padding-top: 30px">
                         <p><label for="" class='preserveLines'>{{ $qe->container_no }}</label></p>
                     </div>
                 </td>
