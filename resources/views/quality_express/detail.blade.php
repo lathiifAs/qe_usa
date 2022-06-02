@@ -67,7 +67,7 @@
             cellpadding="0" cellspacing="0">
             <tr>
                 {{-- 1 --}}
-                <td colspan="4" class="pl" style="padding-right:20px; padding-top:15px" rowspan="2">
+                <td colspan="4" class="pl" rowspan="2">
                     <div class="h1">
                         <p>
                             <label for="" class='preserveLines'>{{ $qe->shipper }}</label>
@@ -82,7 +82,7 @@
                     <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl" style="padding-top:25px">
+                <td colspan="2" class="pl" style="padding-top:5px">
                     <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
                 </td>
                 {{-- 7 --}}
