@@ -37,7 +37,7 @@
     }
 
     td.pl {
-        padding-left: 10px
+        padding-left: 0px
     }
 
 </style>
