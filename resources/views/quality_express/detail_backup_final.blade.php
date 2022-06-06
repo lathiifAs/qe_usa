@@ -3,23 +3,19 @@
 
 <style>
     b {
-        font-size: 14px;
+        font-size: 12px;
         /* 40px/16=2.5em */
     }
 
     label {
-        font-size: 14px;
+        font-size: 12px;
         /* 40px/16=2.5em */
         font-family: Arial;
     }
 
-    .pl1 {
-        padding-left: 20px
-    }
-
 
     p {
-        font-size: 14px;
+        font-size: 12px;
         /* 40px/16=2.5em */
     }
 
@@ -32,18 +28,18 @@
     }
 
     div.h1 {
-        height: 65px;
+        height: 55px;
         overflow: hidden;
     }
 
     div.k1 {
-        height: 14px;
+        height: 12px;
     }
 
     td.pl {
         padding-left: 0px
     }
-    @page { margin-bottom: 0px; margin-left: 10px }
+    @page { margin-bottom: 0px; }
 
 
 </style>
@@ -84,11 +80,11 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 {{-- 5 --}}
-                <td colspan="2" style="width: 20%" class="p1l">
+                <td colspan="2" style="width: 20%" class="pl">
                     <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl1" style="padding-top:5px;">
+                <td colspan="2" class="pl" style="padding-top:5px; padding-left: 10px">
                     <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -105,7 +101,7 @@
                     <p>{{ $qe->fmc_no }}</p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl1" style="padding-top: 20px;">
+                <td colspan="2" class="pl" style="padding-top: 20px; padding-left: 10px">
                     <p><label for="">{{ $qe->no_of_original_signed }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -114,7 +110,7 @@
             {{--  --}}
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 65px; overflow: hidden; padding-top: 5px">
+                    <div style="height: 60px; overflow: hidden; padding-top: 5px">
                         <p><label for="" class='preserveLines'>{{ $qe->consignee }}</label></p>
                     </div>
                 </td>
@@ -123,7 +119,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 65px; overflow: hidden;" class="pl1">
+                    <div style="height: 60px; overflow: hidden; padding-left: 10px">
                         <p><label for="" class='preserveLines'>{{ $qe->for_delivery }}</label></p>
                     </div>
                 </td>
@@ -135,7 +131,7 @@
 
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 65px; overflow: hidden; padding-top: 10px">
+                    <div style="height: 55px; overflow: hidden; padding-top: 10px">
                         <p><label for="" class='preserveLines'>{{ $qe->notify_party }}</label></p>
                     </div>
                 </td>
@@ -143,8 +139,8 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="4" style="padding-top: 15px;">
-                    <div style="height: 65px; overflow: hidden;" class="pl1">
+                <td colspan="4" class="pl" style="padding-top: 15px; padding-left: 10px">
+                    <div style="height: 55px; overflow: hidden;">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
                 </td>
@@ -165,21 +161,21 @@
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-top: 3px; padding-left: 15px">
-                        <p><label for="" class=" white-space: nowrap;">{{ $qe->part_of_loading }}</label></p>
+                    <div class="k1" style="padding-top: 3px">
+                        <p><label for="">{{ $qe->part_of_loading }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 3px; padding-left: 15px;">
+                    <div class="k1" style="padding-top: 3px">
                         <p><label for="">{{ $qe->pier_or_place }}</label></p>
                     </div>
                 </td>
                 {{-- 5 --}}
                 {{-- 6 --}}
                 <td colspan="2" style="padding-left: 50px">
-                    <div class="k1" style="padding-top: 3px;padding-left: 15px;">
+                    <div class="k1" style="padding-top: 3px">
                         <p><label for="">{{ $qe->type_of_move }}</label></p>
                     </div>
                 </td>
@@ -196,14 +192,14 @@
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-top: 4px;padding-left: 15px;">
+                    <div class="k1" style="padding-top: 4px">
                         <p><label for="">{{ $qe->place_of_delivery }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 4px;padding-left: 15px;">
+                    <div class="k1" style="padding-top: 4px">
                         <p><label for="">{{ $qe->final_destination }}</label></p>
                     </div>
                 </td>
@@ -252,7 +248,7 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 <td colspan="5" style="padding-left: 20px; border:none;">
-                    <div style="height: 315px; padding-top: 30px; padding-left: 20px">
+                    <div style="height: 315px; padding-top: 30px">
                         <p><label for="" class='preserveLines'>{{ $qe->no_of_pkgs }}</label></p>
                     </div>
                 </td>
@@ -305,7 +301,7 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 18px; padding-top: 10px">
+                    <div style="height: 18px;">
                         <p><label for="">{{ $qe->total_no_pkgs }}</label></p>
                     </div>
                 </td>
@@ -382,7 +378,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 40px; padding-top: 65px">
+                    <div class="row" style="height: 40px; padding-top: 55px">
                         <div style="text-align: right; padding-right: 55px;">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>

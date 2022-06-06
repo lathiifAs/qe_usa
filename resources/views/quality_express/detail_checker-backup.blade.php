@@ -233,7 +233,7 @@
 
                 <tr>
                     <td colspan="2" style="border:none;" class="pl">
-                        <div style="height: 180px; ">
+                        <div style="height: 280px;">
                             <label for=""  class='preserveLines'><p>{{ $qe->container_no }}</p></label>
                         </div>
                     </td>
