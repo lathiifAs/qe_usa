@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ URL('cubic_template/plugins/images/favicon.png') }}">
-    <title>Cubic Admin Template</title>
+    <title>Quality Express USA</title>
     <!-- ===== Bootstrap CSS ===== -->
     <link href="{{ URL('cubic_template/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- ===== Plugin CSS ===== -->
