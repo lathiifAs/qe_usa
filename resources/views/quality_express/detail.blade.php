@@ -203,7 +203,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-left: 15px;">
+                    <div class="k1" style="padding-left: 15px; padding-top: 3px">
                         <p><label for="">{{ $qe->final_destination }}</label></p>
                     </div>
                 </td>
