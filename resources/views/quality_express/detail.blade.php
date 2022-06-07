@@ -88,7 +88,7 @@
                     <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl1" style="padding-top:5px;">
+                <td colspan="2" class="pl1" style="padding-top:7px;">
                     <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -353,7 +353,7 @@
                 </td>
                 {{-- 3 --}}
                 <td colspan="2" style="text-align: right; padding-right:10px; padding-top: 10px">
-                    <div style="height: 25px; padding-left: 20px">
+                    <div style="height: 25px; padding-left: 35px">
 
                         {{-- jakarta --}}
                         <label for="">{{ $qe->place_and_date_issue }}</label>
@@ -369,7 +369,7 @@
             </tr>
             <tr style="border:none">
                 <td colspan="3" style="border: none">
-                    <div style="height: 45px;">
+                    <div style="height: 35px;">
                         &nbsp;
                     </div>
                 </td>
@@ -382,7 +382,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 40px; padding-top: 40px">
+                    <div class="row" style="height: 40px; padding-top: 30px">
                         <div style="text-align: right; padding-right: 55px;">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
