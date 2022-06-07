@@ -74,7 +74,7 @@
             <tr>
                 {{-- 1 --}}
                 <td colspan="4" class="pl" rowspan="2">
-                    <div class="h1">
+                    <div style="height: 70px; overflow: hidden;">
                         <p>
                             <label for="" class='preserveLines'>{{ $qe->shipper }}</label>
                         </p>
@@ -165,21 +165,21 @@
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style=" padding-top: 4px;padding-left: 15px">
+                    <div class="k1" style=" padding-top: 2px;padding-left: 15px">
                         <p><label for="" class=" white-space: nowrap;">{{ $qe->part_of_loading }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 3px;padding-left: 15px;">
+                    <div class="k1" style="padding-top: 2px;padding-left: 15px;">
                         <p><label for="">{{ $qe->pier_or_place }}</label></p>
                     </div>
                 </td>
                 {{-- 5 --}}
                 {{-- 6 --}}
                 <td colspan="2" style="padding-left: 50px">
-                    <div class="k1" style="padding-top: 2px; padding-left: 15px;">
+                    <div class="k1" style="padding-top: 1px; padding-left: 15px;">
                         <p><label for="">{{ $qe->type_of_move }}</label></p>
                     </div>
                 </td>
@@ -215,25 +215,25 @@
 
             <tr>
                 <td colspan="2" style="width:30%;" class="pl">
-                    <div style="height: 10px;">
+                    <div style="height: 5px;">
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="4" style="padding-left: 10px">
-                    <div style="height: 10px;">
+                    <div style="height: 5px;">
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="1" style="padding-left: 20px">
-                    <div style="height: 10px;">
+                    <div style="height: 5px;">
                     </div>
                 </td>
                 {{-- 5 --}}
                 {{-- 6 --}}
                 <td colspan="1" style="padding-left: 10px">
-                    <div style="height: 10px;">
+                    <div style="height: 5px;">
                     </div>
                 </td>
                 {{-- 7 --}}
