@@ -189,21 +189,21 @@
 
             <tr>
                 <td colspan="2" class="pl">
-                    <div class="k1" style="padding-top: 3px">
+                    <div class="k1" style="padding-top: 1px">
                         <p><label for="">{{ $qe->port_of_discharge }}</label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-left: 15px; padding-top: 2px">
+                    <div class="k1" style="padding-left: 15px;">
                         <p><label for="">{{ $qe->place_of_delivery }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-left: 15px; padding-top: 3px">
+                    <div class="k1" style="padding-left: 15px;">
                         <p><label for="">{{ $qe->final_destination }}</label></p>
                     </div>
                 </td>
@@ -382,7 +382,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 40px; padding-top: 30px">
+                    <div class="row" style="height: 40px; padding-top: 40px">
                         <div style="text-align: right; padding-right: 55px;">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
