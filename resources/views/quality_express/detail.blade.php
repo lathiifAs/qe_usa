@@ -114,7 +114,7 @@
             {{--  --}}
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 65px; overflow: hidden; padding-top: 5px">
+                    <div style="height: 55px; overflow: hidden;">
                         <p><label for="" class='preserveLines'>{{ $qe->consignee }}</label></p>
                     </div>
                 </td>
@@ -123,7 +123,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 65px; overflow: hidden;" class="pl1">
+                    <div style="height: 55px; overflow: hidden;" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->for_delivery }}</label></p>
                     </div>
                 </td>
@@ -135,7 +135,7 @@
 
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 65px; overflow: hidden; padding-top: 10px">
+                    <div style="height: 55px; overflow: hidden;">
                         <p><label for="" class='preserveLines'>{{ $qe->notify_party }}</label></p>
                     </div>
                 </td>
@@ -144,7 +144,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" style="padding-top: 15px;">
-                    <div style="height: 65px; overflow: hidden;" class="pl1">
+                    <div style="height: 55px; overflow: hidden;" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
                 </td>
