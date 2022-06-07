@@ -135,7 +135,7 @@
 
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 55px; overflow: hidden; padding-top: 10px">
+                    <div style="height: 65px; overflow: hidden; padding-top: 10px">
                         <p><label for="" class='preserveLines'>{{ $qe->notify_party }}</label></p>
                     </div>
                 </td>
@@ -144,7 +144,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" style="padding-top: 15px;">
-                    <div style="height: 55px; overflow: hidden;" class="pl1">
+                    <div style="height: 65px; overflow: hidden;" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
                 </td>
@@ -244,7 +244,7 @@
 
             <tr>
                 <td colspan="2" style="border:none;" class="pl">
-                    <div style="height: 310px;">
+                    <div style="height: 315px;">
                         <p><label for="" class='preserveLines'>{{ $qe->container_no }}</label></p>
                     </div>
                 </td>
@@ -369,7 +369,7 @@
             </tr>
             <tr style="border:none">
                 <td colspan="3" style="border: none">
-                    <div style="height: 30px;">
+                    <div style="height: 45px;">
                         &nbsp;
                     </div>
                 </td>
