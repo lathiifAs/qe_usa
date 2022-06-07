@@ -3,12 +3,12 @@
 
 <style>
     b {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
     label {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
         font-family: Arial;
     }
@@ -19,7 +19,7 @@
 
 
     p {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
@@ -37,7 +37,7 @@
     }
 
     div.k1 {
-        height: 14px;
+        height: 13px;
     }
 
     td.pl {
@@ -158,21 +158,21 @@
 
             <tr>
                 <td colspan="2" style="width:35%" class="pl">
-                    <div class="k1" style="padding-top: 10px">
+                    <div class="k1" >
                         <p><label for="">{{ $qe->vessel_voy }}</label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-top: 3px; padding-left: 15px">
+                    <div class="k1" style="padding-left: 15px">
                         <p><label for="" class=" white-space: nowrap;">{{ $qe->part_of_loading }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 3px; padding-left: 15px;">
+                    <div class="k1" style="padding-left: 15px;">
                         <p><label for="">{{ $qe->pier_or_place }}</label></p>
                     </div>
                 </td>
@@ -189,21 +189,21 @@
 
             <tr>
                 <td colspan="2" class="pl">
-                    <div class="k1" style="padding-top: 4px">
+                    <div class="k1">
                         <p><label for="">{{ $qe->port_of_discharge }}</label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-top: 4px;padding-left: 15px;">
+                    <div class="k1" style="padding-left: 15px;">
                         <p><label for="">{{ $qe->place_of_delivery }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 4px;padding-left: 15px;">
+                    <div class="k1" style="padding-left: 15px;">
                         <p><label for="">{{ $qe->final_destination }}</label></p>
                     </div>
                 </td>
@@ -244,7 +244,7 @@
 
             <tr>
                 <td colspan="2" style="border:none;" class="pl">
-                    <div style="height: 320px; padding-top: 10px">
+                    <div style="height: 310px;">
                         <p><label for="" class='preserveLines'>{{ $qe->container_no }}</label></p>
                     </div>
                 </td>
