@@ -43,7 +43,7 @@
     td.pl {
         padding-left: 0px
     }
-    @page { margin-bottom: 0px; margin-left: 0px; margin-top: 5px; size: 25cm 33cm}
+    @page { margin-bottom: 0px; margin-left: 0px; margin-top: 5px; size: 22cm 33cm}
 
 
 </style>
