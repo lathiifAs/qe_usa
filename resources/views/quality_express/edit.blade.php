@@ -31,6 +31,10 @@ textarea { font-family: Arial; }
   white-space: pre-line;
 }
 
+.preserveLines {
+        white-space: pre-wrap;
+    }
+
 </style>
 
 
@@ -286,7 +290,10 @@ textarea { font-family: Arial; }
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-4">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" class="form-control" id="" cols="30" rows="10">{{ old('container_no', $qe->container_no) }}</textarea>
+
+                                    <textarea name="container_no" id="editor1" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('container_no', $qe->container_no) !!}</textarea>
+
+                                    {{-- <textarea name="container_no" class="form-control" style="white-space: pre-wrap;" id="" cols="30" rows="10" >{{ old('container_no', $qe->container_no) }}</textarea> --}}
 
                                     {{-- <div class="col-lg-12">
                                         <input type="text" class="form-control" name="cont_no" placeholder="CONT. NO">
@@ -310,9 +317,9 @@ textarea { font-family: Arial; }
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
-                                        {{-- <textarea name="no_of_pkgs" id="editor" size="2" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea> --}}
+                                    <textarea name="no_of_pkgs" id="editor2"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea>
 
-                                    <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea>
+                                    {{-- <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea> --}}
                                     @error('no_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -340,7 +347,9 @@ textarea { font-family: Arial; }
 
                                     </div> --}}
 
-                                    <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea>
+                                    <textarea name="total_measur" id="editor3"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('total_measur', $qe->total_measur) !!}</textarea>
+
+                                    {{-- <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea> --}}
                                     @error('total_measur')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -445,7 +454,25 @@ textarea { font-family: Arial; }
                 });
 
                 ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
+                                .create( document.querySelector( '#editor1' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+
+                                ClassicEditor
+                                .create( document.querySelector( '#editor2' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+
+                                ClassicEditor
+                                .create( document.querySelector( '#editor3' ) )
                                 .then( editor => {
                                         console.log( editor );
                                 } )
