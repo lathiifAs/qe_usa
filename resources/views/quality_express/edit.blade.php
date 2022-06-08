@@ -437,9 +437,7 @@ textarea { font-family: Arial; }
     </div>
 
     @push('custom-scripts')
-
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
                 integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
