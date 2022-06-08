@@ -451,32 +451,36 @@ textarea { font-family: Arial; }
                     minimumResultsForSearch: Infinity, //removes the search box
                 });
 
-                ClassicEditor
-                                .create( document.querySelector( '#editor1' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
 
-                                ClassicEditor
-                                .create( document.querySelector( '#editor2' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
+                CKEDITOR.replace( 'container_no' );
 
-                                ClassicEditor
-                                .create( document.querySelector( '#editor3' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
+
+                // ClassicEditor
+                //                 .create( document.querySelector( '#editor1' ) )
+                //                 .then( editor => {
+                //                         console.log( editor );
+                //                 } )
+                //                 .catch( error => {
+                //                         console.error( error );
+                //                 } );
+
+                //                 ClassicEditor
+                //                 .create( document.querySelector( '#editor2' ) )
+                //                 .then( editor => {
+                //                         console.log( editor );
+                //                 } )
+                //                 .catch( error => {
+                //                         console.error( error );
+                //                 } );
+
+                //                 ClassicEditor
+                //                 .create( document.querySelector( '#editor3' ) )
+                //                 .then( editor => {
+                //                         console.log( editor );
+                //                 } )
+                //                 .catch( error => {
+                //                         console.error( error );
+                //                 } );
             });
         </script>
     @endpush
