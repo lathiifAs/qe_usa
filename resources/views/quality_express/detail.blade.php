@@ -43,7 +43,7 @@
     td.pl {
         padding-left: 0px
     }
-    @page { margin-bottom: 0px; margin-left: 0px; margin-top: 5px; size: 21.6cm 33cm}
+    @page { margin-bottom: 0px; margin-left: -15px; margin-top: 15px; size: 21.6cm 33cm}
 
 
 </style>
@@ -88,7 +88,7 @@
                     <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl1" style="padding-top:10px;">
+                <td colspan="2" class="pl1" style="padding-top:10px; padding-left: 15px">
                     <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -105,7 +105,7 @@
                     <p>{{ $qe->fmc_no }}</p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl1" style="padding-top: 20px;">
+                <td colspan="2" class="pl1" style="padding-top: 20px; padding-left: 15px">
                     <p><label for="">{{ $qe->no_of_original_signed }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -179,7 +179,7 @@
                 {{-- 5 --}}
                 {{-- 6 --}}
                 <td colspan="2" style="padding-left: 50px">
-                    <div class="k1" style="padding-top: 1px; padding-left: 30px;">
+                    <div class="k1" style="padding-top: 1px; padding-left: 40px;">
                         <p><label for="">{{ $qe->type_of_move }}</label></p>
                     </div>
                 </td>
@@ -218,7 +218,7 @@
 
             <tr>
                 <td colspan="2" style="border:none;" class="pl">
-                    <div style="height: 335px;">
+                    <div style="height: 355px;">
                         <p><label for="" class='preserveLines'>{!! $qe->container_no !!}</label></p>
                     </div>
                 </td>
@@ -226,7 +226,7 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 <td colspan="5" style="padding-left: 20px; border:none;">
-                    <div style="height: 335px;  padding-left: 20px">
+                    <div style="height: 355px;  padding-left: 20px">
                         <p><label for="" class='preserveLines'>{!! $qe->no_of_pkgs !!}</label></p>
                     </div>
                 </td>
@@ -237,7 +237,7 @@
                     </td> --}}
                 {{-- 6 --}}
                 <td style="border:none">
-                    <div style="height: 335px; padding-top: 30px">
+                    <div style="height: 355px; padding-top: 30px">
                         <p><label for="" class='preserveLines'>{!! $qe->total_measur !!}</label></p>
                     </div>
                 </td>
