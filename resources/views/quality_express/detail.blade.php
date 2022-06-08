@@ -3,12 +3,12 @@
 
 <style>
     b {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
     label {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
         font-family: Arial;
     }
@@ -19,7 +19,7 @@
 
 
     p {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
@@ -37,7 +37,7 @@
     }
 
     div.k1 {
-        height: 14px;
+        height: 13px;
     }
 
     td.pl {
@@ -114,7 +114,7 @@
             {{--  --}}
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 75px; overflow: hidden;">
+                    <div style="height: 70px; overflow: hidden;">
                         <p><label for="" class='preserveLines'>{{ $qe->consignee }}</label></p>
                     </div>
                 </td>
@@ -123,7 +123,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 75px; overflow: hidden; padding-top: 10px" class="pl1">
+                    <div style="height: 70px; overflow: hidden; padding-top: 5px" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->for_delivery }}</label></p>
                     </div>
                 </td>
@@ -135,7 +135,7 @@
 
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 75px; overflow: hidden; padding-top: 15px">
+                    <div style="height: 70px; overflow: hidden; padding-top: 15px">
                         <p><label for="" class='preserveLines'>{{ $qe->notify_party }}</label></p>
                     </div>
                 </td>
@@ -144,7 +144,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" style="padding-top: 15px;">
-                    <div style="height: 75px; overflow: hidden; padding-top: 15px" class="pl1">
+                    <div style="height: 70px; overflow: hidden; padding-top: 15px" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
                 </td>
@@ -356,7 +356,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 60px; padding-top: 55px">
+                    <div class="row" style="height: 60px; padding-top: 75px">
                         <div style="text-align: right; padding-right: 35px; ">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
