@@ -43,7 +43,7 @@
     td.pl {
         padding-left: 0px
     }
-    @page { margin-bottom: 0px; margin-left: 0px; margin-top: 5px; size: 22cm 33cm}
+    @page { margin-bottom: 0px; margin-left: 0px; margin-top: 15px; size: 22cm 33cm}
 
 
 </style>
@@ -158,28 +158,28 @@
 
             <tr>
                 <td colspan="2" style="width:35%" class="pl">
-                    <div class="k1" style="padding-top: 15px" >
+                    <div class="k1" style="padding-top: 5px" >
                         <p><label for="">{{ $qe->vessel_voy }}</label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style=" padding-top: 15px;padding-left: 25px">
+                    <div class="k1" style=" padding-top: 5px;padding-left: 25px">
                         <p><label for="" class=" white-space: nowrap;">{{ $qe->part_of_loading }}</label></p>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 15px;padding-left: 25px;">
+                    <div class="k1" style="padding-top: 5px;padding-left: 25px;">
                         <p><label for="">{{ $qe->pier_or_place }}</label></p>
                     </div>
                 </td>
                 {{-- 5 --}}
                 {{-- 6 --}}
                 <td colspan="2" style="padding-left: 50px">
-                    <div class="k1" style="padding-top: 15px; padding-left: 60px;">
+                    <div class="k1" style="padding-top: 5px; padding-left: 60px;">
                         <p><label for="">{{ $qe->type_of_move }}</label></p>
                     </div>
                 </td>
