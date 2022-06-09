@@ -285,7 +285,7 @@ textarea { font-family: Arial; }
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-4">
                                     <label for="">Container No, Seal No, Mars & Nos</label>
-                                    <textarea name="container_no" id="editor1" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('container_no') !!}</textarea>
+                                    <textarea name="container_no" class="summernote" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('container_no') !!}</textarea>
 
                                     {{-- <textarea name="container_no" class="form-control" id="" cols="30" rows="10">{{ old('container_no') }}</textarea> --}}
 
@@ -311,7 +311,7 @@ textarea { font-family: Arial; }
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
-                                        <textarea name="no_of_pkgs" id="editor2"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('no_of_pkgs') !!}</textarea>
+                                        <textarea name="no_of_pkgs" class="summernote"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('no_of_pkgs') !!}</textarea>
 
                                     {{-- <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{old('no_of_pkgs') }}</textarea> --}}
                                     @error('no_of_pkgs')
@@ -341,7 +341,7 @@ textarea { font-family: Arial; }
 
                                     </div> --}}
 
-                                    <textarea name="total_measur" id="editor3"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('total_measur') !!}</textarea>
+                                    <textarea name="total_measur" class="summernote"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('total_measur') !!}</textarea>
 
                                     {{-- <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur') }}</textarea> --}}
                                     @error('total_measur')
@@ -440,6 +440,11 @@ textarea { font-family: Arial; }
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+        <!-- include summernote css/js -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
         <script type="text/javascript">
             $(document).ready(function() {
 
@@ -447,34 +452,11 @@ textarea { font-family: Arial; }
                     minimumResultsForSearch: Infinity, //removes the search box
                 });
 
-                ClassicEditor
-                                .create( document.querySelector( '#editor1' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
+                $('.summernote').summernote({
+                    tabsize: 3,
+                    height: 200
+                });
 
-
-                ClassicEditor
-                                .create( document.querySelector( '#editor2' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-
-
-                ClassicEditor
-                                .create( document.querySelector( '#editor3' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
             });
         </script>
     @endpush
