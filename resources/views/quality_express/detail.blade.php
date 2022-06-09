@@ -74,7 +74,7 @@
             <tr>
                 {{-- 1 --}}
                 <td colspan="4" class="pl" rowspan="2">
-                    <div style="height: 80px; overflow: hidden; padding-top: 7px">
+                    <div style="height: 80px; overflow: hidden; padding-top: 7px;">
                         <p>
                             <label for="" class='preserveLines'>{{ $qe->shipper }}</label>
                         </p>
@@ -88,7 +88,7 @@
                     <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl1" style="padding-top:15px; padding-left: 45px">
+                <td colspan="2" class="pl1" style="padding-top:20px; padding-left: 45px">
                     <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
                 </td>
                 {{-- 7 --}}
@@ -123,7 +123,7 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 75px; overflow: hidden; padding-top: 5px" class="pl1">
+                    <div style="height: 75px; overflow: hidden;" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->for_delivery }}</label></p>
                     </div>
                 </td>
@@ -135,7 +135,7 @@
 
             <tr>
                 <td colspan="4" class="pl">
-                    <div style="height: 75px; overflow: hidden; padding-top: 15px">
+                    <div style="height: 80px; overflow: hidden; padding-top: 5px;">
                         <p><label for="" class='preserveLines'>{{ $qe->notify_party }}</label></p>
                     </div>
                 </td>
@@ -143,8 +143,8 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="4" style="padding-top: 15px;">
-                    <div style="height: 75px; overflow: hidden; padding-top: 15px" class="pl1">
+                <td colspan="4">
+                    <div style="height: 80px; overflow: hidden; padding-top: 5px;" class="pl1">
                         <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
                 </td>
