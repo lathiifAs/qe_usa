@@ -43,7 +43,7 @@
     td.pl {
         padding-left: 0px
     }
-    @page { margin-bottom: -30px; margin-left: 0px; margin-top: 30px; size: 22cm 33cm}
+    @page { margin-bottom: -30px; margin-left: 0px; margin-top: 20px; size: 22cm 33cm}
 
 
 </style>
@@ -356,7 +356,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 60px; padding-top: 85px">
+                    <div class="row" style="height: 60px; padding-top: 75px">
                         <div style="text-align: right; padding-right: 35px; ">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
