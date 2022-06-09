@@ -3,12 +3,12 @@
 
 <style>
     b {
-        font-size: 13px;
+        font-size: 14px;
         /* 40px/16=2.5em */
     }
 
     label {
-        font-size: 13px;
+        font-size: 14px;
         /* 40px/16=2.5em */
         font-family: Arial;
     }
@@ -19,7 +19,7 @@
 
 
     p {
-        font-size: 13px;
+        font-size: 14px;
         /* 40px/16=2.5em */
     }
 
@@ -37,13 +37,13 @@
     }
 
     div.k1 {
-        height: 13px;
+        height: 14px;
     }
 
     td.pl {
         padding-left: 0px
     }
-    @page { margin-bottom: 0px; margin-left: 0px; margin-top: 30px; size: 22cm 33cm}
+    @page { margin-bottom: -30px; margin-left: 0px; margin-top: 30px; size: 22cm 33cm}
 
 
 </style>
@@ -356,7 +356,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 60px; padding-top: 59px">
+                    <div class="row" style="height: 60px; padding-top: 85px">
                         <div style="text-align: right; padding-right: 35px; ">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
