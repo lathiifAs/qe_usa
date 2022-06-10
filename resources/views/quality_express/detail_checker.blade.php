@@ -64,15 +64,15 @@
 </head>
 
 <body>
+    <div class="row col-lg-12">
+        <div class="text-right">
+            <b>
+                <h3 style="text-align: right; padding-right: 10px">BILL OF LADING</h3>
+            </b>
+        </div>
+
+    </div>
     <center>
-        <table style="border-color: black; border-collapse: collapse;">
-            <tr>
-                <td style="width:50%"></td>
-                <td style="text-align: right; width:50%"><b>
-                        <h3></h3>
-                    </b></td>
-            </tr>
-        </table>
         {{-- <font size="2"> --}}
         <table border="1"
             style="font-size: 10px; border-color: black; border-collapse: collapse; width:100%; table-layout: fixed; padding: 0px; margin: 0px;"
