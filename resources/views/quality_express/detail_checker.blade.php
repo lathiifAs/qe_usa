@@ -388,7 +388,7 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 80px; padding-top: 85px">
+                    <div class="row" style="height:70px; padding-top: 60px">
                         <div style="text-align: right; padding-right: 35px; ">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
