@@ -126,7 +126,7 @@ class Quality_express extends Controller
         ->first();
         // return view('quality_express.detail_checker-backup', compact('qe'));
 
-    	$pdf = PDF::loadview('quality_express.detail_checker-backup', compact('qe'));
+    	$pdf = PDF::loadview('quality_express.detail_checker', compact('qe'));
     	return $pdf->download('Bill_of_lading_'.time().'.pdf');
     }
 

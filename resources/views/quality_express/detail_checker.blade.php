@@ -4,18 +4,23 @@
 <style>
     b {
         font-size: 12px;
+        text-transform: uppercase;
         /* 40px/16=2.5em */
     }
 
     label {
-        font-size: 12px;
+        font-size: 13px;
         /* 40px/16=2.5em */
         font-family: Arial;
     }
 
+    .pl1 {
+        padding-left: 30px
+    }
+
 
     p {
-        font-size: 12px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
@@ -25,27 +30,26 @@
 
     td.cs {
         padding-top: 15px;
+        padding-left: 10px
+    }
+
+    table {
+        padding-left: 10px
     }
 
     div.h1 {
-        height: 90px;
-        overflow: hidden;
-    }
-
-
-    div.h12 {
-        height: 15px;
+        height: 65px;
         overflow: hidden;
     }
 
     div.k1 {
-        height: 12px;
+        height: 30px;
     }
 
     td.pl {
         padding-left: 10px
     }
-    @page { margin-bottom: 0px; }
+    @page { margin-bottom: -30px; margin-left: 0px; margin-top: 20px; size: 24cm 33cm}
 
 
 </style>
@@ -71,14 +75,14 @@
         </table>
         {{-- <font size="2"> --}}
         <table border="1"
-            style="font-size: 10px; border-color: black; border-collapse: collapse; width:104%; table-layout: fixed;"
+            style="font-size: 10px; border-color: black; border-collapse: collapse; width:100%; table-layout: fixed; padding: 0px; margin: 0px;"
             cellpadding="0" cellspacing="0">
             <tr>
                 {{-- 1 --}}
                 <td colspan="4" class="pl" rowspan="2">
-                    <div class="h1">
+                    <div style="height: 90px; overflow: hidden;">
+                        <b>SHIPPER/EXPORTER</b> <br>
                         <p>
-                            <b>SHIPPER/EXPORTER</b> <br>
                             <label for="" class='preserveLines'>{{ $qe->shipper }}</label>
                         </p>
                     </div>
@@ -87,15 +91,16 @@
                 {{-- 3 --}}
                 {{-- 4 --}}
                 {{-- 5 --}}
-                <td colspan="2" style="width: 20%" class="pl">
-                    <p><label for="">
-                        <b>EXPORT REFERENCES</b><br>
-                        {{ $qe->export_references }}</label>
-                    </p>
+                <td colspan="2" style="width: 20%" class="p1l">
+                    <b style="padding-left: 10px">EXPORT REFERENCES</b><br>
+                    <p><label for="">{{ $qe->export_references }}</label></p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl" style="padding-top:5px; padding-left: 10px">
-                    <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
+                <td colspan="2" style="padding-top:20px;">
+                    <center>
+                        <b>BILL OF LADING NO.</b><br>
+                        <p><label for="">{{ $qe->bill_of_lading_no }}</label></p>
+                    </center>
                 </td>
                 {{-- 7 --}}
                 {{-- 8 --}}
@@ -108,11 +113,17 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="2" class="pl">
+                    <b style="padding-left: 10px">FMC NO.</b>
                     <p>{{ $qe->fmc_no }}</p>
                 </td>
                 {{-- 6 --}}
-                <td colspan="2" class="pl" style="padding-top: 20px; padding-left: 10px">
-                    <p><label for="">{{ $qe->no_of_original_signed }}</label></p>
+                <td colspan="2" style="padding-top: 20px">
+                    <center>
+                        <b>
+                            NO. OF ORIGINAL B(s)/L(s) SIGNED
+                        </b>
+                        <p><label for="">{{ $qe->no_of_original_signed }}</label></p>
+                    </center>
                 </td>
                 {{-- 7 --}}
                 {{-- 8 --}}
@@ -120,23 +131,19 @@
             {{--  --}}
             <tr>
                 <td colspan="4" class="pl">
-                    <div class="h1">
-                        <p>
-                            <b>CONSIGNEE</b> <br>
-                            <label for="" class='preserveLines'>{{ $qe->consignee }}</label>
-                        </p>
+                    <div style="height: 90px; overflow: hidden; padding-top: 5px">
+                        <b>CONSIGNEE</b>
+                        <p><label for="" class='preserveLines'>{{ $qe->consignee }}</label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="4" class="pl">
-                    <div class="h1">
-                        <p>
-                            <b>FOR DELIVERY PLEASE APPLY TO :</b> <br>
-                            <label for="" class='preserveLines'>{{ $qe->for_delivery }}</label>
-                        </p>
+                <td colspan="4">
+                    <div style="height: 90px; overflow: hidden; padding-top: 5px; padding-left: 10px">
+                        <b>FOR DELIVERY PLEASE APPLY TO :</b>
+                        <p><label for="" class='preserveLines'>{{ $qe->for_delivery }}</label></p>
                     </div>
                 </td>
                 {{-- 5 --}}
@@ -147,23 +154,19 @@
 
             <tr>
                 <td colspan="4" class="pl">
-                    <div class="h1">
-                        <p>
-                            <b>NOTIFY PARTY</b> <br>
-                            <label for="" class='preserveLines'>{{ $qe->notify_party }}</label>
-                        </p>
+                    <div style="height: 95px; overflow: hidden; padding-top: 5px;">
+                        <b>NOTIFY PARTY</b>
+                        <p><label for="" class='preserveLines'>{{ $qe->notify_party }}</label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="4" class="pl">
-                    <div class="h1">
-                        <p>
-                            <b>ALSO NOTIFY (NAME AND FULL ADDRESS) / DOMESTIC ROUTING</b> <br>
-                            <label for="" class='preserveLines'>{{ $qe->also_notify }}</label>
-                        </p>
+                <td colspan="4">
+                    <div style="height: 95px; overflow: hidden; padding-top: 5px; padding-left: 10px">
+                        <b>ALSO NOTIFY (NAME AND FULL ADDRESS) / DOMESTIC ROUTING</b>
+                        <p><label for="" class='preserveLines'>{{ $qe->also_notify }}</label></p>
                     </div>
                 </td>
                 {{-- 5 --}}
@@ -176,29 +179,33 @@
 
             <tr>
                 <td colspan="2" style="width:35%" class="pl">
-                    <div class="k1" style="padding-top: 10px">
-                        <p><label for="">{{ $qe->vessel_voy }}</label></p>
+                    <div class="k1" style="padding-top: 5px" >
+                        <b>Vessel Voy</b><br>
+                        <label for="" style="padding-top: -10px">{{ $qe->vessel_voy }}</label>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
-                <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-top: 3px">
-                        <p><label for="">{{ $qe->part_of_loading }}</label></p>
+                <td colspan="2" style="padding-left: 10px">
+                    <div class="k1" style=" padding-top: 5px;">
+                        <b>Port of Loading</b><br>
+                        <label for="" class=" white-space: nowrap;">{{ $qe->part_of_loading }}</label>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 3px">
-                        <p><label for="">{{ $qe->pier_or_place }}</label></p>
+                <td colspan="2" style="padding-left: 10px">
+                    <div class="k1" style="padding-top: 5px;">
+                        <b>Pier of Plance of Receipt</b><br>
+                        <label for="">{{ $qe->pier_or_place }}</label>
                     </div>
                 </td>
                 {{-- 5 --}}
                 {{-- 6 --}}
-                <td colspan="2" style="padding-left: 50px">
-                    <div class="k1" style="padding-top: 3px">
-                        <p><label for="">{{ $qe->type_of_move }}</label></p>
+                <td colspan="2" style="padding-left: 10px">
+                    <div class="k1" style="padding-top: 5px;">
+                        <b>Type of Move</b><br>
+                        <label for="">{{ $qe->type_of_move }}</label>
                     </div>
                 </td>
                 {{-- 7 --}}
@@ -207,22 +214,25 @@
 
             <tr>
                 <td colspan="2" class="pl">
-                    <div class="k1" style="padding-top: 4px">
-                        <p><label for="">{{ $qe->port_of_discharge }}</label></p>
+                    <div class="k1" style="padding-top: 5px">
+                        <b>Port of Discharge</b><br>
+                        <label for="">{{ $qe->port_of_discharge }}</label>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
-                <td colspan="2" style="padding-left: 25px">
-                    <div class="k1" style="padding-top: 4px">
-                        <p><label for="">{{ $qe->place_of_delivery }}</label></p>
+                <td colspan="2" style="padding-left: 10px">
+                    <div class="k1" style="padding-top: 5px">
+                        <b>Place of Delivery</b><br>
+                        <label for="">{{ $qe->place_of_delivery }}</label>
                     </div>
                 </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
-                <td colspan="2" style="padding-left: 15px">
-                    <div class="k1" style="padding-top: 4px">
-                        <p><label for="">{{ $qe->final_destination }}</label></p>
+                <td colspan="4">
+                    <div class="k1" style="padding-top: 5px; padding-left: 10px">
+                        <b>Final Destination (For The Merchant's Reference Only)</b> <br>
+                        <label for="">{{ $qe->final_destination }}</label>
                     </div>
                 </td>
                 {{-- 5 --}}
@@ -231,47 +241,46 @@
                 {{-- 8 --}}
             </tr>
 
+
+            {{-- copy area --}}
+
             <tr>
                 <td colspan="2" style="width:30%;" class="pl">
-                    <div style="height: 40px;">
+                    <div style="height: 20px;">
+                        <b>Container No, Seal No, Marks & Nos</b>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 <td colspan="4" style="padding-left: 10px">
-                    <div style="height: 40px;">
-                    </div>
-                </td>
+                    <b>No of PKGS. or Containers, Kid of PKGS, Description of Goods</b>
+                    </td>
                 {{-- 3 --}}
                 {{-- 4 --}}
                 <td colspan="1" style="padding-left: 20px">
-                    <div style="height: 40px;">
-                    </div>
-                </td>
+                    <b>Total Gross Weight KGS ; (Pounds)</b>
+                    </td>
                 {{-- 5 --}}
                 {{-- 6 --}}
-                <td colspan="1" style="padding-left: 10px">
-                    <div style="height: 40px;">
-                    </div>
+                <td colspan="1"  style="padding-left: 10px">
+                    <b>Total Measurement CBM; (CFT)</b>
                 </td>
                 {{-- 7 --}}
                 {{-- 8 --}}
             </tr>
 
-            {{-- copy area --}}
-
             <tr>
                 <td colspan="2" style="border:none;" class="pl">
-                    <div style="height: 320px; padding-top: 30px">
-                        <p><label for="" class='preserveLines'>{{ $qe->container_no }}</label></p>
+                    <div style="height: 360px;">
+                        <label for="" class='preserveLines'>{!! $qe->container_no !!}</label>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 {{-- 3 --}}
                 <td colspan="5" style="padding-left: 20px; border:none;">
-                    <div style="height: 315px; padding-top: 30px">
-                        <p><label for="" class='preserveLines'>{{ $qe->no_of_pkgs }}</label></p>
+                    <div style="height: 360px;  padding-left: 20px">
+                        <label for="" class='preserveLines'>{!! $qe->no_of_pkgs !!}</label>
                     </div>
                 </td>
                 {{-- 4 --}}
@@ -281,8 +290,8 @@
                     </td> --}}
                 {{-- 6 --}}
                 <td style="border:none">
-                    <div style="height: 315px; padding-top: 30px">
-                        <p><label for="" class='preserveLines'>{{ $qe->total_measur }}</label></p>
+                    <div style="height: 360px; padding-top: 10px;padding-left: 15px">
+                        <label for="" class='preserveLines'>{!! $qe->total_measur !!}</label>
                     </div>
                 </td>
                 {{-- 7 --}}
@@ -323,7 +332,7 @@
                 {{-- 2 --}}
                 {{-- 3 --}}
                 <td colspan="4" class="pl">
-                    <div style="height: 18px;">
+                    <div style="height: 18px; padding-top: 10px;">
                         <p><label for="">{{ $qe->total_no_pkgs }}</label></p>
                     </div>
                 </td>
@@ -339,8 +348,6 @@
                 {{-- 8 --}}
             </tr>
 
-
-
             <tr>
                 <td colspan="2"></td>
                 {{-- 1 --}}
@@ -351,8 +358,8 @@
                     </center>
                 </td>
                 {{-- 3 --}}
-                <td colspan="2" style="text-align: right; padding-right:10px; padding-top: 10px">
-                    <div style="height: 25px;">
+                <td colspan="2" style="text-align: right; padding-top: 10px">
+                    <div style="height: 25px; padding-left: 45px">
 
                         {{-- jakarta --}}
                         <label for="">{{ $qe->place_and_date_issue }}</label>
@@ -362,13 +369,13 @@
                 {{-- 5 --}}
                 {{-- 6 --}}
                 {{-- 7 --}}
-                <td colspan="2" style="text-align: left; padding-left: 58px; padding-top: 13x">, {{ $qe->by }}
+                <td colspan="2" style="text-align: left; padding-left: 68px; padding-top: 13x"><label for="">, {{ $qe->by }}</label>
                 </td>
                 {{-- 8 --}}
             </tr>
             <tr style="border:none">
                 <td colspan="3" style="border: none">
-                    <div style="height: 30px;">
+                    <div style="height: 35px;">
                         &nbsp;
                     </div>
                 </td>
@@ -381,8 +388,8 @@
                 {{-- 4 --}}
                 {{-- 5 --}}
                 <td colspan="8" style="padding-left:10px; border:none">
-                    <div class="row" style="height: 40px; padding-top: 55px">
-                        <div style="text-align: right; padding-right: 55px;">
+                    <div class="row" style="height: 80px; padding-top: 85px">
+                        <div style="text-align: right; padding-right: 35px; ">
                             <label for="">{{ $qe->as_agent }}</label>
                         </div>
                     </div>
