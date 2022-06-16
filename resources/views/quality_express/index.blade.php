@@ -35,6 +35,8 @@
                     </div>
 
                     <hr>
+
+
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -80,8 +82,13 @@
                                                 {{ \Illuminate\Support\Str::limit($qe_data->as_agent, 15, $end = '...') }}
                                             </td>
                                             <td class="text-center">
-                                                <a href="{{ route('quality_express/detail_checker', $qe_data->id) }}" class="btn btn-info text-xs mb-0 p-2" title="detail"> <i
-                                                    class="fa fa-file-text mr-1"></i> Checker</a>
+                                                <div class="btn-group dropup m-r-10">
+                                                    <button aria-expanded="false" data-toggle="dropdown" class="btn btn-info dropdown-toggle waves-effect waves-light" type="button"><i class="fa fa-file-text mr-1"></i> Draft / Checker<span class="caret"></span></button>
+                                                    <ul role="menu" class="dropdown-menu">
+                                                        <li><a href="{{ route('quality_express/detail_checker', $qe_data->id) }}">Bill of Lading</a></li>
+                                                        <li><a href="{{ route('quality_express/detail_checker_forwarder', $qe_data->id) }}">Forward Cargo Receipt</a></li>
+                                                    </ul>
+                                                </div>
                                                 <a href="{{ route('quality_express/create_pdf', $qe_data->id) }}"
                                                     class="btn btn-success text-xs mb-0 p-2 mt-1" title="detail"><i
                                                     class="fa fa-file-text mr-1"></i> Final</a>
