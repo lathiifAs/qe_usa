@@ -49,7 +49,7 @@
     td.pl {
         padding-left: 10px
     }
-    @page { margin-bottom: -30px; margin-left: 0px; margin-top: 20px; size: 24cm 33cm}
+    @page { margin-bottom: -30px; margin-left: 15px; margin-top: 20px; size: 24cm 33cm}
 
 
 </style>
@@ -324,27 +324,54 @@
             {{--  --}}
             <tr>
                 <td class="pl" colspan="2">
-                    <div style="height: 20px; padding-top: 5px">
-                        <p><label for=""></label></p>
+                    <div style="height: 20px;">
+                        <p><label for=""><b>TOTAL NO OF PACKAGES</b></label></p>
                     </div>
                 </td>
                 {{-- 1 --}}
                 {{-- 2 --}}
                 {{-- 3 --}}
-                <td colspan="4" class="pl">
-                    <div style="height: 18px; padding-top: 10px;">
+                <td colspan="6" class="pl">
+                    <div style="height: 18px;">
                         <p><label for="">{{ $qe->total_no_pkgs }}</label></p>
                     </div>
                 </td>
                 {{-- 4 --}}
                 {{-- 5 --}}
                 {{-- 6 --}}
-                <td colspan="2">
-                    <div style="height: 20px; padding-top: 5px">
-                        <p><label for=""></label></p>
-                    </div>
-                </td>
                 {{-- 7 --}}
+                {{-- 8 --}}
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <center>
+                        <label for="">FREIGHT AND CHARGES</label>
+                    </center>
+                </td>
+                {{-- 1 --}}
+                {{-- 2 --}}
+                <td colspan="2" class="text-center">
+                    <center>
+                        {{-- jakarta --}}
+                        <label for="">PREPAID   &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;    COLLECT</label>
+                    </center>
+                </td>
+                {{-- 3 --}}
+                <td colspan="2" class="text-center">
+                    <center>
+                        <label for="">PLACE AND DATE OF ISSUE</label>
+                    </center>
+                </td>
+                {{-- 4 --}}
+                {{-- 5 --}}
+                {{-- 6 --}}
+                {{-- 7 --}}
+                <td colspan="2" class="text-center">
+                    <center>
+                        <label for="">DATE, BY</label>
+                    </center>
+                </td>
                 {{-- 8 --}}
             </tr>
 
