@@ -2,39 +2,67 @@
 
 @section('konten')
 
-    <style>
-        .select2-container .select2-selection {
-            height: 40px;
-            padding-top: 5px;
-        }
+<style>
 
-    </style>
+textarea { font-family: Arial; }
 
-    <div class="mb-3">
-        <nav aria-label="breadcrumb">
-            <h6 class="font-weight-bolder text-white mb-0">Bill of Lading</h6>
-            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                <li class="breadcrumb-item text-sm"><a href="{{ route('air_way') }}" class="text-white">Bill of
-                        Lading</a></li>
-                <li class="breadcrumb-item text-sm active" aria-current="page">Add Data</li>
-            </ol>
-        </nav>
-    </div>
-    <div class="container-fluid py-4">
+@media (min-width: 768px) {
+    .col-sm-18, .col-sm-40, .col-sm-8half {
+        float: left;
+    }
+    .col-sm-18 {
+        width: 18%;
+    }
+    .col-sm-40 {
+        width: 28%;
+    }
+    .col-sm-8half {
+        width: 70.83333333%;
+    }
+}
+
+    .select2-container .select2-selection {
+    height: 40px;
+    width: 83%;
+    padding-top: 5px;
+    }
+
+    .select2-drop li {
+  white-space: pre-line;
+}
+
+</style>
+
+
+
+<div class="white-box">
+    <h3 class="box-title">Air Way Bill</h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><a href="{{ route('air_way') }}"><i class="fa fa-file-pdf-o"></i> Air Way Bill</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Data</li>
+        </ol>
+    </nav>
+</div>
+
+    <div class="white-box">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-lg-10">
-                                <h6 class="mt-2">Add Data</h6>
+                                <div class="col-lg-12">
+                                    <h3 class="box-title">Add Data</h3>
+                                </div>
                             </div>
                             <div class="col-lg-2" style="text-align: right">
-                                <a href="{{ route('air_way') }}" class="btn btn-secondary"> Back</a>
+                                <a href="{{ route('air_way') }}" class="btn btn-default btn-outline"> Back</a>
                             </div>
                         </div>
                     </div>
 
+                    <hr>
                     @if ($errors->any())
                         <div class="alert alert-danger m-3" role="alert">
                             <h4>Error</h4>
@@ -52,7 +80,7 @@
                         </div>
                     @endif
 
-                    <div class="card-body px-0 pt-0 pb-2">
+                    <div class="card-body px-0 pt-0 pb-2 mt-3">
                         <form action="{{ route('air_way/store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="row col-lg-12 m-2">
@@ -91,7 +119,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12" style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <label for="">Shipper's Account Number</label>
                                     <input type="text" name="shipper_account_number" id="" class="form-control">
@@ -111,7 +139,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <label for="">Consignee's Name and Address</label>
                                     <select
@@ -130,7 +158,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <label for="">Consignee's Account Number</label>
                                     <input type="text" name="fmc_no" id="" class="form-control">
@@ -159,7 +187,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
                                     <label for="">Airport of Departure (Addr. of First Carrier) and Requested
                                         Routing</label>
@@ -171,7 +199,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
 
                                     <label for="">Accounting Information</label>
@@ -191,7 +219,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-2">
                                     <label for="">To</label>
                                     <input type="text" class="form-control" name="to">
@@ -247,7 +275,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-2">
                                     <label for="">Currency</label>
                                     <input type="text" class="form-control" name="currency">
@@ -303,7 +331,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <label for="">Declared Value of Carriage</label>
                                     <input type="text" class="form-control" name="declared_carriage">
@@ -324,7 +352,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">Airport of Destination</label>
                                     <input type="text" class="form-control" name="airport_of_destination">
@@ -363,7 +391,7 @@
                                 </div>
 
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
                                     <label for="">Handling Information</label>
                                     <textarea name="handling_information" class="form-control" id="" cols="30" rows="10"></textarea>
@@ -375,7 +403,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">No. of Pieces RCP</label>
                                     <input type="text" class="form-control" name="no_of_pieces">
@@ -414,7 +442,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">Chargeable Weight</label>
                                     <input type="text" class="form-control" name="chargeable_weight">
@@ -453,7 +481,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">(Weight Charge) Prepaid</label>
                                     <input type="text" class="form-control" name="prepaid">
@@ -491,7 +519,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <div class="col-lg-12 row text-center">
                                         <label for="">--------- Tax ---------</label>
@@ -510,7 +538,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6" style="margin-top: 15px">
                                     <div class="col-lg-12 row text-center">
                                         <label for="">----- Total other Charges Due Agent -----</label>
                                     </div>
@@ -530,7 +558,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
                                     <label for="">Other Charges</label>
                                     <input type="text" class="form-control" name="other_charges">
@@ -542,7 +570,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <div class="col-lg-12 row text-center">
                                         <label for="">----- Total other Charges Due Carrier -----</label>
@@ -581,7 +609,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">Currenct Conversion Rates</label>
                                     <input type="text" class="form-control" name="current_conversion">
@@ -620,7 +648,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
                                     <label for="">Total Collect Charges</label>
                                     <input type="text" class="form-control" name="total_collect_charges">
@@ -632,7 +660,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
                                     <label for="">Signature of Shipper or his Agent</label>
                                     <input type="text" class="form-control" name="signature_of_shipper">
@@ -644,7 +672,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12 m-2">
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-4">
                                     <label for="">Executed on</label>
                                     <input type="date" class="form-control" name="executed_date">
@@ -664,7 +692,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" style="margin-top: 15px">
                                     <label for="">Signature if Issuing Carrier or its Agent</label>
                                     <input type="text" class="form-control" name="signature_of_issue">
                                     @error('signature_of_issue')
@@ -675,7 +703,7 @@
                                 </div>
                             </div>
 
-                            <div class="row col-lg-12">
+                            <div class="row col-lg-12" style="margin-top: 15px">
                                 <div class="col-lg-11">
                                 </div>
                                 <div class="col-lg-1" style="text-align: right">
@@ -690,15 +718,32 @@
     </div>
 
     @push('custom-scripts')
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
                 integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+        <!-- include summernote css/js -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
         <script type="text/javascript">
             $(document).ready(function() {
-                $('.js-example-basic-single').select2();
+
+                $('.js-example-basic-single').select2({
+                    minimumResultsForSearch: Infinity, //removes the search box
+                });
+
+                $('.summernote').summernote({
+                    tabsize: 3,
+                    height: 200
+                });
+
             });
         </script>
     @endpush

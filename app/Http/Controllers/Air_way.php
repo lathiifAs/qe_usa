@@ -129,11 +129,21 @@ class Air_way extends Controller
         ->select('air_ways.*', 'shippers.shipper', 'consignees.consignee', 'notify_parties.notify_party', 'issued_bies.issued_by')
         ->where('air_ways.id', $id)
         ->first();
+
+    // @page { margin-bottom: -30px; margin-left: 0px; margin-top: 20px; size: 23cm 33cm}
+
+
     	// $pdf = PDF::loadview('air_way.detail_checker', compact('aw'));
     	// return $pdf->download('Bill_of_lading_'.time().'.pdf');
+
+
+        // default
         $customPaper = array(0,0,609.4488, 864.5669);
     	$pdf = PDF::loadview('air_way.detail', compact('aw'))->setPaper($customPaper, 'portrait');
-    	return $pdf->download('AWB_'.time().'.pdf');
+
+
+    	// $pdf = PDF::loadview('air_way.detail', compact('aw'));
+    	// return $pdf->download('AWB_'.time().'.pdf');
         // return view('air_way.detail', compact('aw'));
     }
 
