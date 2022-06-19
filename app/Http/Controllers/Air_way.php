@@ -143,7 +143,7 @@ class Air_way extends Controller
 
 
     	// $pdf = PDF::loadview('air_way.detail', compact('aw'));
-    	// return $pdf->download('AWB_'.time().'.pdf');
+    	return $pdf->download('AWB_'.time().'.pdf');
         // return view('air_way.detail', compact('aw'));
     }
 
