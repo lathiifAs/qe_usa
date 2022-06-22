@@ -172,7 +172,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 50px; overflow:hidden; padding-right: 15px">
+                        <div style="height: 50px; overflow:hidden;">
                             <label class='preserveLines'>{{ $aw->shipper }}</label>
                         </div>
                     </td>
