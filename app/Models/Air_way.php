@@ -67,5 +67,8 @@ class Air_way extends Model
         'at_place',
         'signature_of_shipper',
         'signature_of_issue',
+        'desc_of_goods',
+        'mawb_no',
+        'aawb_no',
     ];
 }

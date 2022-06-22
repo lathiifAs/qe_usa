@@ -84,6 +84,28 @@ textarea { font-family: Arial; }
                         <form action="{{ route('air_way/update') }}" method="post">
                             <input type="hidden" value="{{ $aw->id }}" name="id">
                             {{ csrf_field() }}
+
+                            <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <label for="">No. MAWB</label>
+                                    <input type="text" class="form-control" name="mawb_no"  value="{{ old('mawb_no', $aw->mawb_no) }}">
+                                    @error('shipper_exporter')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="">No. AAWB</label>
+                                    <input type="text" class="form-control" name="aawb_no"  value="{{ old('aawb_no', $aw->aawb_no) }}">
+                                    @error('export_references')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="row col-lg-12 m-2" style="padding-top: 15px">
                                 <div class="col-lg-6">
                                     <label for="">Shipper Name and Address</label>
@@ -404,6 +426,19 @@ textarea { font-family: Arial; }
                                 </div>
                             </div>
 
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
+                                <div class="col-lg-12">
+                                    <label for="">Desc of Goods</label>
+                                    <textarea name="desc_of_goods" class="summernote" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
+                                    @error('handling_information')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+{{--
                             <div class="row col-lg-12 m-2" style="padding-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">No. of Pieces RCP</label>
@@ -480,7 +515,7 @@ textarea { font-family: Arial; }
                                         </div>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="row col-lg-12 m-2" style="padding-top: 15px">
                                 <div class="col-lg-3">

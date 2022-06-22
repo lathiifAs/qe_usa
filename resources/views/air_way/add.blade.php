@@ -83,7 +83,29 @@ textarea { font-family: Arial; }
                     <div class="card-body px-0 pt-0 pb-2 mt-3">
                         <form action="{{ route('air_way/store') }}" method="post">
                             {{ csrf_field() }}
+
                             <div class="row col-lg-12 m-2">
+                                <div class="col-lg-6">
+                                    <label for="">No. MAWB</label>
+                                    <input type="text" class="form-control" name="mawb_no">
+                                    @error('shipper_exporter')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="">No. AAWB</label>
+                                    <input type="text" class="form-control" name="aawb_no">
+                                    @error('export_references')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-12 m-2"  style="margin-top: 15px">
                                 <div class="col-lg-6">
                                     <label for="">Shipper Name and Address</label>
                                     <select
@@ -202,7 +224,7 @@ textarea { font-family: Arial; }
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
 
-                                    <label for="">Accounting Information</label>
+                                    <label for="">Accounting Information (NOTIFY PARTY :)</label>
                                     <select
                                         class="js-example-basic-single form-control @error('shipper') is-invalid @enderror"
                                         name="accounting_information">
@@ -402,7 +424,19 @@ textarea { font-family: Arial; }
                                     @enderror
                                 </div>
                             </div>
+                            <div class="row col-lg-12 m-2" style="margin-top: 15px">
+                                <div class="col-lg-12">
+                                    <label for="">Desc of Goods</label>
+                                    <textarea name="desc_of_goods" class="summernote" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('desc_of_goods') !!}</textarea>
+                                    @error('handling_information')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
 
+{{--
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
                                     <label for="">No. of Pieces RCP</label>
@@ -479,7 +513,9 @@ textarea { font-family: Arial; }
                                         </div>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
+
+
 
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-3">
@@ -637,7 +673,7 @@ textarea { font-family: Arial; }
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6" style="margin-top: 15px">
                                     <label for="">Charges at Destination (For Carrier's Use only at Destination)</label>
                                     <input type="text" class="form-control" name="charges_desti">
                                     @error('charges_desti')
@@ -692,7 +728,7 @@ textarea { font-family: Arial; }
                                     @enderror
                                 </div>
 
-                                <div class="col-lg-4" style="margin-top: 15px">
+                                <div class="col-lg-4">
                                     <label for="">Signature if Issuing Carrier or its Agent</label>
                                     <input type="text" class="form-control" name="signature_of_issue">
                                     @error('signature_of_issue')
@@ -721,30 +757,30 @@ textarea { font-family: Arial; }
 
     <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
-                integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
+            integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-        <!-- include summernote css/js -->
-        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
-        <script type="text/javascript">
-            $(document).ready(function() {
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-                $('.js-example-basic-single').select2({
-                    minimumResultsForSearch: Infinity, //removes the search box
-                });
-
-                $('.summernote').summernote({
-                    tabsize: 3,
-                    height: 200
-                });
-
+            $('.js-example-basic-single').select2({
+                minimumResultsForSearch: Infinity, //removes the search box
             });
-        </script>
+
+            $('.summernote').summernote({
+                tabsize: 3,
+                height: 200
+            });
+
+        });
+    </script>
     @endpush
 @endsection

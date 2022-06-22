@@ -101,6 +101,9 @@ class Air_way extends Controller
             'at_place' => $request->at_place,
             'signature_of_shipper' => $request->signature_of_shipper,
             'signature_of_issue' => $request->signature_of_issue,
+            'desc_of_goods' => $request->desc_of_goods,
+            'mawb_no' => $request->mawb_no,
+            'aawb_no' => $request->aawb_no,
             // 'as_agent' => $request->shipper,
         ]);
 
@@ -267,6 +270,9 @@ class Air_way extends Controller
             'at_place' => $request->at_place,
             'signature_of_shipper' => $request->signature_of_shipper,
             'signature_of_issue' => $request->signature_of_issue,
+            'desc_of_goods' => $request->desc_of_goods,
+            'mawb_no' => $request->mawb_no,
+            'aawb_no' => $request->aawb_no,
         ]);
 
         if ($send) {
@@ -292,7 +298,7 @@ class Air_way extends Controller
 
         if ($send) {
             return redirect()
-            ->route('air_way/index')
+            ->route('air_way')
             ->with([
                 'success' => 'New send has been deleted successfully'
                 ]);
