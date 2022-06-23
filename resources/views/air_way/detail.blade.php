@@ -3,12 +3,12 @@
 <style>
 
 b {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
     label {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
         font-family: Arial;
     }
@@ -19,7 +19,7 @@ b {
 
 
     p {
-        font-size: 14px;
+        font-size: 13px;
         /* 40px/16=2.5em */
     }
 
@@ -27,7 +27,7 @@ b {
         white-space: pre-wrap;
     }
 
-@page { margin-left: 0px;}
+@page { margin-left: 0px; margin-top: 0px}
 
     td {
         overflow: hidden;
@@ -178,7 +178,7 @@ b {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="6" style="border-bottom-style: hidden;"></td>
+                    <td colspan="6" style="border-bottom-style: hidden; padding-top: 10px"></td>
                     <td colspan="6">
                         <label> {{ $aw->account_no }} </label>
                     </td>
@@ -187,14 +187,14 @@ b {
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 60px; overflow:hidden;">
+                        <div style="height: 70px; overflow:hidden; padding-top: 10px">
                         <label class='preserveLines'>{{ $aw->consignee }}</label>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 40px; overflow:hidden;">
+                        <div style="height: 40px; overflow:hidden; padding-top: 10px">
                         <label class='preserveLines'>{{ $aw->issuing_carrier }}</label>
                         </div>
                     </td>
