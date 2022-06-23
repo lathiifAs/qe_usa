@@ -300,7 +300,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 300px; overflow: hidden;">
+                        <div style="height: 280px; overflow: hidden;">
                             <label for="">{!! $aw->desc_of_goods !!}</label>
                         </div>
                     </td>
