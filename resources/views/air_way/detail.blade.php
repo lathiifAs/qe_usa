@@ -288,17 +288,6 @@ b {
                     <td colspan="3" style="border-top-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td style="height: 70px"></td>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td><b></b></td>
-                    <td colspan="2"><b></b></td>
-                    <td colspan="3"><b></b></td>
-                    <td colspan="2"><b></b></td>
-                    <td colspan="5"><b></b></td>
-                    <td colspan="7"><b></b></td>
-                </tr>
-                <tr>
                     <td colspan="24">
                         <div style="height: 280px; overflow: hidden;">
                             <label for="">{!! $aw->desc_of_goods !!}</label>
