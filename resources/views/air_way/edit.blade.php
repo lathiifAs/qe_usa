@@ -437,7 +437,7 @@ textarea { font-family: Arial;  }
                                     </div>
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <textarea name="desc_of_goods" class="form-control" size="2"  cols="170"rows="10" style="font-size: 2rem">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
+                                            <textarea name="desc_of_goods" class="form-control" size="2"  rows="10" style="font-size: 2rem; min-width: 1240px;">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
                                         </div>
                                     </div>
                                     @error('handling_information')
@@ -785,6 +785,13 @@ textarea { font-family: Arial;  }
                 $('.js-example-basic-single').select2({
                     minimumResultsForSearch: Infinity, //removes the search box
                 });
+
+                // var href = $('.sidebartoggler').attr('href');
+                //     window.location.href = href; //causes the browser to refresh and load the requested url
+                // });
+                // $('.scroll-sidebar').toggleClass('active')
+                // sidebartoggler
+                // $('body').addClass("mini-sidebar");
 
                 $('.summernote').summernote({
                     tabsize: 3,
