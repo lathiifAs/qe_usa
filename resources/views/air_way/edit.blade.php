@@ -4,7 +4,7 @@
 
 <style>
 
-textarea { font-family: Arial; }
+textarea { font-family: Arial;  }
 
 @media (min-width: 768px) {
     .col-sm-18, .col-sm-40, .col-sm-8half {
@@ -435,7 +435,11 @@ textarea { font-family: Arial; }
                                     <div class="row">
                                         <label for="">Desc of Goods</label>
                                     </div>
-                                    <textarea name="desc_of_goods"  size="2"  cols="240"rows="10">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <textarea name="desc_of_goods" class="form-control" size="2"  cols="170"rows="10" style="font-size: 2rem">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
+                                        </div>
+                                    </div>
                                     @error('handling_information')
                                         <div class="invalid-feedback">
                                             {{ $message }}
