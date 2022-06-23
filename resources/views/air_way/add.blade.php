@@ -424,10 +424,13 @@ textarea { font-family: Arial; }
                                     @enderror
                                 </div>
                             </div>
+
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
-                                    <label for="">Desc of Goods</label>
-                                    <textarea name="desc_of_goods" class="summernote" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('desc_of_goods') !!}</textarea>
+                                    <div class="row">
+                                        <label for="">Desc of Goods</label>
+                                    </div>
+                                    <textarea name="desc_of_goods" style="white-space: pre-wrap;" size="2" cols="240" rows="10">{!! old('desc_of_goods') !!}</textarea>
                                     @error('handling_information')
                                         <div class="invalid-feedback">
                                             {{ $message }}

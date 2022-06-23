@@ -21,6 +21,10 @@ textarea { font-family: Arial; }
     }
 }
 
+.summernote {
+    line-height: 0;
+}
+
     .select2-container .select2-selection {
     height: 40px;
     width: 83%;
@@ -428,8 +432,10 @@ textarea { font-family: Arial; }
 
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-12">
-                                    <label for="">Desc of Goods</label>
-                                    <textarea name="desc_of_goods" class="summernote" cols="20" rows="10">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
+                                    <div class="row">
+                                        <label for="">Desc of Goods</label>
+                                    </div>
+                                    <textarea name="desc_of_goods"  size="2"  cols="240"rows="10">{!! old('desc_of_goods', $aw->desc_of_goods) !!}</textarea>
                                     @error('handling_information')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -271,6 +271,8 @@ class Quality_express extends Controller
             'mother_vessel' => $request->mother_vessel,
         ]);
 
+        dd($send);
+
         if ($send) {
             return redirect()
             ->route('quality_express/edit', $id)

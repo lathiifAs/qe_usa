@@ -290,7 +290,7 @@ b {
                 <tr>
                     <td colspan="24">
                         <div style="height: 280px; overflow: hidden;">
-                            <label for="">{!! $aw->desc_of_goods !!}</label>
+                            <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>
                 </tr>

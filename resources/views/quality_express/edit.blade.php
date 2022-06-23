@@ -21,6 +21,10 @@ textarea { font-family: Arial; }
     }
 }
 
+.summernote {
+    line-height: 0.5;
+}
+
     .select2-container .select2-selection {
     height: 40px;
     width: 83%;
@@ -289,25 +293,11 @@ textarea { font-family: Arial; }
                             </div>
                             <div class="row col-lg-12 m-2" style="margin-top: 15px">
                                 <div class="col-lg-4">
-                                    <label for="">Container No, Seal No, Mars & Nos</label>
-
-                                    <textarea name="container_no" class="summernote" style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('container_no', $qe->container_no) !!}</textarea>
-
-                                    {{-- <textarea name="container_no" class="form-control" style="white-space: pre-wrap;" id="" cols="30" rows="10" >{{ old('container_no', $qe->container_no) }}</textarea> --}}
-
-                                    {{-- <div class="col-lg-12">
-                                        <input type="text" class="form-control" name="cont_no" placeholder="CONT. NO">
+                                    <div class="row">
+                                                                            <label for="">Container No, Seal No, Mars & Nos</label>
 
                                     </div>
-                                    <div class="col-lg-12 mt-4">
-                                        <input type="text" class="form-control" name="seal_no" placeholder="SEAL NO.">
-
-                                    </div>
-
-                                    <div class="col-lg-12 mt-4">
-                                        <input type="text" class="form-control" name="mother_vessel" placeholder="MOTHER VESSEL">
-
-                                    </div> --}}
+                                    <textarea name="container_no" style="white-space: pre-wrap;" size="2" cols="50" rows="10">{!! old('container_no', $qe->container_no) !!}</textarea>
 
                                     @error('container_no')
                                         <div class="invalid-feedback">
@@ -316,25 +306,17 @@ textarea { font-family: Arial; }
                                     @enderror
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
-                                    <textarea name="no_of_pkgs" class="summernote"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea>
+                                    <div>
+                                        <label for="">No of PKGS or Cont. ; Kind of PKGS, Desc of Goods</label>
+                                    </div>
+                                    <textarea name="no_of_pkgs"  style="white-space: pre-wrap;" size="2" cols="100" rows="10">{!! old('no_of_pkgs', $qe->no_of_pkgs) !!}</textarea>
 
-                                    {{-- <textarea name="no_of_pkgs" class="form-control" id="" cols="20" rows="10">{{old('no_of_pkgs', $qe->no_of_pkgs) }}</textarea> --}}
                                     @error('no_of_pkgs')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                {{-- <div class="col-lg-1">
-                                    <label for="">Total Gross Weight KGS (Pounds)</label>
-                                    <textarea name="total_gross_weight" class="form-control" id="" cols="30" rows="10">{{ old('total_gross_weight', $qe->total_gross_weight) }}</textarea>
-                                    @error('total_gross_weight')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div> --}}
                                 <div class="col-lg-2">
                                     <label for="">Total Meas CBM (CFT)</label>
 
@@ -347,7 +329,7 @@ textarea { font-family: Arial; }
 
                                     </div> --}}
 
-                                    <textarea name="total_measur" class="summernote"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('total_measur', $qe->total_measur) !!}</textarea>
+                                    <textarea name="total_measur"  style="white-space: pre-wrap;" size="2" cols="20" rows="10">{!! old('total_measur', $qe->total_measur) !!}</textarea>
 
                                     {{-- <textarea name="total_measur" class="form-control" id="" cols="30" rows="10">{{ old('total_measur', $qe->total_measur) }}</textarea> --}}
                                     @error('total_measur')
@@ -438,7 +420,6 @@ textarea { font-family: Arial; }
     </div>
 
     @push('custom-scripts')
-    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
                 integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -457,13 +438,27 @@ textarea { font-family: Arial; }
                     minimumResultsForSearch: Infinity, //removes the search box
                 });
 
+                $('.summernote').summernote('lineHeight', '5px');
 
                 // CKEDITOR.replace( 'container_no' );
-
-                $('.summernote').summernote({
-                    tabsize: 3,
-                    height: 200
-                });
+                // $('.summernote').summernote({
+                //       toolbar: [
+                //           // [groupName, [list of button]]
+                //           ['style', ['style']],
+                //           ['style', ['bold', 'italic', 'underline', 'clear']],
+                //           ['font', ['strikethrough', 'superscript', 'subscript']],
+                //           ['fontsize', ['fontsize']],
+                //           ['color', ['color']],
+                //           ['para', ['ul', 'ol', 'paragraph']],
+                //           ['height', ['height']],
+                //           ['fontname', ['fontname']],
+                //           ['table', ['table']],
+                //           ['insert', ['link', 'picture', 'video']],
+                //           ['view', ['fullscreen', 'codeview', 'help']]
+                //       ],
+                //     tabsize: 3,
+                //     height: 200,
+                // });
 
                 // ClassicEditor
                 //                 .create( document.querySelector( '#editor1' ) )
