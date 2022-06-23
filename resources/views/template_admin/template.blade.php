@@ -58,7 +58,7 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li>
-                        <a href="javascript:void(0)" class="sidebartoggler font-20 waves-effect waves-light"><i class="icon-arrow-left-circle"></i></a>
+                        <a href="javascript:void(0)" id="sidemini" class="sidebartoggler font-20 waves-effect waves-light"><i class="icon-arrow-left-circle"></i></a>
                     </li>
                     {{-- <li>
                         <form role="search" class="app-search hidden-xs">
@@ -79,7 +79,7 @@
         <!-- ===== Top-Navigation-End ===== -->
         <!-- ===== Left-Sidebar ===== -->
         <aside class="sidebar">
-            <div class="scroll-sidebar">
+            <div class="scroll-sidebar" style="overflow: visible hidden; width: auto; height: 100%;">
                 <div class="user-profile">
                     <div class="dropdown user-pro-body">
                         <div class="profile-image">
@@ -192,7 +192,14 @@
     <script src="{{ URL('cubic_template/js/db1.js') }}"></script>
     <!-- ===== Style Switcher JS ===== -->
     <script src="{{ URL('cubic_template/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
+    <script>
+        $(document).ready(function() {
 
+            $('body').css('zoom','70%'); /* Webkit browsers */
+            $('body').css('zoom','0.7'); /* Other non-webkit browsers */
+            $('body').css('-moz-transform',scale(0.7, 0.7)); /* Moz-browsers */
+        });
+</script>
     @stack('custom-scripts')
 
 </body>
