@@ -245,7 +245,7 @@ b {
                     <td colspan="3" style="border-top-style: hidden; border-bottom-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td colspan="21" rowspan="2" style="border-right-style: hidden; padding-top: 10px; height: 85px; overflow: hidden;">
+                    <td colspan="21" rowspan="2" style="border-right-style: hidden; height: 85px; overflow: hidden;">
                         <label for="">{{ $aw->handling_information }}</label></td>
                     <td colspan="3"><br></td>
                 </tr>
