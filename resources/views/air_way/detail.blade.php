@@ -137,7 +137,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 75px; overflow:hidden;">
+                        <div style="height: 80px; overflow:hidden;">
                             <label class='preserveLines'>{{ $aw->shipper }}</label>
                         </div>
                     </td>
@@ -254,7 +254,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 300px; overflow: hidden; padding-top: 60px">
+                        <div style="height: 270px; overflow: hidden; padding-top: 60px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>
