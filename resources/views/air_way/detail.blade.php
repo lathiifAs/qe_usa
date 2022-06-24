@@ -254,7 +254,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 248px; overflow: hidden; padding-top: 20px">
+                        <div style="height: 245px; overflow: hidden; padding-top: 20px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>
@@ -317,7 +317,7 @@ b {
                         <label for="">{{ $aw->end_total_charge_agent }}</label>
                         </div>
                     </td>
-                    <td colspan="14" rowspan="3" style="text-align: center; padding-top: 15px">
+                    <td colspan="14" rowspan="3" style="text-align: center; padding-top: 23px">
                         <div style="height: 30px; overflow: hidden;  ">
                             <label>{{ $aw->signature_of_shipper }}</label>
                         </div>
