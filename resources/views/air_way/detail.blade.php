@@ -265,59 +265,75 @@ b {
                 </tr>
                 <tr>
                     <td colspan="5"><b></b>
-                        <div style="height: 20px; overflow: hidden;">
-                            <label for="">{{ $aw->prepaid }}</label>
+                        <div style="height: 20px; overflow: hidden; background-color: blue">
+                            <label for="" style="background-color: blue">{{ $aw->prepaid }}</label>
                         </div>
                     </td>
                     <td colspan="5" ><b></b>
-                        <label for="">{{ $aw->collect }}</label>
+                        <div style="height: 20px; overflow: hidden; background-color: blue">
+                            <label for="" style="background-color: blue">{{ $aw->collect }}</label>
+                        </div>
                     </td>
                     <td colspan="14"  rowspan="3"><b></b>
-                        <label>{{ $aw->other_charges }}</label>
+                        <div style="height: 70px; overflow: hidden; background-color: red">
+                            <label>{{ $aw->other_charges }}</label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" ><b></b>
-                        <div style="height: 20px; overflow: hidden;">
+                        <div style="height: 20px; overflow: hidden;  background-color: red">
                             <label for="">{{ $aw->start_valuation_charge }}</label>
                         </div>
                     </td>
                     <td colspan="5" ><b></b>
+                        <div style="height: 20px; overflow: hidden;  background-color: red">
+
                         <label for="">{{ $aw->end_valuation_charge }}</label>
+                    </div>
+
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" ><b><b>
-                        <div style="height: 20px; overflow: hidden;">
+                        <div style="height: 20px; overflow: hidden; background-color: blue">
                             <label for="">{{ $aw->start_tax }}</label>
                         </div>
                     </td>
                     <td colspan="5" ><b><b>
+                        <div style="height: 20px; overflow: hidden; background-color: blue">
                                 <label for="">{{ $aw->end_tax }}</label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" ><b></b>
-                        <div style="height: 20px; overflow: hidden;">
+                        <div style="height: 20px; overflow: hidden;  background-color: red">
                             <label for="">{{ $aw->start_total_charge_agent }}</label>
                         </div>
                     </td>
                     <td colspan="5" ><b></b>
+                        <div style="height: 20px; overflow: hidden;  background-color: red">
                         <label for="">{{ $aw->end_total_charge_agent }}</label>
+                        </div>
                     </td>
                     <td colspan="14" rowspan="3" style="text-align: center; padding-top: 15px">
-                        <label>{{ $aw->signature_of_shipper }}</label>
+                        <div style="height: 20px; overflow: hidden;  background-color: red">
+                            <label>{{ $aw->signature_of_shipper }}</label>
+                        </div>
                         <b></b>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" ><b></b>
-                        <div style="height: 20px; overflow: hidden;">
+                        <div style="height: 20px; overflow: hidden; background-color: blue">
                             <label for="">{{ $aw->start_total_charge_carrier }}</label>
                         </div>
                     </td>
                     <td colspan="5" ><b></b>
+                        <div style="height: 20px; overflow: hidden; background-color: blue">
                         <label for="">{{ $aw->end_total_charge_carrier }}</label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -335,14 +351,20 @@ b {
                         </div>
                     </td>
                     <td colspan="5" class="h40"><b></b>
+                        <div style="height: 20px; overflow: hidden; background-color: red">
                         <label for="">{{ $aw->total_collect }}</label>
+                        </div>
                     </td>
                     <td colspan="4" rowspan="2" style="text-align: center">
+                        <div style="height: 20px; overflow: hidden; background-color: red">
                         <label>  {{ date('j F, Y', strtotime($aw->executed_date)) }}</label>
+                        </div>
                         <b></b>
                     </td>
                     <td colspan="5" class="h40" rowspan="2" style="text-align: center">
+                        <div style="height: 20px; overflow: hidden; background-color: red">
                         <label>{{ $aw->at_place }}</label>
+                        </div>
                         <b></b>
                     </td>
                     <td colspan="5" class="h40" rowspan="2" style="text-align: center">
