@@ -254,7 +254,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 255px; overflow: hidden; padding-top: 20px">
+                        <div style="height: 248px; overflow: hidden; padding-top: 20px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>
@@ -275,7 +275,7 @@ b {
                         </div>
                     </td>
                     <td colspan="16"  rowspan="3"><b></b>
-                        <div style="height: 125px; overflow: hidden; ">
+                        <div style="height: 115px; overflow: hidden; ">
                             <label>{{ $aw->other_charges }}</label>
                         </div>
                     </td>
