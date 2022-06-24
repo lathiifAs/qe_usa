@@ -264,45 +264,45 @@ b {
                     <td colspan="5"><br></td>
                 </tr>
                 <tr>
-                    <td colspan="5" style="padding-top: 10px"><b></b>
+                    <td colspan="5"><b></b>
                         <div style="height: 20px; overflow: hidden;">
                             <label for="">{{ $aw->prepaid }}</label>
                         </div>
                     </td>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <label for="">{{ $aw->collect }}</label>
                     </td>
-                    <td colspan="14"  style="padding-top: 10px" rowspan="3"><b></b>
+                    <td colspan="14"  rowspan="3"><b></b>
                         <label>{{ $aw->other_charges }}</label>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <div style="height: 20px; overflow: hidden;">
                             <label for="">{{ $aw->start_valuation_charge }}</label>
                         </div>
                     </td>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <label for="">{{ $aw->end_valuation_charge }}</label>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5"  style="padding-top: 10px"><b><b>
+                    <td colspan="5" ><b><b>
                         <div style="height: 20px; overflow: hidden;">
                             <label for="">{{ $aw->start_tax }}</label>
                         </div>
                     </td>
-                    <td colspan="5"  style="padding-top: 10px"><b><b>
+                    <td colspan="5" ><b><b>
                                 <label for="">{{ $aw->end_tax }}</label>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <div style="height: 20px; overflow: hidden;">
                             <label for="">{{ $aw->start_total_charge_agent }}</label>
                         </div>
                     </td>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <label for="">{{ $aw->end_total_charge_agent }}</label>
                     </td>
                     <td colspan="14" rowspan="3" style="text-align: center; padding-top: 15px">
@@ -311,22 +311,22 @@ b {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <div style="height: 20px; overflow: hidden;">
                             <label for="">{{ $aw->start_total_charge_carrier }}</label>
                         </div>
                     </td>
-                    <td colspan="5"  style="padding-top: 10px"><b></b>
+                    <td colspan="5" ><b></b>
                         <label for="">{{ $aw->end_total_charge_carrier }}</label>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5"  style="padding-top: 10px" >
+                    <td colspan="5"  >
                         <div style="height: 20px; overflow: hidden;">
                             <br>
                         </div>
                     </td>
-                    <td colspan="5"  style="padding-top: 10px" ><br></td>
+                    <td colspan="5"  ><br></td>
                 </tr>
                 <tr>
                     <td colspan="5"><b></b>
