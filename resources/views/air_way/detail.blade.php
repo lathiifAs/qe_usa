@@ -65,41 +65,6 @@ b {
         width: 50%;
     }
 
-    /* td.cs {
-        padding-top: 15px;
-    }
-
-    td.h1 {
-        height: 55px;
-        overflow: hidden;
-    }
-
-
-    td.h45 {
-        height: 40px;
-        overflow: hidden;
-    }
-
-
-    td.h3 {
-        height: 75px;
-        overflow: hidden;
-    }
-
-
-    td.h2 {
-        height: 35px;
-        overflow: hidden;
-    }
-
-    td.pl {
-        padding-left: 10px
-    }
-
-    td.pt {
-        padding-top: 10px
-    } */
-
 </style>
 
 <head>
@@ -198,7 +163,7 @@ b {
                         <label class='preserveLines'>{{ $aw->issuing_carrier }}</label>
                         </div>
                     </td>
-                    <td colspan="12" rowspan="3"><label >NOTIFY PARTY :  </label><label for="" class='preserveLines'>{{ $aw->notify_party }}</label></td>
+                    <td colspan="12" rowspan="3"><label for="" class='preserveLines'>{{ $aw->notify_party }}</label></td>
                 </tr>
                 <tr>
                     <td colspan="6" style="padding-top: 35px"></td>
@@ -214,7 +179,7 @@ b {
 
                 <tr>
                     <td colspan="1">
-                        <div style="overflow:hidden; height: 20px;padding-top: 15px">
+                        <div style="overflow:hidden; height: 30px;padding-top: 15px">
                             <label>{{ $aw->to }}</label>
                         </div>
                     </td>
@@ -289,7 +254,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 320px; overflow: hidden; padding-top: 60px">
+                        <div style="height: 300px; overflow: hidden; padding-top: 60px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>
