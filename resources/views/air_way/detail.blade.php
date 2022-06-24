@@ -27,7 +27,7 @@ b {
         white-space: pre-wrap;
     }
 
-@page { margin-left: 15px; margin-top: 0px}
+@page { margin-left: 35px; margin-top: 0px}
 
     td {
         overflow: hidden;
@@ -194,7 +194,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 40px; overflow:hidden; padding-top: 10px">
+                        <div style="height: 60px; overflow:hidden; padding-top: 25px">
                         <label class='preserveLines'>{{ $aw->issuing_carrier }}</label>
                         </div>
                     </td>
@@ -289,7 +289,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 280px; overflow: hidden;">
+                        <div style="height: 320px; overflow: hidden; padding-top: 50px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>

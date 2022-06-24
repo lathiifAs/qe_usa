@@ -194,7 +194,7 @@
     <script src="{{ URL('cubic_template/plugins/components/styleswitcher/jQuery.style.switcher.js') }}"></script>
     <script>
         $(document).ready(function() {
-
+            // $('body').css('MozTransform','scale(' + FFzoom + ')');
             $('body').css('zoom','70%'); /* Webkit browsers */
             $('body').css('zoom','0.7'); /* Other non-webkit browsers */
             $('body').css('-moz-transform',scale(0.7, 0.7)); /* Moz-browsers */
