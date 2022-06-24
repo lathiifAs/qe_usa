@@ -27,7 +27,7 @@ b {
         white-space: pre-wrap;
     }
 
-@page { margin-left: 0px; margin-top: 0px}
+@page { margin-left: 15px; margin-top: 0px}
 
     td {
         overflow: hidden;
