@@ -245,7 +245,7 @@ b {
                     <td colspan="3" style="border-top-style: hidden; border-bottom-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td colspan="21" rowspan="2" class="h2" style="border-right-style: hidden; padding-top: 10px">
+                    <td colspan="21" rowspan="2" style="border-right-style: hidden; padding-top: 10px; height: 85px; overflow: hidden;">
                         <label for="">{{ $aw->handling_information }}</label></td>
                     <td colspan="3"><br></td>
                 </tr>
@@ -254,7 +254,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="24">
-                        <div style="height: 270px; overflow: hidden; padding-top: 60px">
+                        <div style="height: 250px; overflow: hidden; padding-top: 10px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
                         </div>
                     </td>
@@ -305,7 +305,7 @@ b {
                     <td colspan="5"  style="padding-top: 10px"><b></b>
                         <label for="">{{ $aw->end_total_charge_agent }}</label>
                     </td>
-                    <td colspan="14" rowspan="3" style="text-align: center">
+                    <td colspan="14" rowspan="3" style="text-align: center; padding-top: 15px">
                         <label>{{ $aw->signature_of_shipper }}</label>
                         <b></b>
                     </td>
