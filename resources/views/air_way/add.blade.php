@@ -430,14 +430,28 @@ textarea { font-family: Arial; }
                                     <div class="row">
                                         <label for="">Desc of Goods</label>
                                     </div>
-                                    <textarea name="desc_of_goods" size="2" cols="120" rows="10"
-                                    style="font-size: 2rem; min-width: 1240px;
-                                    background-color: #fff;
-border: 1px solid #e5ebec;
-border-radius: 0;
-box-shadow: none;
-color: #565656;
-                                ">{!! old('desc_of_goods') !!}</textarea>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <textarea name="desc_of_goods" size="2" cols="100" rows="10"
+                                                style="font-size: 2rem; min-width: 900px;
+                                                background-color: #fff;
+                                                border: 1px solid #e5ebec;
+                                                border-radius: 0;
+                                                box-shadow: none;
+                                                color: #565656;
+                                            ">{!! old('desc_of_goods') !!}</textarea>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <textarea name="nature_and_qty" size="2" cols="30" rows="10"
+                                            style="font-size: 2rem; min-width: 300px;
+                                            background-color: #fff;
+                                            border: 1px solid #e5ebec;
+                                            border-radius: 0;
+                                            box-shadow: none;
+                                            color: #565656;
+                                        ">{!! old('nature_and_qty') !!}</textarea>
+                                        </div>
+                                    </div>
                                     @error('handling_information')
                                         <div class="invalid-feedback">
                                             {{ $message }}

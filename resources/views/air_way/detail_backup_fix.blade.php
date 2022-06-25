@@ -253,14 +253,9 @@ b {
                     <td colspan="3" style="border-top-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td colspan="18">
+                    <td colspan="24">
                         <div style="height: 245px; overflow: hidden; padding-top: 20px">
                             <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
-                        </div>
-                    </td>
-                    <td colspan="6">
-                        <div style="height: 245px; overflow: hidden; padding-top: 20px">
-                            <label for="" class='preserveLines'>{{ $aw->nature_and_qty }}</label>
                         </div>
                     </td>
                 </tr>
