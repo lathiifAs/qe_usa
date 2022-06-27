@@ -323,7 +323,7 @@ b {
                         </div>
                     </td>
                     <td colspan="14" rowspan="3" style="text-align: center; padding-top: 23px">
-                        <div style="height: 30px; overflow: hidden;  ">
+                        <div style="height: 25px; overflow: hidden;  ">
                             <label>{{ $aw->signature_of_shipper }}</label>
                         </div>
                         <b></b>
