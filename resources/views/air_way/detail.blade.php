@@ -27,7 +27,7 @@ b {
         white-space: pre-wrap;
     }
 
-@page { margin-left: 35px; margin-top: 0px ;margin-bottom: -20px;}
+@page { margin-left: 30px; margin-top: 0px ;margin-bottom: -20px;}
 
     td {
         overflow: hidden;
@@ -186,11 +186,11 @@ b {
                     <td colspan="6" style="padding-left: 25px">
                         <label>{{ $aw->by_first_carrier }}</label>
                     </td>
-                    <td style="padding-left: 10px">
+                    <td style="padding-left: 5px;">
                         <label>{{ $aw->to_2 }}</label>
                     </td>
                     <td>
-                        <label>{{ $aw->by }}</label>
+                        <label style="margin-left: 14px;">{{ $aw->by }}</label>
                     </td>
                     <td>
                         <label for="">{{ $aw->to_3 }}</label>
@@ -198,8 +198,8 @@ b {
                     <td>
                         <label for="">{{ $aw->by_2 }}</label>
                     </td>
-                    <td>
-                        <label for="">{{ $aw->currency }}</label>
+                    <td  colspan="2">
+                        <label for="" style="margin-left: 30px;">{{ $aw->currency }}</label>
                     </td>
                     <td>
                         <label for="">{{ $aw->chos_cd }}</label>
@@ -216,11 +216,11 @@ b {
                     <td>
                         <label for="">{{ $aw->qnay_coll }}</label>
                     </td>
-                    <td colspan="3">
+                    <td colspan="2">
                         <label for="">{{ $aw->declared_carriage }}</label>
                     </td>
                     <td colspan="3">
-                        <label for="">{{ $aw->declared_costums }}</label>
+                        <label for="" style="padding-left: 45px">{{ $aw->declared_costums }}</label>
                     </td>
                 </tr>
 
@@ -280,7 +280,7 @@ b {
                         </div>
                     </td>
                     <td colspan="16"  rowspan="3"><b></b>
-                        <div style="height: 115px; overflow: hidden; ">
+                        <div style="height: 110px; overflow: hidden; ">
                             <label>{{ $aw->other_charges }}</label>
                         </div>
                     </td>
@@ -343,7 +343,7 @@ b {
                 </tr>
                 <tr>
                     <td colspan="5"  >
-                        <div style="height: 30px; overflow: hidden;">
+                        <div style="height: 20px; overflow: hidden;">
                             <br>
                         </div>
                     </td>
