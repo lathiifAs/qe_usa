@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+
+
+
+    b {
+        font-size: 13px;
+        /* 40px/16=2.5em */
+    }
+
+    label {
+        font-size: 13px;
+        /* 40px/16=2.5em */
+        font-family: Arial;
+    }
+
+    .pl1 {
+        padding-left: 30px
+    }
+
+
+    p {
+        font-size: 13px;
+        /* 40px/16=2.5em */
+    }
+
+    .preserveLines {
+        white-space: pre-wrap;
+    }
+
+    @page { margin-left: 30px; margin-top: 0px ;margin-bottom: -20px;}
+
     td {
         overflow: hidden;
     }
@@ -31,6 +61,13 @@
     td.pt {
         padding-top: 10px
     }
+
+    tr.hide_all > td, td.hide_all{
+        /* border-style:hidden; */
+        border-right-style:hidden;
+        border-left-style:hidden;
+        border-top-style:hidden;
+      }
 
 </style>
 
@@ -83,10 +120,18 @@
                     <td><br></td>
                     <td colspan="20"><br></td>
                 </tr> --}}
+                <tr  class="hide_all">
+                    <td colspan="12">
+                        <label for=""> {{ $aw->mawb_no }} </label>
+                    </td>
+                    <td colspan="12" style="text-align: right; padding-right: 10px">
+                        <label for="" > {{ $aw->aawb_no }} </label>
+                    </td>
+                </tr>
                 <tr>
                     <td colspan="6" style="border-bottom-style: hidden;"><b>Shipper's Name and Address</b></td>
                     <td colspan="6"><b>Shipper Account Number</b>
-                        <p>{{ $aw->shipper_account_number }}</p>
+                        <label>{{ $aw->shipper_account_number }}</label>
                     </td>
                     <td colspan="3" rowspan="2" style="border-right-style: hidden;">NOT NEGOTIABLE<p>
                             <b>Air Waybill</b>
@@ -95,13 +140,13 @@
                             Issued by : </p>
                     </td>
                     <td colspan="9" style="border-left-style: hidden;" rowspan="2">
-                        {{ $aw->issued_by }}
+                        <label class='preserveLines'>{{ $aw->issued_by }}</label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 40px; overflow:hidden;">
-                        <p>{{ $aw->shipper }}</p>
+                        <div style="height: 80px; overflow:hidden;">
+                            <label class='preserveLines'>{{ $aw->shipper }}</label>
                         </div>
                     </td>
                 </tr>
@@ -115,18 +160,18 @@
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 40px; overflow:hidden;">
-                        {{ $aw->consignee }}
+                        <div style="height: 60px; overflow:hidden;">
+                            <label class='preserveLines'>{{ $aw->consignee }}</label>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="12">
-                        <div style="height: 40px; overflow:hidden;"><b>Issuing Carrier's Agent Name and City</b>
-                        <p>{{ $aw->issuing_carrier }}</p>
+                        <div style="height: 40px; overflow:hidden;"><b>Issuing Carrier's Agent Name and City</b><br>
+                            <label class='preserveLines' style="padding-top: 5px">{{ $aw->issuing_carrier }}</label>
                         </div>
                     </td>
-                    <td colspan="12" rowspan="3">NOTIFY PARTY : {{ $aw->notify_party }}</td>
+                    <td colspan="12" rowspan="3"><label for="" class='preserveLines'>{{ $aw->notify_party }}</label></td>
                 </tr>
                 <tr>
                     <td colspan="6" class="h2"><b>Agent's IATA Code</b></td>
@@ -134,81 +179,81 @@
                 </tr>
                 <tr>
                     <td colspan="12" class="h2"><b>Airport of Departure (Addr. of First Carrier) and Request
-                            Routing</b>
-                        <p>{{ $aw->airport_of_departure }}</p>
+                            Routing</b><br>
+                        <label>{{ $aw->airport_of_departure }}</label>
                     </td>
                 </tr>
                 <tr>
                     <td><b>To</b>
                         <div style="height: 13px; overflow:hidden;">
-                            {{ $aw->to }}
+                            <label for="">{{ $aw->to }}</label>
                         </div>
                     </td>
                     <td colspan="7"><b>By First Carrier (Routing and Destination)</b>
                         <div style="height: 13px; overflow:hidden;">
-                            {{ $aw->by_first_carrier }}
+                            <label for="">{{ $aw->by_first_carrier }}</label>
                         </div>
                     </td>
                     <td><b>To</b>
                         <div style="height: 13px; overflow:hidden;">
-                            {{ $aw->to_2 }}
+                            <label for="">{{ $aw->to_2 }}</label>
                         </div>
                     </td>
                     <td><b>By</b>
                         <div style="height: 13px; overflow:hidden;">
-                            {{ $aw->by }}
+                            <label for="">{{ $aw->by }}</label>
                         </div>
                     </td>
                     <td><b>To</b>
                         <div style="height: 13px; overflow:hidden;">
-                            {{ $aw->to_3 }}
+                            <label for="">{{ $aw->to_3 }}</label>
                         </div>
                     </td>
                     <td><b>By</b>
                         <div style="height: 13px; overflow:hidden;">
-                            {{ $aw->by_2 }}
+                            <label for="">{{ $aw->by_2 }}</label>
                         </div>
                     </td>
                     <td><b>Currency</b>
                         <div style="height: 13px; overflow:hidden;">
-                        {{ $aw->currency }}
+                            <label for="">{{ $aw->currency }}</label>
                         </div>
                     </td>
                     <td><b>CHGS Cd</b>
                         <div style="height: 13px; overflow:hidden;">
-                        {{ $aw->chos_cd }}
+                            <label for="">{{ $aw->chos_cd }}</label>
                         </div>
                     </td>
                     <td><b>(WT/VAL) PDD</b>
                         <div style="height: 13px; overflow:hidden;">
-                        {{ $aw->wtnal_pdd }}
+                            <label for="">{{ $aw->wtnal_pdd }}</label>
                         </div>
                     </td>
                     <td><b>(WT/VAL) COLL</b>
                         <div style="height: 13px; overflow:hidden;">
-                        {{ $aw->wtnal_coll }}
+                            <label for="">{{ $aw->wtnal_coll }}</label>
                         </div>
                     </td>
                     <td><b>(Other) PDD</b>
                         <div style="height: 13px; overflow:hidden;">
-                        {{ $aw->qnay_pdd }}
+                            <label for="">{{ $aw->qnay_pdd }}</label>
                         </div>
                     </td>
                     <td><b>(Other) COLL</b>
                         <div style="height: 13px; overflow:hidden;">
-                        {{ $aw->qnay_coll }}
+                            <label for="">{{ $aw->qnay_coll }}</label>
                         </div>
                     </td>
                     <td colspan="3">
                         <div style="height: 13px; overflow:hidden;">
                         <b>Declared Value of Carriage</b>
-                        {{ $aw->declared_carriage }}
+                        <label for="">{{ $aw->declared_carriage }}</label>
                         </div>
                     </td>
                     <td colspan="3">
                         <div style="height: 13px; overflow:hidden;">
                         <b>Declared Value of Costums</b>
-                        {{ $aw->declared_costums }}
+                        <label for="">{{ $aw->declared_costums }}</label>
                         </div>
                     </td>
                 </tr>
@@ -217,28 +262,28 @@
                         <div style="height: 30px; overflow:hidden;">
                         <b>Airport of Destination</b>
                         <br>
-                        {{ $aw->airport_of_destination }}
+                        <label for="">{{ $aw->airport_of_destination }}</label>
                         </div>
                     </td>
                     <td colspan="3">
                         <div style="height: 30px; overflow:hidden;">
                         <b>Start Flight/Date</b>
                         <br>
-                        {{ $aw->start_flight_date }}
+                        <label for="">{{ $aw->start_flight_date }}</label>
                         </div>
                     </td>
                     <td colspan="3">
                         <div style="height: 30px; overflow:hidden;">
                         <b>End Flight/Date</b>
                         <br>
-                        {{ $aw->end_flight_date }}
+                        <label for="">{{ $aw->end_flight_date }}</label>
                         </div>
                     </td>
                     <td colspan="4">
                         <div style="height: 30px; overflow:hidden;">
                         <b>Amount of Insurance</b>
                         <br>
-                        {{ $aw->amount_of_insurance }}
+                        <label for="">{{ $aw->amount_of_insurance }}</label>
                         </div>
                     </td>
                     <td colspan="8"></td>
@@ -253,7 +298,8 @@
                 </tr>
                 <tr>
                     <td colspan="21" rowspan="2" class="h2" style="border-right-style: hidden;">
-                        {{ $aw->handling_information }}</td>
+                        <label for="">{{ $aw->handling_information }}</label>
+                    </td>
                     <td colspan="3"><br></td>
                 </tr>
                 <tr>
@@ -271,65 +317,64 @@
                     <td colspan="7"><b>Nature and Qty of Goods (Incl. Dimensions or Volume)</b></td>
                 </tr>
                 <tr>
-                    <td style="height: 100px">{{ $aw->no_of_pieces }}</td>
-                    <td colspan="2">{{ $aw->gross_weight }}</td>
-                    <td rowspan="2">{{ $aw->kglg }}</td>
-                    <td rowspan="2"></td>
-                    <td colspan="2" rowspan="2">{{ $aw->commodity_item }}</td>
-                    <td colspan="3" rowspan="2">{{ $aw->chargeable_weight }}</td>
-                    <td colspan="2" rowspan="2">{{ $aw->rate_charge }}</td>
-                    <td colspan="5" rowspan="2">{{ $aw->total }}</td>
-                    <td colspan="7" rowspan="2">{{ $aw->nature_and_qty }}</td>
+                    <td colspan="17">
+                        <div style="height: 245px; overflow: hidden; padding-top: 20px">
+                            <label for="" class='preserveLines'>{{ $aw->desc_of_goods }}</label>
+                        </div>
+                    </td>
+                    <td colspan="7">
+                        <div style="height: 245px; overflow: hidden; padding-top: 20px">
+                            <label for="" class='preserveLines'>{{ $aw->nature_and_qty }}</label>
+                        </div>
+                    </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td colspan="5"><br></td>
-                </tr>
+
                 <tr>
                     <td colspan="5" class="h2"><b>Weight Charge (Prepaid)</b>
-                        <p>{{ $aw->prepaid }}</p>
+                        <label>{{ $aw->prepaid }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>Weight Charge (Collect)</b>
-                        <p>{{ $aw->collect }}</p>
+                        <label>{{ $aw->collect }}</label>
                     </td>
                     <td colspan="14" class="h2" rowspan="3"><b>Other Charges</b>
-                        <p>{{ $aw->other_charges }}</p>
+                        <label>{{ $aw->other_charges }}</label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>Start Valiation Charge</b>
-                        <p>{{ $aw->start_valuation_charge }}</p>
+                        <label>{{ $aw->start_valuation_charge }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>End Valiation Charge</b>
-                        <p>{{ $aw->end_valuation_charge }}</p>
+                        <label>{{ $aw->end_valuation_charge }}</label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>Start Tax<b>
-                                <p>{{ $aw->start_tax }}</p>
+                                <label>{{ $aw->start_tax }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>End Tax<b>
-                                <p>{{ $aw->end_tax }}</p>
+                                <label>{{ $aw->end_tax }}</label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>Start Total Other Charges Due Agent</b>
-                        <p>{{ $aw->start_total_charge_agent }}</p>
+                        <label>{{ $aw->start_total_charge_agent }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>End Total Other Charges Due Agent</b>
-                        <p>{{ $aw->end_total_charge_agent }}</p>
+                        <label>{{ $aw->end_total_charge_agent }}</label>
                     </td>
                     <td colspan="14" rowspan="3" style="text-align: center">
-                        <p>{{ $aw->signature_of_shipper }}</p>
+                        <label>{{ $aw->signature_of_shipper }}</label>
+                        <br>
                         <b>Signature of Shipper or His Agent</b>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>Start Total Other Charges Due Carrier</b>
-                        <p>{{ $aw->start_total_charge_carrier }}</p>
+                        <label>{{ $aw->start_total_charge_carrier }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>End Total Other Charges Due Carrier</b>
-                        <p>{{ $aw->end_total_charge_carrier }}</p>
+                        <label>{{ $aw->end_total_charge_carrier }}</label>
                     </td>
                 </tr>
                 <tr>
@@ -338,40 +383,41 @@
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>Total Prepaid</b>
-                        <p>{{ $aw->total_repaid }}</p>
+                        <label>{{ $aw->total_repaid }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>Total Collect</b>
-                        <p>{{ $aw->total_collect }}</p>
+                        <br>
+                        <label>{{ $aw->total_collect }}</label>
                     </td>
                     <td colspan="4" rowspan="2" style="text-align: center">
-                        <p>  {{ date('j F, Y', strtotime($aw->executed_date)) }}</p>
+                        <p>  {{ date('j F, Y', strtotime($aw->executed_date)) }}</label><br>
                         <b>Executed on (Date)</b>
                     </td>
                     <td colspan="5" class="h2" rowspan="2" style="text-align: center">
-                        <p>{{ $aw->at_place }}</p>
+                        <label>{{ $aw->at_place }}</label><br>
                         <b>at (Place)</b>
                     </td>
                     <td colspan="5" class="h2" rowspan="2" style="text-align: center">
-                        <p>{{ $aw->signature_of_issue }}</p>
+                        <label>{{ $aw->signature_of_issue }}</label><br>
                         <b>Signiture of
                             Issuing Carrier or itsAgent</b>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>Currency Conversion Rate</b>
-                        <p>{{ $aw->current_conversion }}</p>
+                        <label>{{ $aw->current_conversion }}</label>
                     </td>
                     <td colspan="5" class="h2"><b>CC Charges in Des. Currency</b>
-                        <p>{{ $aw->cc_charges }}</p>
+                        <label>{{ $aw->cc_charges }}</label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="h2"><b>for Carrier's Use Only at Destination</b></td>
                     <td colspan="5" class="h2"><b>Charges at Destination</b>
-                        <p>{{ $aw->charges_desti }}</p>
+                        <label>{{ $aw->charges_desti }}</label>
                     </td>
                     <td colspan="4"><b>Total Collect Charges</b>
-                        <p>{{ $aw->total_collect_charges }}</p>
+                        <label>{{ $aw->total_collect_charges }}</label>
                     </td>
                     <td colspan="10"><b></b></td>
                 </tr>
